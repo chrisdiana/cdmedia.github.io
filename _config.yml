@@ -9,9 +9,9 @@ permalink:           pretty
 relative_permalinks: true
 
 # Setup
-title:               CDM
-tagline:             'Chris Diana - Blog'
-description:         'Useful things found'
+title:               Chris Diana
+tagline:             'Useful things found'
+description:         'Blog'
 url:                 http://cdmedia.github.io/
 baseurl:             /
 paginate:            5
