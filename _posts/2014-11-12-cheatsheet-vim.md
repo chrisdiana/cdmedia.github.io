@@ -2,6 +2,9 @@
 layout: post
 title: Vim Cheatsheet 
 comments: true
+tags:
+  - cheatsheet
+  - vim
 ---
 
 VIM
