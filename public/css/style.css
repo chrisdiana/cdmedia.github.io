@@ -1,0 +1,19 @@
+/* Tagging */
+ul.tag_list, ul.tag_list_in_post {
+	display: inline-block;
+	padding-left: 0px;
+	list-style: none;
+	margin: 0px;
+}
+li.inline.archive_list, li.tag_list_item {
+	display: block;
+	float: left;
+	margin: 0px 5px;
+	line-height: 14px;
+}
+a.tag_list_link {
+	font-size: 14px;
+	background: #268bd2;
+	color: #fff;
+	padding: 2px 8px;
+}

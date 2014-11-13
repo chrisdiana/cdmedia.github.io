@@ -12,7 +12,15 @@ title: Home
       </a>
     </h1>
 
-    <span class="post-date">{{ post.date | date_to_string }}</span>
+	<span class="post-date">{{ post.date | date_to_string }}
+		<ul class="tag_list_in_post">
+		{% for tag in page.tags %}
+			<li class="inline tag_list_item">
+				<a class="tag_list_link" href="/tag/{{ tag }}">{{ tag }}</a>
+			</li>
+		{% endfor %}
+		</ul>
+	</span>
 
     {{ post.content }}
   </div>
