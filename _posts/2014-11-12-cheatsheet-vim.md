@@ -1,10 +1,9 @@
 ---
 layout: post
-title: Vim Cheatsheet 
+title: Vim Cheatsheet
 comments: true
-tags:
-  - cheatsheet
-  - vim
+category: cheatsheets
+tags: [cheatsheet, vim]
 ---
 
 VIM
