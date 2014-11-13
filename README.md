@@ -1,3 +1,2 @@
-My Blog of Useful Things
+My Personal Blog of Useful Things Built on Jekyll.
 
--Chris Diana

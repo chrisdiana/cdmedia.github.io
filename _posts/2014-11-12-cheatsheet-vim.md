@@ -2,7 +2,6 @@
 layout: post
 title: Vim Cheatsheet
 comments: true
-category: cheatsheets
 tags: [cheatsheet, vim]
 ---
 
