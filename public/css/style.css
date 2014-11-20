@@ -17,3 +17,11 @@ a.tag_list_link {
 	color: #fff;
 	padding: 2px 8px;
 }
+/* Search */
+input#search-input {
+	display: block;
+	float: right;
+	font-size: 16px;
+	padding: 7px;
+	margin: -30px 10px;
+}
