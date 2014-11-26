@@ -25,3 +25,24 @@ input#search-input {
 	padding: 7px;
 	margin: -30px 10px;
 }
+#results-container {
+	padding: 10px 0px;
+	margin-top: 20px;
+}
+#results-container li {
+	list-style: none;
+	padding: 5px 0px;
+	border-bottom: 1px solid #ebdff3;
+}
+#results-container li:first-child {
+	border-top: 1px solid #ebdff3;
+	margin-top: 20px;
+}
+#results-container li:before {
+	content: "\232A";
+	font-size: 16px;
+	padding-right: 10px;
+	margin-top: 2px;
+	display: block;
+	float: left;
+}
