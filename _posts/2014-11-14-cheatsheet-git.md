@@ -7,6 +7,7 @@ tags: [cheatsheet, git]
 
 Here is some great tips and tricks to get around git.
 Some helpful sites:
+
 * [git - the simple guide](http://rogerdudler.github.io/git-guide/)
 * [Bitbucket - Atlassian Tutorial on Git](https://www.atlassian.com/git/tutorials/setting-up-a-repository)
 * [Git - Official site](http://git-scm.com/book/en/v2/Getting-Started-About-Version-Control)

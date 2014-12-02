@@ -4,6 +4,7 @@ title: Moving a Wordpress site to production
 comments: true
 tags: wordpress
 ---
+A few tips on moving a Wordpress site to a production environment
 
 1. Copy all files over to subfolder on production server
 2. Install WP-Migrate-DB plugin on site you are moving and set the new URL and root folder directory
