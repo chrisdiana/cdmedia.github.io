@@ -12,6 +12,10 @@ Some helpful sites:
 * [Bitbucket - Atlassian Tutorial on Git](https://www.atlassian.com/git/tutorials/setting-up-a-repository)
 * [Git - Official site](http://git-scm.com/book/en/v2/Getting-Started-About-Version-Control)
 
+Git Config Examples
+
+* [git config that doesnt suck](http://northisup.com/blog/git-config-that-doesnt-suck-2)
+
 #### Add all files but untracked
 
 ```
