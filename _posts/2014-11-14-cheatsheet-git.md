@@ -39,6 +39,31 @@ $ git add -A  # do both operation at once, add to index all files
 git commit -a -m "Your message"
 ```
 
+#### Edit latest commit message
+
+```
+git commit --amend -m "Your edited message"
+```
+
+#### Stash current changes temporarily
+
+```
+// Stash some changes
+git stash 
+
+// Reapply changes
+git stash apply
+
+// Reapply changes to specific stash
+git stash apply stash@{0}
+
+// List all stashes
+git stash list
+
+// Clear stashes
+git stash clear
+```
+
 #### Undo a git add - remove files staged for a git commit
 
 ```
