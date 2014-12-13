@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: Shortcut to Add Jekyll post from Terminal
 comments: true
 tags: [jekyll, bash]
@@ -13,7 +13,7 @@ Feel free to change this as you see fit.
 
 ```
 ---
-layout: default
+layout: post
 title:
 comments: true
 tags: []

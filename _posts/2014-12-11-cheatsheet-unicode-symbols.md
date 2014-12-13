@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: Unicode Symbol Cheatsheet
 comments: true
 tags: [unicode, cheatsheet]
