@@ -3,23 +3,15 @@
 
   {% include head.html %}
 
-  <body class="layout-reverse">
+  <body class="layout">
 
     {% include sidebar.html %}
 
     <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
          content to avoid any CSS collisions with our real content. -->
     <div class="wrap">
-      <div class="masthead">
-        <div class="container">
-          <h3 class="masthead-title">
-            <a href="/" title="Home">{{ site.title }}</a>
-            <small>{{ site.tagline }}</small>
-          </h3>
-		<input id="search-input" placeholder="Search..." />
-		<div id="results-container"></div>
-        </div>
-      </div>
+
+       <a href="#" id="trigger-overlay"><i class="fa fa-search fa-lg search-icon"></i></a>
 
       <div class="container content">
         {{ content }}
@@ -29,23 +21,20 @@
 
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>
 
-    <script>
-      (function(document) {
-        var toggle = document.querySelector('.sidebar-toggle');
-        var sidebar = document.querySelector('#sidebar');
-        var checkbox = document.querySelector('#sidebar-checkbox');
+    <!--
+    {% for i in (1..10) %}
+      <img src="photos/{{ i }}.png"><br>
+    {% endfor %}
+    -->
 
-        document.addEventListener('click', function(e) {
-          var target = e.target;
-
-          if(!checkbox.checked ||
-             sidebar.contains(target) ||
-             (target === checkbox || target === toggle)) return;
-
-          checkbox.checked = false;
-        }, false);
-      })(document);
-    </script>
+   <!-- open/close -->
+    <div class="overlay overlay-hugeinc">
+      <button type="button" class="overlay-close"><i class="fa fa-close"></i></button>
+      <div class="search-container">
+        <input id="search-input" placeholder="Search..." />
+        <div id="results-container"></div>
+      </div>
+    </div>
 
     {% include google_analytics.html %}
   </body>

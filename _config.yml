@@ -10,8 +10,8 @@ relative_permalinks: true
 
 # Setup
 title:               Chris Diana
-tagline:             'Useful things found'
-description:         'Blog'
+tagline:             'Web Designer & Developer'
+description:         'Useful things found'
 url:                 http://cdmedia.github.io/
 baseurl:             /
 paginate:            5

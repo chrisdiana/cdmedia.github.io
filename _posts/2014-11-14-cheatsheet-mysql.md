@@ -41,6 +41,13 @@ DELETE FROM table_name WHERE id=whatever;
 
 ```
 INSERT INTO table_b (id, title, description, params) (SELECT "someotherID#", title, description, params FROM table_a WHERE id IN (id1, id2, id3, id4, id5));
+
+or
+
+INSERT INTO `users` ( username, first_name, last_name, address, city, state )
+SELECT "chrisdoe", "Chris", last_name, address, city, state
+FROM `users`
+WHERE `username`='johndoe'
 ```
 
 ### Inner Join
@@ -51,6 +58,16 @@ FROM table_a a
 INNER JOIN table_b b ON a.column_a = a.id 
 INNER JOIN table_c c ON a.column_a = c.id 
 WHERE c.column_c = ?;
+```
+
+### Multiple Updates using a single query
+
+```
+UPDATE mytable SET title = CASE
+WHEN id = 1 THEN 'Great Expectations';
+WHEN id = 2 THEN 'War and Peace';
+ELSE title
+END;
 ```
 
 ### Create/Assign User to DB
