@@ -34,10 +34,17 @@ Javascript
 * [JavaScript: The Good Partsi - Book](http://shop.oreilly.com/product/9780596517748.do)
 * [Secrets of the JavaScript Ninjai - Book](http://jsninja.com/)
 
+---
+
+MySQL
+
+* [A Basic MySQL Tutorial - Digital Ocean](https://www.digitalocean.com/community/tutorials/a-basic-mysql-tutorial)
 
 Web Development
 
 * [Google Guides for Technical Development](http://www.google.com/edu/tools-and-solutions/guide-for-technical-development/index.html)
+
+---
 
 Hosting, IAAS and Cloud
 
@@ -45,6 +52,8 @@ Hosting, IAAS and Cloud
 * OpenShift
 * Linode
 * Hostgator
+
+---
 
 Online Editors and IDEs
 

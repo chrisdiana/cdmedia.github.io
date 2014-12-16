@@ -50,13 +50,21 @@ FROM `users`
 WHERE `username`='johndoe'
 ```
 
+### Add Column to Table
+
+```
+ALTER TABLE contacts ADD email VARCHAR(60);
+ALTER TABLE contacts ADD email VARCHAR(60) AFTER name;
+ALTER TABLE contacts ADD email VARCHAR(60) FIRST;
+```
+
 ### Inner Join
 
 ```
-SELECT a.column_a, b.column_b, c.column_c 
-FROM table_a a 
-INNER JOIN table_b b ON a.column_a = a.id 
-INNER JOIN table_c c ON a.column_a = c.id 
+SELECT a.column_a, b.column_b, c.column_c
+FROM table_a a
+INNER JOIN table_b b ON a.column_a = a.id
+INNER JOIN table_c c ON a.column_a = c.id
 WHERE c.column_c = ?;
 ```
 
