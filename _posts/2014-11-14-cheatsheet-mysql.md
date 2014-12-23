@@ -7,37 +7,52 @@ tags: [cheatsheet, mysql]
 
 A few helpful hints for MySQL
 
-### Create DB
+Create DB
 
 ```
 create database dbname;
 ```
 
-### Select Record
+Create Table
+
+```
+CREATE TABLE people (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(30) NOT NULL,
+    email VARCHAR(50),
+    reg_date TIMESTAMP
+);
+```
+
+---
+
+## Data
+
+Select Record
 
 ```
 SELECT field1, field2 table_name1, table_name2 WHERE id=whatever;
 ```
 
-### Update Record
+Update Record
 
 ```
 UPDATE table_name SET field1=new-value1, field2=new-value2 WHERE id=whatever;
 ```
 
-### Insert Record
+Insert Record
 
 ```
 INSERT INTO table_name ( field1, field2, fieldN ) VALUES ( value1, value2, valueN );
 ```
 
-### Delete Record
+Delete Record
 
 ```
 DELETE FROM table_name WHERE id=whatever;
 ```
 
-### Copy Records
+Copy Records
 
 ```
 INSERT INTO table_b (id, title, description, params) (SELECT "someotherID#", title, description, params FROM table_a WHERE id IN (id1, id2, id3, id4, id5));
@@ -50,15 +65,20 @@ FROM `users`
 WHERE `username`='johndoe'
 ```
 
-### Add Column to Table
+---
+
+## Columns
+
+Add Column to Table
 
 ```
 ALTER TABLE contacts ADD email VARCHAR(60);
 ALTER TABLE contacts ADD email VARCHAR(60) AFTER name;
-ALTER TABLE contacts ADD email VARCHAR(60) FIRST;
+# If the column is not null
+ALTER TABLE contacts ADD email VARCHAR(60) NOT NULL FIRST;
 ```
 
-### Inner Join
+Inner Join
 
 ```
 SELECT a.column_a, b.column_b, c.column_c
@@ -68,7 +88,11 @@ INNER JOIN table_c c ON a.column_a = c.id
 WHERE c.column_c = ?;
 ```
 
-### Multiple Updates using a single query
+---
+
+## Other
+
+Multiple Updates using a single query
 
 ```
 UPDATE mytable SET title = CASE
@@ -78,7 +102,7 @@ ELSE title
 END;
 ```
 
-### Create/Assign User to DB
+Create/Assign User to DB
 
 ```
 CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password';
@@ -91,13 +115,9 @@ GRANT ALL PRIVILEGES ON * . * TO 'newuser'@'localhost';
 FLUSH PRIVILEGES;
 ```
 
-### SCP SSH File Transfer
+---
 
-```
-scp data.sql vivek@example.cyberciti.biz:/home/vivek
-```
-
-Terminal commands.
+## Terminal commands
 
 ### Start SQL
 
@@ -105,26 +125,32 @@ Terminal commands.
 sudo /usr/local/mysql/support-files/mysql.server start
 ```
 
-### Version
+Version
 
 ```
 /usr/local/mysql/bin/mysql -v
 ```
 
-### Login
+Login
 
 ```
 mysql -u root -p
 ```
 
-### Import SQL data file
+Import SQL data file
 
 ```
 mysql -u username -p -h localhost DATA-BASE-NAME &lt; data.sql ``` ### SQL Dump ``` mysqldump -u root -p[root_password] [database_name] &amp;gt; dumpfilename.sql
 ```
 
-### SQL Dump
+SQL Dump
 
 ```
 mysqldump -u root -p[root_password] [database_name] &gt; dumpfilename.sql
+```
+
+SCP SSH File Transfer
+
+```
+scp data.sql vivek@example.cyberciti.biz:/home/vivek
 ```

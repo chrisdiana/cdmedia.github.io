@@ -39,6 +39,10 @@ Javascript
 MySQL
 
 * [A Basic MySQL Tutorial - Digital Ocean](https://www.digitalocean.com/community/tutorials/a-basic-mysql-tutorial)
+* [A Visual Explanation of SQL Joins](http://blog.codinghorror.com/a-visual-explanation-of-sql-joins/)
+* [SQL for Beginners Part 1](http://code.tutsplus.com/tutorials/sql-for-beginners--net-8200) [Part 2](http://code.tutsplus.com/tutorials/sql-for-beginners-part-1--net-8274) [Part 3](http://code.tutsplus.com/articles/sql-for-beginners-part-3-database-relationships--net-8561)
+
+---
 
 Web Development
 
