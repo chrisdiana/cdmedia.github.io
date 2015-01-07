@@ -53,7 +53,10 @@ git commit --amend -m "Your edited message"
 
 ```
 // Stash some changes
-git stash 
+git stash
+
+// Stash with name
+git stash save "Some description"
 
 // Reapply changes
 git stash apply
@@ -91,7 +94,7 @@ git clean -fdx
 
 #### Clone just branch
 
-```    
+```
 git clone --branch=stable ssh://git@bitbucket.org/yourrepo/project.git
 ```
 
@@ -102,7 +105,7 @@ git checkout wip
 
 #### Add remote repo
 
-```    
+```
 git remote add project git@bitbucket.org:yourrepo/project.git
 ```
 
@@ -114,44 +117,44 @@ git checkout -b newdesign origin/newdesign
 
 #### Delete branch
 
-```    
+```
 git branch -d create_feature
 ```
 
 #### Creating a remote called "github"
 
-```    
+```
 git remote add github git://github.com/yourrepo/project.git
 git fetch github
 ```
 
 #### List all remote branches:
 
-```    
+```
 git branch -r
 ```
 
 #### Add remote
 
-```    
+```
 git remote add origin ssh://git@bitbucket.org/yourrepo/project.git
 ```
 
 #### Push a new rep
 
-```    
+```
 git push -u origin --all
 ```
 
 #### Commit for another author
 
-```    
+```
 --author=&lt;author&gt;
 ```
 
 #### Setup a local directory
 
-``` 
+```
 mkdir /path/to/your/project
 cd /path/to/your/project
 git init
@@ -160,7 +163,7 @@ git remote add origin git@bitbucket.org:yourrepo/test.git
 
 Create your first file, commit, and push
 
-```    
+```
 echo "Chris Diana" &gt;&gt; contributors.txt
 git add contributors.txt
 git commit -m 'Initial commit with contributors'
@@ -169,7 +172,7 @@ git push -u origin master
 
 #### Existing project setup
 
-```    
+```
 cd /path/to/my/repo
 git remote add origin git@bitbucket.org:yourrepo/project.git
 git push -u origin --all # pushes up the repo and its refs for the first time

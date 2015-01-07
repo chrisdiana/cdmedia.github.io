@@ -2,7 +2,7 @@
 layout: post
 title: Browser Wars
 comments: true
-tags: browsers 
+tags: browsers
 ---
 
 Here is the best of the best for each browser...
@@ -20,7 +20,7 @@ Best Extensions
 
 * Firebug
 * Stylish (Themes for Firebug, and other sites at [userstyles.org](http://userstyles.org)
-
+* Muzli
 
 Best Firebug Themes [userstyles.org](https://userstyles.org/styles/browse?search_terms=firebug)
 ---

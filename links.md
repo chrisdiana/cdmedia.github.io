@@ -36,11 +36,26 @@ Javascript
 
 ---
 
+PHP
+
+* [PHP The Right Way](http://www.phptherightway.com)
+
+---
+
 MySQL
 
 * [A Basic MySQL Tutorial - Digital Ocean](https://www.digitalocean.com/community/tutorials/a-basic-mysql-tutorial)
 * [A Visual Explanation of SQL Joins](http://blog.codinghorror.com/a-visual-explanation-of-sql-joins/)
 * [SQL for Beginners Part 1](http://code.tutsplus.com/tutorials/sql-for-beginners--net-8200) [Part 2](http://code.tutsplus.com/tutorials/sql-for-beginners-part-1--net-8274) [Part 3](http://code.tutsplus.com/articles/sql-for-beginners-part-3-database-relationships--net-8561)
+
+---
+
+Linux
+
+* [Debian Static IP Setup](https://www.howtoforge.com/debian-static-ip-address)
+* [Debian Network Configuration](https://wiki.debian.org/NetworkConfiguration)
+* [Debian Web Server Setup](http://www.pontikis.net/blog/debian-wheezy-web-server-setup)
+* [Debian - The Perfect Server](https://www.howtoforge.com/perfect-server-debian-wheezy-apache2-bind-dovecot-ispconfig-3)
 
 ---
 
@@ -56,6 +71,12 @@ Hosting, IAAS and Cloud
 * OpenShift
 * Linode
 * Hostgator
+
+---
+
+GIT
+
+* [A Hackers Guid to GIT](https://wildlyinaccurate.com/a-hackers-guide-to-git)
 
 ---
 
