@@ -55,7 +55,9 @@ Linux
 * [Debian Static IP Setup](https://www.howtoforge.com/debian-static-ip-address)
 * [Debian Network Configuration](https://wiki.debian.org/NetworkConfiguration)
 * [Debian Web Server Setup](http://www.pontikis.net/blog/debian-wheezy-web-server-setup)
-* [Debian - The Perfect Server](https://www.howtoforge.com/perfect-server-debian-wheezy-apache2-bind-dovecot-ispconfig-3)
+* [Debian Wheezy- The Perfect Server](https://www.howtoforge.com/perfect-server-debian-wheezy-apache2-bind-dovecot-ispconfig-3)
+* [LAMP Server on Debian 7](https://www.linode.com/docs/websites/lamp/lamp-server-on-debian-7-wheezy)
+* [Users in Linux](https://www.digitalocean.com/community/tutorials/how-to-add-delete-and-grant-sudo-privileges-to-users-on-a-debian-vps)
 
 ---
 
@@ -85,3 +87,5 @@ Online Editors and IDEs
 * Koding
 * Cloud9 IDE
 * Codio
+* CodeAnywhere
+* NitrousIO
