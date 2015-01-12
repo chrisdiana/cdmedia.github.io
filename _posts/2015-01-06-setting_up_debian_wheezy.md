@@ -5,8 +5,8 @@ comments: true
 tags: [server]
 ---
 
-1. Load Debian Image
-2. Setup Static Newtork Configuration
+###1. Load Debian Image
+###2. Setup Static Newtork Configuration
 
 Make a backup of the network configuration file just in case:
 
@@ -32,7 +32,7 @@ Restart networking
 /etc/init.d/networking restart
 ```
 
-3. Add a user
+###3. Add a user
 
 ```
 adduser someuser
@@ -50,7 +50,7 @@ root        ALL=(ALL:ALL) ALL
 newuser    ALL=(ALL:ALL) ALL
 ```
 
-4. Harden SSH
+###4. Harden SSH
 
 Edit the `/etc/ssh/sshd_config` file
 
@@ -62,7 +62,7 @@ AllowUsers youruser
 
 Then, restart ssh service using `systemctl restart ssh.service`
 
-5. Add a hostname
+###5. Add a hostname
 
 Edit your `/etc/hostname` to your liking
 
@@ -77,7 +77,7 @@ and now your `/etc/hosts` file so it resolves correctly
 ::1         localhost servername ip6-localhost ip6-loopback
 ```
 
-6. Install Apache, MySQL, NodeJS and PHP
+###6. Install Apache, MySQL, NodeJS and PHP
 
 ```
 sudo apt-get install apache2
@@ -93,7 +93,7 @@ curl -sL https://deb.nodesource.com/setup | bash -
 apt-get install -y nodejs
 ```
 
-7. Create Virtual Hosts
+###7. Create Virtual Hosts
 
 First, make sure that vhost is enable in apache configuraton. Check to see if this is
 uncommented in `/etc/apache2/apache2.conf`
@@ -141,7 +141,7 @@ Finally, make sure to add your new site to `/etc/hosts` like:
 127.0.0.1   localhost example.com
 ```
 
-8. Fix permission issues
+###8. Fix permission issues
 
 If you want to work on your site and not be logged in as root, run this to fix
 your sites permissions:
@@ -156,7 +156,7 @@ Also, youll want to make sure everyone is able to read your files:
 sudo chmod -R 775 /var/www
 ```
 
-9. Harden Apache
+###9. Harden Apache
 
 By default apache lists all the content of the directory in absence of an index file.
 Edit or add this to your `/etc/apache2/apache2.conf` or `httpd.conf` and
@@ -180,7 +180,7 @@ Now, reload apache:
 sudo /etc/init.d/apache2 reload
 ```
 
-10. Create a Firewall
+###10. Create a Firewall
 
 If your server isnt sitting behind a router or firewall, I highly
 suggest setting up a firewall to protect your server from attacks.
@@ -314,6 +314,25 @@ sudo a2enmod mod-security
 sudo /etc/init.d/apache2 force-reload
 ```
 
+###12. Generate SSH Key
+
+Check for SSH keys
+
+```
+ls -al ~/.ssh
+```
+
+If none exist, run keygen to generate a new ssh key
+
+```
+sh-keygen -t rsa -C "your_email@example.com"
+```
+
+then copy it to use
+
+```
+cat ~/.ssh/id_rsa.pub
+```
 
 
 
