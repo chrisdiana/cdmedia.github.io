@@ -5,8 +5,10 @@ comments: true
 tags: [server]
 ---
 
+Here is quick guide to a Debian Wheezy web server up and running.
+
 ###1. Load Debian Image
-###2. Setup Static Newtork Configuration
+###2. Setup Static Network Configuration
 
 Make a backup of the network configuration file just in case:
 
@@ -302,7 +304,7 @@ Finally, set the scripts permissions using:
 sudo chmod +x /etc/network/if-pre-up.d/firewall
 ```
 
-11. Extra security measures
+###11. Extra security measures
 
 Install mod_security, fail2ban and/or psad
 
