@@ -4,6 +4,13 @@
         <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}">
             <img class="sidebar-logo" src="{{ site.baseurl }}public/img/logo-white-leather.png" />
         </a>
+
+        <div id="about-info">
+          <p class="info-headline">Developer & Designer</p>
+          <p>Web developer <a target="_blank" href="https://twitter.com/searchmonitor">@thesearchmonitor</a><br>
+          Javascript and PHP software engineer</p>
+        </div>
+
         <a href="#" id="menu-toggle">&#x2261;</a>
         <!--<small>{{ site.tagline }}</small>-->
     </div>
@@ -24,6 +31,7 @@
         {% endif %}
       {% endfor %}
 
+      <a class="sidebar-nav-item" href="{{ site.baseurl }}/about">About</a>
       <a class="sidebar-nav-item" href="{{ site.author.url }}/#portfolio">Portfolio</a>
     </nav>
 

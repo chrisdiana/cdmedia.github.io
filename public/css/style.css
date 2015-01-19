@@ -161,8 +161,6 @@ input#search-input:-ms-input-placeholder { color: #fff; }
 	transform: translateY(-50%);
 }
 
-
-
 /* Effects */
 .overlay-hugeinc {
 	opacity: 0;
@@ -201,6 +199,17 @@ input#search-input:-ms-input-placeholder { color: #fff; }
 	-webkit-transform: translateY(25%) rotateX(-35deg);
 	transform: translateY(25%) rotateX(-35deg);
 }
+
+/* About Page */
+.resumebtn {
+	background: rgb(138,174,206);
+	color: white;
+	padding: 10px 15px;
+}
+#about-info {
+	display :none;
+}
+
 @media (max-width: 48em) {
 	.content { margin-left: 0; }
 	#menu-toggle {
