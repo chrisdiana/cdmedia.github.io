@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  {% include head.html %}
+  <link rel="stylesheet" href="{{ site.baseurl }}public/css/about.css">
+
+  <body class="layout">
+
+  {% include sidebar.html %}
+
+    <div class="wrap">
+       <a href="#" id="trigger-overlay"><i class="fa fa-search fa-lg search-icon"></i></a>
+
+      <div class="container content">
+        {{ content }}
+      </div>
+    </div>
+
+   <!-- open/close -->
+    <div class="overlay overlay-hugeinc">
+      <button type="button" class="overlay-close"><i class="fa fa-close"></i></button>
+      <div class="search-container">
+        <input id="search-input" placeholder="Search..." />
+        <div id="results-container"></div>
+      </div>
+    </div>
+
+    <script src="{{ site.baseurl }}public/js/particleground.min.js"></script>
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-27401837-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    <script>
+    $(function(){
+      $('sidebar').addClass('particles').fadeIn(200);
+      $('#about-info').show().fadeIn(300);
+    });
+    </script>
+
+  </body>
+</html>
