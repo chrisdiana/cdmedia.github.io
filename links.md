@@ -47,6 +47,7 @@ MySQL
 * [A Basic MySQL Tutorial - Digital Ocean](https://www.digitalocean.com/community/tutorials/a-basic-mysql-tutorial)
 * [A Visual Explanation of SQL Joins](http://blog.codinghorror.com/a-visual-explanation-of-sql-joins/)
 * [SQL for Beginners Part 1](http://code.tutsplus.com/tutorials/sql-for-beginners--net-8200) [Part 2](http://code.tutsplus.com/tutorials/sql-for-beginners-part-1--net-8274) [Part 3](http://code.tutsplus.com/articles/sql-for-beginners-part-3-database-relationships--net-8561)
+* [MySQL TutorialsPoint](http://www.tutorialspoint.com/mysql/index.htm)
 
 ---
 
@@ -80,6 +81,7 @@ GIT
 
 * [A Hackers Guid to GIT](https://wildlyinaccurate.com/a-hackers-guide-to-git)
 * [Adding an existing project to GitHub using the command line](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/)
+* [GIT Cheatsheet](https://github.com/tiimgreen/github-cheat-sheet)
 
 ---
 

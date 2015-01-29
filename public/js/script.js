@@ -62,4 +62,18 @@ $(function() {
         else
             jQuery("#sidebar-nav").removeClass("slidedown").addClass("slideup");
     });
+
+    jQuery('#portfolio-gallery').mixItUp({
+		animation: {
+			duration: 220,
+			effects: 'fade stagger(34ms) translateZ(-40px)',
+			easing: 'ease'
+		}
+	});
+
+	$.featherlight.contentFilters.iframe = {
+           process: function(url){
+               return $('<iframe width="800" height="500" src="' + url + '"/>')
+           }
+       }
 });

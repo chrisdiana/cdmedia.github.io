@@ -146,12 +146,85 @@ Feel free to download my resume by clicking the link below:
 
 ---
 
+## Portfolio
+<div class="controls">
+	<a class="filter" data-filter="all">All</a>
+	<a class="filter" data-filter=".mobile">Mobile/Web Apps</a>
+	<a class="filter" data-filter=".websites">Websites</a>
+	<a class="filter" data-filter=".graphics">Graphic Design</a>
+</div>
+
+<div id="portfolio-gallery" class="portfolio">
+	<div class="mix websites">
+		<a href="#" data-featherlight="{{ site.baseurl }}public/img/portfolio/websites/truckduty-full.jpg">
+			<img src="{{ site.baseurl }}public/img/portfolio/websites/truckduty.jpg" />
+		</a>
+	</div>
+	<div class="mix mobile">
+		<a href="#" data-featherlight="{{ site.baseurl }}public/img/portfolio/mobile/pghcares-full.jpg">
+			<img src="{{ site.baseurl }}public/img/portfolio/mobile/pghcares.jpg" />
+		</a>
+	</div>
+	<div class="mix mobile">
+		<a href="#" data-featherlight="{{ site.baseurl }}public/img/portfolio/mobile/automatefitness-full.jpg">
+			<img src="{{ site.baseurl }}public/img/portfolio/mobile/automatefitness.jpg" />
+		</a>
+	</div>
+	<div class="mix mobile">
+		<a href="#" data-featherlight="{{ site.baseurl }}public/img/portfolio/mobile/realsocial-full.jpg">
+			<img src="{{ site.baseurl }}public/img/portfolio/mobile/realsocial.jpg" />
+		</a>
+	</div>
+	<div class="mix websites">
+		<a href="#" data-featherlight="{{ site.baseurl }}public/img/portfolio/websites/comeback-full.jpg">
+			<img src="{{ site.baseurl }}public/img/portfolio/websites/comeback.jpg" />
+		</a>
+	</div>
+	<div class="mix mobile">
+		<a href="#" data-featherlight="{{ site.baseurl }}public/img/portfolio/mobile/strideright-full.jpg">
+			<img src="{{ site.baseurl }}public/img/portfolio/mobile/strideright.jpg" />
+		</a>
+	</div>
+	<div class="mix websites">
+		<a href="#" data-featherlight="{{ site.baseurl }}public/img/portfolio/websites/crimpers-full.jpg">
+			<img src="{{ site.baseurl }}public/img/portfolio/websites/crimpers.jpg" />
+		</a>
+	</div>
+	<div class="mix websites">
+		<a href="#" data-featherlight="{{ site.baseurl }}public/img/portfolio/websites/bizprinters-full.jpg">
+			<img src="{{ site.baseurl }}public/img/portfolio/websites/bizprinters.jpg" />
+		</a>
+	</div>
+	<div class="mix graphics">
+		<a href="#" data-featherlight="{{ site.baseurl }}public/img/portfolio/graphics/beanmountain-full.jpg">
+			<img src="{{ site.baseurl }}public/img/portfolio/graphics/beanmountain.jpg" />
+		</a>
+	</div>
+	<div class="mix graphics">
+		<a href="#" data-featherlight="{{ site.baseurl }}public/img/portfolio/graphics/bravenewworld-full.jpg">
+			<img src="{{ site.baseurl }}public/img/portfolio/graphics/bravenewworld.jpg" />
+		</a>
+	</div>
+	<div class="mix graphics">
+		<a href="#" data-featherlight="{{ site.baseurl }}public/img/portfolio/graphics/yesterdaygig-full.jpg">
+			<img src="{{ site.baseurl }}public/img/portfolio/graphics/yesterdaygig.jpg" />
+		</a>
+	</div>
+	<div class="mix graphics">
+		<a href="#" data-featherlight="{{ site.baseurl }}public/img/portfolio/graphics/kennywood-full.jpg">
+			<img src="{{ site.baseurl }}public/img/portfolio/graphics/kennywood.jpg" />
+		</a>
+	</div>
+</div>
+
+---
+
 ### Contact
 
 Feel free to contact me at cdiana.media@gmail.com.
 
 <ul class="about-social-links">
-	<li><a href="https://www.linkedin.com/profile/view?id=114638489"><span class="icon-linkedin2"></span></a></li>
-	<li><a href="https://plus.google.com/u/0/107737587422182772693/posts"><span class="icon-googleplus2"></span></a></li>
-	<li><a href="http://github.com/cdmedia">GitHub</a></li>
+	<li style="width:33.33%;"><a href="https://www.linkedin.com/profile/view?id=114638489"><i class="fa fa-linkedin fa-lg"></i></a></li>
+	<li style="width:33.33%;"><a href="https://plus.google.com/u/0/107737587422182772693/posts"><i class="fa fa-google-plus fa-lg"></i></a></li>
+	<li style="width:33.33%;"><a href="http://github.com/cdmedia"><i class="fa fa-github fa-lg"></i></a></li>
 </ul>

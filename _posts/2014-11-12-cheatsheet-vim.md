@@ -160,3 +160,9 @@ Other
     :s/foo/bar/g - Change each 'foo' to 'bar' in the current line
     :%s/foo/bar/g - Change each 'foo' to 'bar' in all the lines
     (visual):'<,'>s/foo/bar/g - highlight and replace all selected in visual mode
+
+VIM Resources
+
+* [A Good Vimrc](http://dougblack.io/words/a-good-vimrc.html)
+* [Why Vim is Awesome](http://federicoramirez.name/why-vim-is-awesome/)
+* [Vim Colors](http://www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html)

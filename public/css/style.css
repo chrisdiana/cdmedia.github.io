@@ -19,6 +19,7 @@ img.profile-pic {
     border: 1px solid #c8c8c8;
 }
 span.footer { font-size: 12px; }
+.sidebar-icon { padding-right: 10px; }
 
 /* Tagging */
 ul.tag_list, ul.tag_list_in_post {
@@ -206,6 +207,10 @@ input#search-input:-ms-input-placeholder { color: #fff; }
 	color: white;
 	padding: 10px 15px;
 }
+a.resumebtn:hover {
+	background: rgb(120, 149, 176);
+	text-decoration: none;
+}
 #about-info {
 	display :none;
 }
@@ -235,6 +240,7 @@ input#search-input:-ms-input-placeholder { color: #fff; }
 	}
 	.sidebar-nav-item { text-align: left; }
 	.search-icon { color: #fff; }
+	#about-info { display: none !important; }
 }
 @media screen and (max-height: 30.5em) {
 	.overlay .search-container {
