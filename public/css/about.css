@@ -31,6 +31,7 @@
   margin: 0;
   padding: 2em 0;
   list-style-type: none;
+  z-index:  -999;
 }
 .emedu-list-1 li {
   position: relative;
@@ -113,6 +114,7 @@
   margin: 5em 0 6em 0;
   padding: 0;
   list-style-type: none;
+  z-index:  -999;
   -webkit-transform: rotate(-5deg);
   -moz-transform: rotate(-5deg);
   -ms-transform: rotate(-5deg);
@@ -218,6 +220,7 @@
   border-right: 1px solid rgba(0, 0, 0, 0.3);
   font-size: 0.8em;
   font-weight: 700;
+  z-index:  -999;
 }
 .skill-list-1 li:before {
   content: '';
@@ -260,6 +263,7 @@
   height: 16em;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   list-style-type: none;
+  z-index:  -999;
 }
 .skill-list-2 li {
   position: relative;
@@ -427,7 +431,7 @@ font-style: italic;
 display: block;
 }
 #about-info a {
-  color: #73daff;
+  color: #99c9ff;
   text-decoration: none;
 }
 
@@ -461,6 +465,8 @@ display: block;
   content: '';
   display: inline-block;
 }
+
+.controls { padding-bottom: 10px; }
 
 a.filter {
   background: rgb(138,174,206);
@@ -503,6 +509,8 @@ a.filter:hover{
   padding: 0;
   opacity: 0.65;
   text-align: center;
+  position: relative;
+  z-index: 999;
   -webkit-transition: opacity 0.2s linear;
   -moz-transition: opacity 0.2s linear;
   -o-transition: opacity 0.2s linear;

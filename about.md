@@ -224,7 +224,7 @@ Feel free to download my resume by clicking the link below:
 Feel free to contact me at cdiana.media@gmail.com.
 
 <ul class="about-social-links">
-	<li style="width:33.33%;"><a href="https://www.linkedin.com/profile/view?id=114638489"><i class="fa fa-linkedin fa-lg"></i></a></li>
-	<li style="width:33.33%;"><a href="https://plus.google.com/u/0/107737587422182772693/posts"><i class="fa fa-google-plus fa-lg"></i></a></li>
-	<li style="width:33.33%;"><a href="http://github.com/cdmedia"><i class="fa fa-github fa-lg"></i></a></li>
+	<li style="width:33.33%;"><a target="_blank" href="https://www.linkedin.com/profile/view?id=114638489"><i class="fa fa-linkedin fa-lg"></i></a></li>
+	<li style="width:33.33%;"><a target="_blank" href="https://plus.google.com/u/0/107737587422182772693/posts"><i class="fa fa-google-plus fa-lg"></i></a></li>
+	<li style="width:33.33%;"><a target="_blank" href="http://github.com/cdmedia"><i class="fa fa-github fa-lg"></i></a></li>
 </ul>

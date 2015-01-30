@@ -1,4 +1,5 @@
 <div class="sidebar">
+  <div id="termDiv"></div>
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
         <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}">
@@ -33,8 +34,12 @@
 
       <a class="sidebar-nav-item" href="{{ url }}/about">About</a>
       <a class="sidebar-nav-item" href="{{ site.author.url }}/#portfolio">Portfolio</a>
-      <a href="http://github.com/cdmedia" class="sidebar-icon"><i class="fa fa-github"></i></a>
-      <a href="http://chrisdianamedia.com/vim/vim.html" data-featherlight data-featherlight-type="iframe"><i class="fa fa-terminal fa-inverse"></i></a>
+      <a href="http://github.com/cdmedia" target="_blank" class="sidebar-icon"><i class="fa fa-github"></i></a>
+	    <a href="http://gist.github.com/cdmedia" target="_blank" class="sidebar-icon"><i class="fa fa-github-alt"></i></a>
+      <a href="http://chrisdianamedia.com/vim/vim.html" data-featherlight data-featherlight-type="iframe" class="sidebar-icon"><i class="fa fa-code fa-inverse"></i></a>
+      <a href="javascript:termOpen()" id="termLink" onmouseover="window.status='JS/UIX: open terminal and boot system'; return true" onmouseout="window.status=''; return true" class="sidebar-icon">
+       <i class="fa fa-terminal fa-inverse"></i>
+      </a>
     </nav>
     <!--<span class="footer">&copy; {{ site.time | date: '%Y' }}. All rights reserved.</span>-->
   </div>

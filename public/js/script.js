@@ -1,5 +1,4 @@
 $(function() {
-
 	SimpleJekyllSearch.init({
 		searchInput: document.getElementById('search-input'),
 		resultsContainer: document.getElementById('results-container'),
@@ -51,8 +50,12 @@ $(function() {
 	closeBttn.addEventListener( 'click', toggleOverlay );
 
 	jQuery(document).keyup(function(e) {
-  		if (e.keyCode == 27) {
+  		if(e.keyCode == 27){
   			toggleOverlay();
+  		}
+  		if(e.keyCode == 18) {
+  			jQuery('#termLink').click();
+  			termOpen();
   		}
 	});
 
@@ -72,8 +75,15 @@ $(function() {
 	});
 
 	$.featherlight.contentFilters.iframe = {
-           process: function(url){
-               return $('<iframe width="800" height="500" src="' + url + '"/>')
-           }
-       }
+        process: function(url){
+            return $('<iframe width="800" height="500" src="' + url + '"/>')
+        }
+    }
+
+    $('#termLink').on("click", function(){
+    	$(this).addClass('terminalOpen');
+    	$('.sidebar').css("width", "30rem");
+    	$('.sidebar-logo').fadeOut();
+    });
+
 });
