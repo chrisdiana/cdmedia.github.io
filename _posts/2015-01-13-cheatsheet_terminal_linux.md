@@ -16,3 +16,11 @@ Log out all users
 ```
 pkill -KILL -u username
 ```
+
+Latest files written in system
+
+```
+#!/bin/bash
+find $1 -type f -exec stat --format '%Y :%y %n' {} \; | sort -nr | cut -d: -f2- | head
+```
+
