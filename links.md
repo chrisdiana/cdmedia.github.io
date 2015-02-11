@@ -63,6 +63,13 @@ Linux
 
 ---
 
+OSX
+
+* [Perfect Web Development Environment](http://mallinson.ca/osx-web-development/)
+* [Get AMP Stack on your mac](http://coolestguidesontheplanet.com/get-apache-mysql-php-phpmyadmin-working-osx-10-9-mavericks/)
+
+---
+
 Web Development
 
 * [Google Guides for Technical Development](http://www.google.com/edu/tools-and-solutions/guide-for-technical-development/index.html)
@@ -93,6 +100,16 @@ Online Editors and IDEs
 * Codio
 * CodeAnywhere
 * NitrousIO
+
+---
+
+CMS
+
+* Wordpress
+* Joomla
+* Drupal
+* PageKit
+* LightCMS
 
 ---
 
