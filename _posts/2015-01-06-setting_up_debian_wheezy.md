@@ -346,5 +346,8 @@ Additional resources:
 * [Apache Security Tips](http://www.tecmint.com/apache-security-tips/)
 * [Securing your Server](https://www.linode.com/docs/security/securing-your-server)
 * [How to setup mod_security on Debian](https://www.digitalocean.com/community/tutorials/how-to-set-up-mod_security-with-apache-on-debian-ubuntu)
+* [Apache Security Tips](http://www.tecmint.com/apache-security-tips/)
+* [Debian Stable Web Server Step-by-step](http://nickj.org/Debian_stable_Web_Server_step-by-step)
+* [What steps do you take to secure a debian server?](http://serverfault.com/questions/11659/what-steps-do-you-take-to-secure-a-debian-server)
 
 

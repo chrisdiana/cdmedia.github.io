@@ -11,6 +11,12 @@ Move all contents of a folder to another folder
 mv /path/sourcefolder/* /path/destinationfolder/
 ```
 
+Check current disk space in human-readable format
+
+```
+df -h
+```
+
 Log out all users
 
 ```
