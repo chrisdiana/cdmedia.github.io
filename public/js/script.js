@@ -49,17 +49,17 @@ $(function() {
 	triggerBttn.addEventListener( 'click', toggleOverlay );
 	closeBttn.addEventListener( 'click', toggleOverlay );
 
-	/*
 	jQuery(document).keyup(function(e) {
   		if(e.keyCode == 27){
   			toggleOverlay();
   		}
+		/*
   		if(e.keyCode == 18) {
   			jQuery('#termLink').click();
   			termOpen();
   		}
+		*/
 	});
-	*/
 
 	jQuery("#menu-toggle").click(function () {
         if (jQuery("#sidebar-nav").hasClass("slideup"))

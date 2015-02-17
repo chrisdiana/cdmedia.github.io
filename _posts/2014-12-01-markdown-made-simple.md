@@ -2,7 +2,7 @@
 layout: post
 title: Markdown Made Simple
 comments: true
-tags: markdown 
+tags: markdown
 ---
 
 It seems like Markdown is everywhere these days.
@@ -33,24 +33,24 @@ Code:
 Code:
 
 ```
-Paragraphs are simply one or more consecutive lines! 
-Bacon ipsum dolor amet pork loin ribeye cupim tri-tip short loin, brisket beef meatloaf. 
-Kielbasa ham frankfurter spare ribs brisket. 
+Paragraphs are simply one or more consecutive lines!
+Bacon ipsum dolor amet pork loin ribeye cupim tri-tip short loin, brisket beef meatloaf.
+Kielbasa ham frankfurter spare ribs brisket.
 
 Here is two paragraphs broken by a line.
-Bacon ipsum dolor amet pork loin ribeye cupim tri-tip short loin, brisket beef meatloaf. 
+Bacon ipsum dolor amet pork loin ribeye cupim tri-tip short loin, brisket beef meatloaf.
 
-Kielbasa ham frankfurter spare ribs brisket. 
+Kielbasa ham frankfurter spare ribs brisket.
 ```
 
-Paragraphs are simply one or more consecutive lines! 
-Bacon ipsum dolor amet pork loin ribeye cupim tri-tip short loin, brisket beef meatloaf. 
-Kielbasa ham frankfurter spare ribs brisket. 
+Paragraphs are simply one or more consecutive lines!
+Bacon ipsum dolor amet pork loin ribeye cupim tri-tip short loin, brisket beef meatloaf.
+Kielbasa ham frankfurter spare ribs brisket.
 
 Here is two paragraphs broken by a line.
-Bacon ipsum dolor amet pork loin ribeye cupim tri-tip short loin, brisket beef meatloaf. 
+Bacon ipsum dolor amet pork loin ribeye cupim tri-tip short loin, brisket beef meatloaf.
 
-Kielbasa ham frankfurter spare ribs brisket. 
+Kielbasa ham frankfurter spare ribs brisket.
 
 -----
 
@@ -137,6 +137,15 @@ Code:
 
 ------
 
+8. Images
+
+Code:
+
+```
+![Image of Octocat](https://assets-cdn.github.com/images/modules/logos_page/Octocat.png)
+```
+
+![Image of Octocat](https://assets-cdn.github.com/images/modules/logos_page/Octocat.png)
 #More info and further reading:
 
 * [Github Markdown Tutorial](https://help.github.com/articles/markdown-basics)
