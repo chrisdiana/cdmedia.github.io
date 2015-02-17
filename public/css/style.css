@@ -75,6 +75,33 @@ ul.tag-box  {
 	color: #83b5fa;
 	text-decoration: none;
 }
+/* Archive */
+ul.archive-list {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+.archive-list li {
+	padding: 8px 0px;
+	border-bottom: 1px solid #E5E5E5;
+}
+.archive-list li:last-child {
+	display: none;
+}
+.archive-list li a:hover {
+	color: #5F5F5F;
+	text-decoration: none;
+}
+.archive-list span {
+	font-size: 12px;
+	margin-right: 10px;
+	vertical-align: middle;
+	background: #268BD2;
+	padding: 4px 5px;
+	border-radius: 4px;
+	color: #fafafa;
+}
+
 /* Search */
 .search-icon {
 	position: absolute;

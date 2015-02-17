@@ -9,7 +9,7 @@ Port of the awesome Sublime Text theme itg.flat with some minor tweaks.
 
 ---
 
-[Download itg_flat.vim](https://cdn.rawgit.com/cdmedia/itg_flat_vim/master/itg_flat.vim)
+[Download itg_flat.vim](https://cdn.rawgit.com/cdmedia/itg_flat_vim/master/colors/itg_flat.vim)
 
 **Installation**
 

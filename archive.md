@@ -6,6 +6,8 @@ title: Archive
 ## Blog Posts
 or [search by tag]({{ url }}/tags)
 
+<ul class="archive-list">
 {% for post in site.posts %}
-  * {{ post.date | date_to_string }} &raquo; [ {{post.title }} ]({{ post.url }})
+  <li><span>{{ post.date | date_to_string }}</span><a href="{{post.url}}">{{post.title }}</a></li>
 {% endfor %}
+</ul>
