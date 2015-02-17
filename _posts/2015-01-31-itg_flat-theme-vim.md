@@ -20,3 +20,5 @@ then, add this to your .vimrc file
 colorscheme itg_flat
 ```
 
+View the project over on [Github](https://github.com/cdmedia/itg_flat_vim)
+
