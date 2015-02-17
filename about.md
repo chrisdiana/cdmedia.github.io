@@ -44,17 +44,17 @@ Feel free to download my resume by clicking the link below:
 		<div class="emedu-list-1__desc">Develop and maintain various websites in a variety of technologies with a strong focus on mobile compatibility: HTML5, Responsive CSS3, Javascript, jQuery, PHP, Node.js.</div>
 	</li>
 	<li>
+		<div class="emedu-list-1__date">2008-2013</div>
+		<div class="emedu-list-1__location">Freelance</div>
+		<div class="emedu-list-1__title">Web Developer/ UI Designer</div>
+		<div class="emedu-list-1__desc">Design and develop a variety of websites and web applications for clients using various web technologies: HTML, CSS, JavaScript, jQuery, and PHP/MySQL. Design a variety of print/ graphic products for clients using Adobe Suite, Photoshop, Illustrator, and InDesign. Define project goals and refine project details with clients on an ongoing basis.
+		</div>
+	</li>
+	<li>
 		<div class="emedu-list-1__date">2011-2014</div>
 		<div class="emedu-list-1__location">SMARTSolution Technologies</div>
 		<div class="emedu-list-1__title">Web Developer/ Designer</div>
 		<div class="emedu-list-1__desc">Designed and implemented internal web applications, set milestones for projects, tracked progress, scheduled meetings, and designed workflows. Maintained enterprise infrastructure for company-wide applications using several platforms: Microsoft Enterprise Infrastructure, Ubuntu, Linux, IIS 6/7, WAMP, LAMP, MAMP.
-		</div>
-	</li>
-	<li>
-		<div class="emedu-list-1__date">2008-Present</div>
-		<div class="emedu-list-1__location">Freelance</div>
-		<div class="emedu-list-1__title">Web Developer/ UI Designer</div>
-		<div class="emedu-list-1__desc">Design and develop a variety of websites and web applications for clients using various web technologies: HTML, CSS, JavaScript, jQuery, and PHP/MySQL. Design a variety of print/ graphic products for clients using Adobe Suite, Photoshop, Illustrator, and InDesign. Define project goals and refine project details with clients on an ongoing basis.
 		</div>
 	</li>
 	<li>
@@ -129,13 +129,13 @@ Feel free to download my resume by clicking the link below:
 
 ### Other Skills
 
-* **Front-end:** Web Frameworks (Bootstrap, Foundation, jQuery Mobile, iWebKit, Less Framework, Pure Framework), MVC Frameworks (Angular.js, Backbone.js)
-* **Back-end:** MVC Frameworks (Express.js, CodeIgniter), Server Stacks (Apache, Node.js, WAMP, LAMP, MAMP), Databases (MySQL, MongoDB, SQLite, IndexedDB)
+* **Front-end:** Web Frameworks (Bootstrap, Foundation, UIKit, Skeleton, jQuery UI/Mobile), MVC Frameworks (Angular.js, Backbone.js, App.js)
+* **Back-end:** MVC Frameworks (Express.js, CodeIgniter, Slim, Meteor.js, Ruby on Rails), Server Stacks (Apache, Node.js, Nginx), Databases (MySQL, MongoDB, SQLite, IndexedDB)
 * **Design Software:** Adobe Suite, Photoshop, Dreamweaver, Illustrator, InDesign, Acrobat, GIMP
 * **Version Control Systems:** GIT, BitBucket, Github, SourceTree
-* **CMS/CRM:** Wordpress, Joomla, ExpressionEngine, PulseCMS, MonstraCMS, AnchorCMS, Bolt, Silverstripe, Magento, SugarCRM, vTiger, WooCommerce
-* **General/ OS:** MS Office Suite, Windows/Mac OS (all versions), Linux/Command-line, Ubuntu
-* **Other:** XML, XHTML, Responsive Design
+* **CMS/CRM:** Wordpress, Joomla, ExpressionEngine, PulseCMS, MonstraCMS, AnchorCMS, Magento, SugarCRM, vTiger, WooCommerce, PageKit
+* **General/ OS:** MS Office Suite, Windows/Mac OS (all versions), Linux/Command-line, Ubuntu, Vagrant, Bash/Shell
+* **Other:** Web Services, RESTful API, XML, XHTML, Responsive Design
 
 ---
 
