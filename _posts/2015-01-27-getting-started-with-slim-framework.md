@@ -340,6 +340,8 @@ We'll there you have it, we have a RESTful application that can used to GET, POS
 PUT and DELETE items from the database. This is a great starting point and can be
 expanded to includ more methods, routes, and even authentication.
 
+You can download a step by step (in GIT) version of this app on Github.
+
 The next step in this tutorial is to create a client that will communicate with
 this REST API that we've just built. Stay tuned.
 
