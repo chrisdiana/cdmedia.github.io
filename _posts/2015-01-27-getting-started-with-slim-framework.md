@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Getting Started with Slim Framework: Creating a RESTful API
+title: Getting Started with Slim Framework - Creating a RESTful API
 comments: true
 tags: [php, framework, mvc]
 ---
