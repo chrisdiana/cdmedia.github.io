@@ -2,10 +2,10 @@
 layout: post
 title: Getting Started with Slim Framework - Creating a RESTful API
 comments: true
-tags: [php, framework, mvc]
+tags: [php, framework, mvc, rest, api, slim]
 ---
 
-Heres a quick tutorial to get up and running with Slim PHP Framework to start building
+Here's a quick tutorial to get up and running with Slim PHP Framework to start building
 RESTful applications.
 
 **Why a REST API?**
@@ -111,7 +111,7 @@ $db = new NotORM($pdo);
 ### 6. Setup our first Route
 
 Now we are going to setup a HTTP GET route for the home URL. In this step, we
-will acutally be able to start to see our application work. Below the database
+will actually be able to start to see our application work. Below the database
 configuration add:
 
 ```
@@ -135,7 +135,7 @@ CRUD (Create, Read, Update, Delete) operations.
 
 Now that we have our Slim app up and running, we need to get items from the
 database. We are going to create a new route so that when a user (or device) hits
-your base url `/cars`, it will return a list of all cars in the database in
+your base url and then `/cars`, it will return a list of all cars in the database in
 JSON format. Right below your `home` route (and above the `$app->run()`) add:
 
 ```
@@ -156,13 +156,13 @@ $app->get('/cars', function() use($app, $db){
 ```
 
 Here is what happens: First, we tell Slim we are setting up a HTTP GET Route
-`cars/`. We add paramaters `$app` and `$db` to tell Slim to use the Slim app and
+`/cars`. We add paramaters `$app` and `$db` to tell Slim to use the Slim app and
 NotORM database library. We then create an empty cars array and loop through the
 database getting all cars. Finally, we set the repsonse header to JSON and echo
 the cars array as a JSON object. If you hit `http://localhost/your-app/cars` in
 your browser, you should now see all the cars in the database as JSON.
 
-Alternativly, we can use cURL to test the GET request. Pull up your terminal
+Alternatively , we can use cURL to test the GET request. Pull up your terminal
 and type:
 
 ```
@@ -183,7 +183,7 @@ Content-Type: application/json
 ```
 
 
-### 8. Geting A Single Car
+### 8. Getting A Single Car
 
 We've setup a route to get all the cars, but what if we just want a single car?
 We'll follow a similar structure as above:
@@ -287,7 +287,7 @@ $app->put('/car/:id', function($id) use($app, $db){
 ```
 
 Similar to getting a single car, we are using a callback argument `:id` to tell
-the application which car we want to edit. We then, grab the car with the correct
+the application which car we want to edit. We then grab the car with the correct
 id from the database and update it. If the update was successful, we'll echo a
 success message. If the car doesn't exist, well echo that the car doesn't exist.
 
@@ -324,8 +324,8 @@ $app->delete('/car/:id', function($id) use($app, $db){
 ```
 
 Similar to above, we are using the callback argument to get a specific car by their
-id. Then we find that car in the database and delete it using NotORM's `delete()`
-method. We will then echo back a message if the car was successfully deleted or if
+id. Then, we find that car in the database and delete it using NotORM's `delete()`
+method. We will then echo back a message if the car was successfully deleted, or if
 the car does not exist.
 
 We can test out this functionality using cURL DELETE:
@@ -336,11 +336,11 @@ curl -i -X DELETE http://localhost/slim-cars/car/4
 
 ### Conclusion
 
-We'll there you have it, we have a RESTful application that can used to GET, POST,
+We'll there you have it, we have just built a RESTful application that can be used to GET, POST,
 PUT and DELETE items from the database. This is a great starting point and can be
-expanded to includ more methods, routes, and even authentication.
+expanded to include more methods, routes, and even authentication.
 
-You can download a step by step (in GIT) version of this app on Github.
+You can download the source of this app in a step by step (in GIT) version on [Github](https://github.com/cdmedia/slim-cars).
 
 The next step in this tutorial is to create a client that will communicate with
 this REST API that we've just built. Stay tuned.
