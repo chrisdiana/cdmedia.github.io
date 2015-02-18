@@ -129,8 +129,8 @@ Feel free to download my resume by clicking the link below:
 
 ### Other Skills
 
-* **Front-end:** Web Frameworks *(Bootstrap, Foundation, UIKit, Skeleton, jQuery UI/Mobile)*, MVC Frameworks *(Angular.js, Backbone.js, App.js)*
-* **Back-end:** MVC Frameworks *(Express.js, CodeIgniter, Slim, Meteor.js, Ruby on Rails)*, Server Stacks *(Apache, Node.js, Nginx)*, Databases *(MySQL, MongoDB, SQLite, IndexedDB)*
+* **Front-end:** Web Frameworks (Bootstrap, Foundation, UIKit, Skeleton, jQuery UI/Mobile), MVC Frameworks (Angular.js, Backbone.js, App.js)
+* **Back-end:** MVC Frameworks (Express.js, CodeIgniter, Slim, Meteor.js, Ruby on Rails), Server Stacks (Apache, Node.js, Nginx), Databases (MySQL, MongoDB, SQLite, IndexedDB)
 * **Design Software:** Adobe Suite, Photoshop, Dreamweaver, Illustrator, InDesign, Acrobat, GIMP
 * **Version Control Systems:** GIT, BitBucket, Github, SourceTree
 * **CMS/CRM:** Wordpress, Joomla, ExpressionEngine, PulseCMS, MonstraCMS, AnchorCMS, Magento, SugarCRM, vTiger, WooCommerce, PageKit

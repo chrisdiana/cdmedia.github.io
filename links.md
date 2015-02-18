@@ -70,6 +70,16 @@ OSX
 
 ---
 
+VIM
+
+* [VimAwesome](http://vimawesome.com/)
+* [Learn Vimscript the Hard Way](http://learnvimscriptthehardway.stevelosh.com/)
+* [usevim](http://usevim.com/)
+* [Vim Video Tutorials](http://derekwyatt.org/vim/tutorials/)
+* [Best of Vim tips](http://zzapper.co.uk/vimtips.html)
+
+---
+
 Web Development
 
 * [Google Guides for Technical Development](http://www.google.com/edu/tools-and-solutions/guide-for-technical-development/index.html)
@@ -115,5 +125,6 @@ CMS
 
 Other cool links
 
+* [Programming Motherf__ker](http://programming-motherfucker.com/)
 * [CB.vu](http://cb.vu/)
 
