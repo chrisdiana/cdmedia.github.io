@@ -8,6 +8,43 @@ tags: [server]
 Here is quick guide to a Debian Wheezy web server up and running.
 
 ###1. Load Debian Image
+
+Flash the Linux image to a hard drive or flash drive. First download the `.img` or `.raw`
+Linux image file. Then, navigate into the directory with the image.
+
+```
+cd ~/Downloads/Debian/
+```
+
+Check the name of the device you are going to flash
+
+```
+mount
+```
+
+It should looks something like:
+
+```
+/dev/disk2s1 on /Volumes/SYSTEM (msdos, local, nodev, nosuid, noowners)
+```
+
+Unmount that disk
+
+```
+sudo diskutil unmountDisk /dev/disk2
+```
+
+WARNING. Make sure to double check before you run this command or you could wipe
+your entire hard drive if you select the wrong one!
+
+```
+sudo dd if=Debian_2.2_wheezy_3.14.14.raw of=/dev/rdisk2 bs=4096
+```
+
+This will take some time to flash and won't show any progress but you can press Ctrl+T to send to SIGNINFO
+and it will output it's process.
+
+
 ###2. Setup Static Network Configuration
 
 Make a backup of the network configuration file just in case:
@@ -23,9 +60,9 @@ Tip: To find you default gateway, try `route -n get default`
 
 ```
 face eth0 inet static
-    address 192.0.2.7
+    address 192.168.2.105
     netmask 255.255.255.0
-    gateway 192.0.2.254
+    gateway 192.168.2.1
 ```
 
 Restart networking
@@ -340,6 +377,7 @@ cat ~/.ssh/id_rsa.pub
 
 
 Additional resources:
+
 * [How to setup apache virtual hosts on Debian 7](https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-debian-7)
 * [LAMP Server on Debian Wheezy](https://www.linode.com/docs/websites/lamp/lamp-server-on-debian-7-wheezy)
 * [Debian Wheezy Dedicated Web Server](http://www.pontikis.net/blog/debian-wheezy-web-server-setup)
@@ -349,5 +387,14 @@ Additional resources:
 * [Apache Security Tips](http://www.tecmint.com/apache-security-tips/)
 * [Debian Stable Web Server Step-by-step](http://nickj.org/Debian_stable_Web_Server_step-by-step)
 * [What steps do you take to secure a debian server?](http://serverfault.com/questions/11659/what-steps-do-you-take-to-secure-a-debian-server)
+* [Debian Wifi](https://wiki.debian.org/WiFi/HowToUse)
+* [Setup a Bluetooth keyboard on Rasberry Pi](http://www.ctheroux.com/2012/08/a-step-by-step-guide-to-setup-a-bluetooth-keyboard-and-mouse-on-the-raspberry-pi/)
+* [Cubox-i Debian SD image](http://www.igorpecovnik.com/2014/08/19/cubox-i-hummingboard-debian-sd-image/)
 
 
+Upgrade to a simple desktop environment
+
+```
+apt-get -y install xorg lightdm xfce4 xfce4-goodies tango-icon-theme gnome-icon-theme
+reboot
+```
