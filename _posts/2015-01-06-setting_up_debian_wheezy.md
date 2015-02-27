@@ -378,18 +378,19 @@ cat ~/.ssh/id_rsa.pub
 
 Additional resources:
 
-* [How to setup apache virtual hosts on Debian 7](https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-debian-7)
-* [LAMP Server on Debian Wheezy](https://www.linode.com/docs/websites/lamp/lamp-server-on-debian-7-wheezy)
-* [Debian Wheezy Dedicated Web Server](http://www.pontikis.net/blog/debian-wheezy-web-server-setup)
-* [Apache Security Tips](http://www.tecmint.com/apache-security-tips/)
-* [Securing your Server](https://www.linode.com/docs/security/securing-your-server)
-* [How to setup mod_security on Debian](https://www.digitalocean.com/community/tutorials/how-to-set-up-mod_security-with-apache-on-debian-ubuntu)
-* [Apache Security Tips](http://www.tecmint.com/apache-security-tips/)
-* [Debian Stable Web Server Step-by-step](http://nickj.org/Debian_stable_Web_Server_step-by-step)
-* [What steps do you take to secure a debian server?](http://serverfault.com/questions/11659/what-steps-do-you-take-to-secure-a-debian-server)
-* [Debian Wifi](https://wiki.debian.org/WiFi/HowToUse)
-* [Setup a Bluetooth keyboard on Rasberry Pi](http://www.ctheroux.com/2012/08/a-step-by-step-guide-to-setup-a-bluetooth-keyboard-and-mouse-on-the-raspberry-pi/)
-* [Cubox-i Debian SD image](http://www.igorpecovnik.com/2014/08/19/cubox-i-hummingboard-debian-sd-image/)
+*[How to setup apache virtual hosts on Debian 7](https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-debian-7)
+*[LAMP Server on Debian Wheezy](https://www.linode.com/docs/websites/lamp/lamp-server-on-debian-7-wheezy)
+*[Debian Wheezy Dedicated Web Server](http://www.pontikis.net/blog/debian-wheezy-web-server-setup)
+*[Apache Security Tips](http://www.tecmint.com/apache-security-tips/)
+*[Securing your Server](https://www.linode.com/docs/security/securing-your-server)
+*[How to setup mod_security on Debian](https://www.digitalocean.com/community/tutorials/how-to-set-up-mod_security-with-apache-on-debian-ubuntu)
+*[Apache Security Tips](http://www.tecmint.com/apache-security-tips/)
+*[Debian Stable Web Server Step-by-step](http://nickj.org/Debian_stable_Web_Server_step-by-step)
+*[What steps do you take to secure a debian server?](http://serverfault.com/questions/11659/what-steps-do-you-take-to-secure-a-debian-server)
+*[Debian Wifi](https://wiki.debian.org/WiFi/HowToUse)
+*[Setup a Bluetooth keyboard on Rasberry Pi](http://www.ctheroux.com/2012/08/a-step-by-step-guide-to-setup-a-bluetooth-keyboard-and-mouse-on-the-raspberry-pi/)
+*[Cubox-i Debian SD image](http://www.igorpecovnik.com/2014/08/19/cubox-i-hummingboard-debian-sd-image/)
+*[Flash an image](http://wiki.solid-run.com/Flash_an_image)
 
 
 Upgrade to a simple desktop environment
