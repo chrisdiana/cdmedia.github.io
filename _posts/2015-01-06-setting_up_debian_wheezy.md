@@ -71,6 +71,23 @@ Restart networking
 /etc/init.d/networking restart
 ```
 
+Make sure your adapter is UP and if not bring it up
+
+```
+ip a
+iwconfig
+ip link set wlan0 up
+```
+
+
+
+while your at it....set your servers date and time
+
+```
+date --set 1998-11-02
+date --set 21:08:00
+```
+
 ###3. Add a user
 
 ```
@@ -115,6 +132,15 @@ and now your `/etc/hosts` file so it resolves correctly
 127.0.0.1   localhost servername
 ::1         localhost servername ip6-localhost ip6-loopback
 ```
+
+Add your gateway into the `/etc/resolv.conf` if it isn't generated
+
+```
+domain Belkin
+search Belkin
+nameserver 192.168.2.1
+```
+
 
 ###6. Install Apache, MySQL, NodeJS and PHP
 
@@ -364,7 +390,7 @@ ls -al ~/.ssh
 If none exist, run keygen to generate a new ssh key
 
 ```
-sh-keygen -t rsa -C "your_email@example.com"
+ssh-keygen -t rsa -C "your_email@example.com"
 ```
 
 then copy it to use
@@ -374,7 +400,46 @@ cat ~/.ssh/id_rsa.pub
 ```
 
 
+---
 
+### Extra:
+
+Upgrade to a simple desktop environment
+
+```
+apt-get -y install xorg lightdm xfce4 xfce4-goodies tango-icon-theme gnome-icon-theme
+reboot
+```
+
+Install VNC Server for remote viewing
+
+```
+sudo apt-get update
+sudo apt-get install tightvncserver
+```
+
+Now start the server
+
+```
+vncserver
+```
+
+This will create a file in `~/.vnc/` similar to ``. The trailing number is the number
+after the port used to connect to your desktop. For instance, if your IP is
+192.168.0.101, you would connect to VNC using 192.168.0.101:5901. If the you create
+a second desktop it should 2, 3 and so on. The port will change depending on that
+(5902, 5903, etc).
+
+
+You can stop the server by this command. Change the `:1` depending on what vnc instance
+you have running similar to above.
+
+```
+vncserver -kill :1
+```
+
+
+---
 
 Additional resources:
 
@@ -391,11 +456,6 @@ Additional resources:
 *[Setup a Bluetooth keyboard on Rasberry Pi](http://www.ctheroux.com/2012/08/a-step-by-step-guide-to-setup-a-bluetooth-keyboard-and-mouse-on-the-raspberry-pi/)
 *[Cubox-i Debian SD image](http://www.igorpecovnik.com/2014/08/19/cubox-i-hummingboard-debian-sd-image/)
 *[Flash an image](http://wiki.solid-run.com/Flash_an_image)
+*[TightVNC](http://www.penguintutor.com/linux/tightvnc)
 
 
-Upgrade to a simple desktop environment
-
-```
-apt-get -y install xorg lightdm xfce4 xfce4-goodies tango-icon-theme gnome-icon-theme
-reboot
-```
