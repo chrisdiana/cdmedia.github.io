@@ -7,7 +7,8 @@ tags: [vim, theme,]
 
 Port of the awesome Sublime Text theme itg.flat with some minor tweaks.
 
-![itg.flat Screenshot]({{ site.url }}/img/itg_flat_screenshot.png)
+![itg.flat
+Screenshot](https://raw.githubusercontent.com/cdmedia/cdmedia.github.io/master/public/img/itg_flat_screenshot.png)
 
 ---
 
