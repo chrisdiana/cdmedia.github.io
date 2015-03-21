@@ -6,7 +6,7 @@ tags: [slim, rest, api]
 ---
 
 This is part 2 of the Getting Started with Slim Framework
-tutorial.
+tutorial in which we will build a frontend interface to access our API.
 
 In the first part of the tutorial, we focused on building a functional
 API that we could create, delete, update and view items...but there was
@@ -470,7 +470,10 @@ $('#btnDelete').click(function() {
 
 ### 9. Conclusion
 
+Now if you visit you app, you should be able to add, delete, update and view your cars in your database. You
+can get a GIT staged step by step version of this post [here on
+Github](https://github.com/cdmedia/slim-cars-frontend).
 
-
-Now if you visit you app, you should be able to add, delete, update and view your cars in your database.
+![Slim Demo
+Frontend](https://raw.githubusercontent.com/cdmedia/cdmedia.github.io/master/public/img/tuts/slim-frontend-api.png)
 
