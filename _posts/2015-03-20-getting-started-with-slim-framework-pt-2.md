@@ -11,33 +11,34 @@ tutorial in which we will build a frontend interface to access our API.
 In the first part of the tutorial, we focused on building a functional
 API that we could create, delete, update and view items...but there was
 no interface to allow a user to actually use the application unless running
-commands via cURL or through HTTP protocal manually.
+commands via cURL or through HTTP protocol manually.
 
 In this part of the tutorial, we are going to focus on building the front-end
-interface to allow the user to easily use the API using AJAX. The beauty of using a RESTful
+interface to allow the user to easily use the API using HTML, Javascript and AJAX.
+The beauty of using a RESTful
 API is that once an api is build, it can be accessed by any device or language
 that can use HTTP protocols...which gives plenty of flexibility for expanding
 to new platforms or languages. This means you can use the same API with a Web
-Application as an iPhone or Andriod application. You can see how RESTful apis
-have been extremely popular over the recent years.
+Application as an iPhone or Andriod application. You can see how RESTful APIs
+have become extremely popular over the recent years.
 
-Note: When going through this tutorial, make sure to keep your console open to
+**Note:** When going through this tutorial, make sure to keep your console open to
 see all the requests, responses and function calls as I've placed `console.log`
 throughout the project.
 
 ### 1. Setup directory and files
 
-First we are going to do is setup our basic front-end template in which the data
+First, what we are going to do is setup our basic front-end template in which the data
 from the API will eventually load into. We are going to use
-[Skeleton](getskeleton.com) as our CSS framework because it is very light, fast
+[Skeleton](http://getskeleton.com) as our CSS framework because it is very light, fast
 framework (as opposed to the standard Bootstrap starting point). I like Skeleton
 because it has all the basics you need, without the bloat. We are also going to
 use [Zepto.js](http://zeptojs.com/). Zepto is just like jQuery (if you use
 jQuery, you already know Zepto) but much lighter and faster.
 
 Download the latest versions of Zepto.js and Skeleton CSS. Then create a `css`
-and `js` folder and place the files in accordingly. After, creat a `style.css`
-file, a `index.html` file and a `script.js` file. (Note: You should also have a Normalize.css that
+and `js` folder and place the files in accordingly. After, create a `style.css`
+,`index.html` and a `script.js` file. (Note: You should also have a Normalize.css file that
 comes with Skeleton). Your file directory should look like this:
 
 ```
@@ -118,10 +119,10 @@ made. Add this to your `index.html` file:
 </html>
 ```
 
-Couple things to point out here: We created a sidebar where we will list all our
-cars in our garage in the `<ul id="car-list"></ul>` element. Next, we have a
+Couple things to point out here: We created a sidebar where we will list all of
+the cars in our garage in the `<ul id="car-list"></ul>` element. Next, we have a
 `<a class="button button-primary" href="#" id="btnAdd">New Car</a>` button for creating a new car.
-Now to the heart of the app. We created a form for adding and updating cars in our garage in the `<form id="carForm">` form element. The
+Now to the heart of the app: We created a form for adding and updating cars in our garage in the `<form id="carForm">` form element. The
 form will populate with the car's info when the car is selected from the sidebar. Note
 that we have a hidden form element for `id`. This will allow our app to tell which car
 is currently in the form. Then, to save or delete a car we have the `<a class="button" href="#" id="btnSave">Save</a>`
@@ -227,10 +228,10 @@ in your database.
 ### 5. Find a car by ID
 
 
-Now we have all the cars, but if we need to get a car by just the ID we can using our API and calling the ID
+Now we have all the cars, but if we need to get a car by just the ID, we can use our API by calling the ID
 after the url like `cars/3`. Now we are going to create an AJAX call which will get a car by id:
 
-``
+```
 // Get car by id
 function findById(id) {
 	console.log('findById:' + id);
@@ -251,7 +252,7 @@ function findById(id) {
 }
 ```
 
-Similarly to above, we are using the AJAX with the GET method to get a car but unlike above,
+Similarly to above, we are using the AJAX with the GET method to get a car... but unlike above,
 our `findByID()` function takes an input parameter of `id`. This function will call the url
 including the id (`http://localhost/slim-cars/api/3`). On AJAX success, we will also set the
 currentCar (we will be adding shortly) in order for our application to tell
@@ -453,6 +454,7 @@ function deleteCar($id) {
 		}
 	})
 }
+```
 
 Similar to the other ajax functions, we generate a URL using the current form field id ('http://localhost/slim-cars/api/car/3').
 Then, the function calls the HTTP DELETE method. On success, the browser alerts that the car was successfully deleted, blanks out the
