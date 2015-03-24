@@ -76,4 +76,30 @@ git checkout 0d1d7fc32 .
 git commit
 ```
 
+#### ANOTHER SIDE NOTE:
+
+If you've commited and not pushed to remote, you can reset to the previous
+commit using:
+
+```
+git reset --soft HEAD~1
+```
+
+HEAD~1 is a shorthand for the commit before head. Alternatively you can refer to
+the SHA-1 of the hash you want to reset to. --soft option will delete the commit
+but it will leave all your changed files "Changes to be committed", as git
+status would put it.
+
+**If you want to get rid of any changes to tracked files in the working tree since
+the commit before head use --hard instead.**
+
+Now if you already pushed and someone pulled which is usually my case, you can't
+use git reset. You can however do a git revert,
+
+```
+git revert HEAD
+```
+
+This will create a new commit that reverses everything introduced by the
+accidental commit.
 
