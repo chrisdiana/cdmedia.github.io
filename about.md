@@ -96,7 +96,7 @@ Feel free to download my resume by clicking the link below:
 		</div>
 	</li>
 	<li>
-		<div class="skill-list-1__bar" style="width: 65%;">
+		<div class="skill-list-1__bar" style="width: 80%;">
 			<span class="skill-list-1__value">Javascript/jQuery</span><span class="skill-list-1__percentage"></span>
 		</div>
 	</li>
@@ -134,7 +134,7 @@ Feel free to download my resume by clicking the link below:
 * **Design Software:** Adobe Suite, Photoshop, Dreamweaver, Illustrator, InDesign, Acrobat, GIMP
 * **Version Control Systems:** GIT, BitBucket, Github, SourceTree
 * **CMS/CRM:** Wordpress, Joomla, ExpressionEngine, PulseCMS, MonstraCMS, AnchorCMS, Magento, SugarCRM, vTiger, WooCommerce, PageKit
-* **General/ OS:** MS Office Suite, Windows/Mac OS (all versions), Linux/Command-line, Ubuntu, Vagrant, Bash/Shell
+* **General/ OS:** MS Office Suite, Windows/Mac OS (all versions), Linux/Command-line, Ubuntu, Vagrant, Bower, Grunt, Bash/Shell
 * **Other:** Web Services, RESTful API, XML, XHTML, Responsive Design
 
 ---
