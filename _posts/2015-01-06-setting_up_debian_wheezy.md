@@ -178,16 +178,28 @@ adduser someuser
 Grant sudo privileges to new user
 
 ```
+gpasswd -a someuser sudo
+```
+
+OR
+
+```
 sudo visudo
 ```
 
 ```
 # User privilege specification
 root        ALL=(ALL:ALL) ALL
-newuser    ALL=(ALL:ALL) ALL
+someuser    ALL=(ALL:ALL) ALL
 ```
 
 ###4. Harden SSH
+
+If you don't have SSH installed, install it:
+
+```
+sudo apt-get install openssh-client openssh-server
+```
 
 Edit the `/etc/ssh/sshd_config` file
 
