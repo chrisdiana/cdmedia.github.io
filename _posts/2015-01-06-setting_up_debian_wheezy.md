@@ -130,6 +130,38 @@ ping google.com
 
 ---
 
+Here is a sample `/etc/network/interface` file:
+
+```
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The primary network interface
+auto eth0
+iface eth0 inet static
+        address 192.168.1.5
+        netmask 255.255.255.0
+        network 192.168.1.0
+        gateway 192.168.1.1
+
+# The wireless network interface with dhcp
+auto wlan0
+iface wlan0 inet dhcp
+    wpa-ssid nixcraft
+    wpa-key-mgmt WPA-PSK
+    wpa-group TKIP CCMP
+    wpa-psk YOYR-PASSWORD-HERE
+```
+
+**Troubleshooting**
+Check the logs if issues arise:
+
+```
+tail -f /var/log/wpa_supplicant.wlan0.log
+grep 'something' /var/log/wpa_supplicant.wlan0.log
+```
+
 while your at it....set your servers date and time
 
 ```
@@ -505,6 +537,7 @@ Additional resources:
 *[Setup a Bluetooth keyboard on Rasberry Pi](http://www.ctheroux.com/2012/08/a-step-by-step-guide-to-setup-a-bluetooth-keyboard-and-mouse-on-the-raspberry-pi/)
 *[Cubox-i Debian SD image](http://www.igorpecovnik.com/2014/08/19/cubox-i-hummingboard-debian-sd-image/)
 *[Flash an image](http://wiki.solid-run.com/Flash_an_image)
+*[Wireless network setup](http://www.cyberciti.biz/faq/debian-linux-wpa-wpa2-wireless-wifi-networking/)
 *[TightVNC](http://www.penguintutor.com/linux/tightvnc)
 
 
