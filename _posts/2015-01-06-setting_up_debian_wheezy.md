@@ -79,7 +79,56 @@ iwconfig
 ip link set wlan0 up
 ```
 
+---
 
+**NOTE**
+If you are setting up a for wireless instead of ethernet, set this in your
+`/etc/network/interfaces` file:
+
+First in terminal, find your wireless device:
+
+```
+iwconfig
+OR
+iwconfig | grep wlan0
+```
+
+For DHCP
+
+```
+auto wlan0
+iface wlan0 inet dhcp
+    wpa-ssid network-name
+    wpa-psk pre-shared-key
+```
+
+For Static
+
+```
+face wlan0 inet static
+    address 192.168.2.105
+    netmask 255.255.255.0
+    gateway 192.168.2.1
+    wpa-ssid network-name
+    wpa-psk pre-shared-key
+```
+
+Then in terminal, bring up the wlan or restart networking:
+
+```
+ifup wlan0
+OR
+/etc/init.d/networking restart
+```
+
+Check that its working:
+
+```
+ifconfig
+ping google.com
+```
+
+---
 
 while your at it....set your servers date and time
 
