@@ -100,6 +100,7 @@ GIT
 * [A Hackers Guid to GIT](https://wildlyinaccurate.com/a-hackers-guide-to-git)
 * [Adding an existing project to GitHub using the command line](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/)
 * [GIT Cheatsheet](https://github.com/tiimgreen/github-cheat-sheet)
+* [GIT Education Cheat sheet](https://education.github.com/git-cheat-sheet-education.pdf)
 
 ---
 

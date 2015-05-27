@@ -71,6 +71,18 @@ git stash list
 git stash clear
 ```
 
+#### See what files have been changed
+
+```
+git whatchanged
+```
+
+#### See what changes have been made in last commit
+
+```
+git show
+```
+
 #### Undo a git add - remove files staged for a git commit
 
 ```
