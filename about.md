@@ -135,7 +135,7 @@ Feel free to download my resume by clicking the link below:
 * **Version Control Systems:** GIT, BitBucket, Github, SourceTree
 * **CMS/CRM:** Wordpress, Joomla, ExpressionEngine, PulseCMS, MonstraCMS, AnchorCMS, Magento, SugarCRM, vTiger, WooCommerce, PageKit
 * **General/ OS:** MS Office Suite, Windows/Mac OS (all versions), Linux/Command-line, Ubuntu, Vagrant, Bower, Grunt, Bash/Shell
-* **Other:** Web Services, RESTful API, XML, XHTML, Responsive Design
+* **Other:** Web Services, RESTful API, Three.js, XML, XHTML, Responsive Design
 
 ---
 
@@ -152,6 +152,7 @@ Feel free to download my resume by clicking the link below:
 	<a class="filter" data-filter=".mobile">Mobile/Web Apps</a>
 	<a class="filter" data-filter=".websites">Websites</a>
 	<a class="filter" data-filter=".graphics">Graphic Design</a>
+	<a class="filter" data-filter=".demos">Demos</a>
 </div>
 
 <div id="portfolio-gallery" class="portfolio">
@@ -193,6 +194,16 @@ Feel free to download my resume by clicking the link below:
 	<div class="mix websites">
 		<a href="#" data-featherlight="{{ site.baseurl }}public/img/portfolio/websites/bizprinters-full.jpg">
 			<img src="{{ site.baseurl }}public/img/portfolio/websites/bizprinters.jpg" />
+		</a>
+	</div>
+	<div class="mix demos">
+		<a href="http://cdmedia.github.io/car-three.js/plugins/car/examples/index.html" data-featherlight data-featherlight-type="iframe">
+			<img src="{{ site.baseurl }}public/img/projects/webgl_car_demo.jpg" />
+		</a>
+	</div>
+	<div class="mix websites">
+		<a href="#" data-featherlight="{{ site.baseurl }}public/img/portfolio/websites/muzeradio-full.jpg">
+			<img src="{{ site.baseurl }}public/img/portfolio/websites/muzeradio.jpg" />
 		</a>
 	</div>
 	<div class="mix graphics">
