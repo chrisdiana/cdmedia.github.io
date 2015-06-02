@@ -160,6 +160,7 @@ Other
     :s/foo/bar/g - Change each 'foo' to 'bar' in the current line
     :%s/foo/bar/g - Change each 'foo' to 'bar' in all the lines
     (visual):'<,'>s/foo/bar/g - highlight and replace all selected in visual mode
+    Ctrl + z - exit vim (use fg+enter to enter vim again)
 
 VIM Resources
 
