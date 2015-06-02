@@ -114,9 +114,16 @@ var_dump($cars);
 We'll add one more function in order to narrow down our search, a query by param function:
 
 ```
-function getCarsByParam($param, $search)
+function getCarsByParam($param, $search=NULL)
 {
-	$sql = "SELECT * FROM garage WHERE " . $param .  "  LIKE '%" . $search . "%'";
+	if($search)
+	{
+		$sql = "SELECT * FROM garage WHERE " . $param .  "  LIKE '%" . $search . "%'";
+	}
+	else
+	{
+		$sql = "SELECT * FROM garage WHERE " . $param";
+	}
 	$cars = dbQuery($sql);
 	return $cars;
 }
