@@ -18,6 +18,11 @@ Learning Resources
 * [Learnable](http://www.learnable.com)
 * [Team Treehouse](http://teamtreehouse.com)
 * [Tuts+ CodeTuts](http://code.tutsplus.com)
+* [Coursera](https://www.coursera.org/)
+* [Google Developers](https://developers.google.com/)
+* [StackOverflow](http://stackoverflow.com/)
+* [Smashing Magazine](http://coding.smashingmagazine.com/)
+* [Programming Praxis](http://programmingpraxis.com/)
 
 ---
 
@@ -128,4 +133,7 @@ Other cool links
 
 * [Programming Motherf__ker](http://programming-motherfucker.com/)
 * [CB.vu](http://cb.vu/)
+* [Coding Horror](http://www.codinghorror.com/blog/)
+* [xkcd](http://xkcd.com/)
+* [HackerRank](https://www.hackerrank.com)
 
