@@ -34,7 +34,7 @@ Feel free to download my resume by clicking the link below:
 	<li>
 		<div class="emedu-list-1__date">2014-Present</div>
 		<div class="emedu-list-1__location">The Search Monitor</div>
-		<div class="emedu-list-1__title">Software Developer</div>
+		<div class="emedu-list-1__title">Software Engineer</div>
 		<div class="emedu-list-1__desc">Develop and maintain online competitive intelligence monitoring software: PHP, Codeigniter, Javascript, XHTML, ExtJS, MySQL
 		Implement the development of new features through the software lifecycle, from requirements definition through successful deployment</div>
 	</li>
