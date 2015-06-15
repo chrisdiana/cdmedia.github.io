@@ -129,6 +129,13 @@ CMS
 
 ---
 
+API
+
+* [ProgrammableWeb](http://www.programmableweb.com/)
+* [NASA API](https://data.nasa.gov/developer)
+
+---
+
 Other cool links
 
 * [Programming Motherf__ker](http://programming-motherfucker.com/)

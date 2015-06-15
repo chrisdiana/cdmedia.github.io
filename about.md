@@ -35,7 +35,8 @@ Feel free to download my resume by clicking the link below:
 		<div class="emedu-list-1__date">2014-Present</div>
 		<div class="emedu-list-1__location">The Search Monitor</div>
 		<div class="emedu-list-1__title">Software Developer</div>
-		<div class="emedu-list-1__desc"></div>
+		<div class="emedu-list-1__desc">Develop and maintain online competitive intelligence monitoring software: PHP, Codeigniter, Javascript, XHTML, ExtJS, MySQL
+		Implement the development of new features through the software lifecycle, from requirements definition through successful deployment</div>
 	</li>
 	<li>
 		<div class="emedu-list-1__date">2014</div>
@@ -141,6 +142,7 @@ Feel free to download my resume by clicking the link below:
 
 ### Awards and other Accomplishments
 
+* **Steel City Codefest 2015 Participant** - Team "Heinzight" Heinz History Museum/ Pittsburgh Botanic Garden - Mobile App
 * **Steel City Codefest 2014 Finalist** - Team "Think Outside the Sandbox" Pittsburgh Cares - Mobile Web App
 * **Microsoft IT Camp 2013 Participant** - Discussion covering Windows Azure, Hyper-V, Server 2012, System Center
 
