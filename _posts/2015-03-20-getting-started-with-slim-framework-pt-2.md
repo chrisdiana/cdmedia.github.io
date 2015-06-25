@@ -14,15 +14,15 @@ no interface to allow a user to actually use the application unless running
 commands via cURL or through HTTP protocol manually.
 
 In this part of the tutorial, we are going to focus on building the front-end
-interface to allow the user to easily use the API using HTML, Javascript and AJAX.
+interface to allow the user to easily use the API (using HTML, Javascript and AJAX).
 The beauty of using a RESTful
-API is that once an api is build, it can be accessed by any device or language
+API is that once an API is build, it can be accessed by any device or language
 that can use HTTP protocols...which gives plenty of flexibility for expanding
 to new platforms or languages. This means you can use the same API with a Web
 Application as an iPhone or Andriod application. You can see how RESTful APIs
 have become extremely popular over the recent years.
 
-**Note:** When going through this tutorial, make sure to keep your console open to
+**Note:** When going through this tutorial, make sure to keep your web browser console open to
 see all the requests, responses and function calls as I've placed `console.log`
 throughout the project.
 
@@ -161,7 +161,7 @@ ul#car-list {
 
 ### 4. Start working with the API - Get all cars
 
-Now that we've got our template and style setup, we can start pulling data
+Now that we have our template and style set up, we can start pulling data
 from our API and get our application working. From here on out, you'll only
 be working in your `js/script.js` file. In that file, we are going to
 initialize Zepto.js and setup our root URL for our API. In addition, we will
@@ -303,7 +303,7 @@ the form fields should populate with the data.
 
 ### 6. Adding a new car
 
-First we need to have our form clear out once the 'New Car' button is clicked. Add this just
+First, we need to have our form clear out once the 'New Car' button is clicked. Add this just
 above your `findAll()` function.
 
 ```
@@ -362,7 +362,7 @@ function addCar() {
 }
 ```
 
-What happens here is the function sends a HTTP POST request at our API ('http://localhost/slim-cars/api/car') and
+What happens here is the function sends a HTTP POST request to our API ('http://localhost/slim-cars/api/car') and
 URI encodes our form field values so that our API can understand them. Then on success, the browser
 alerts us that a car was successfully added. In addition, we show the delete button (it was never hidden anyway, but
 we'll get to that later), adds the id value to our form's id hidden field, and reload's our car list
@@ -413,7 +413,7 @@ function updateCar($id) {
 ```
 
 Similar to the `addCar()` function, we are URI encoding our form data so our API can
-understand what to do. The function using our form field 'id' value in order to build
+understand what to do. The function uses our form field 'id' value in order to build
 our URL in which to send the PUT request. For instance, the request sent to
 'http://localhost/slim-cars/api/car/3' tells the API to update car with an id of 3.
 After the update is successful, the browser alerts that the car was updated successfully and

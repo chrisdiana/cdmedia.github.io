@@ -7,6 +7,21 @@ tags: browsers
 
 Here is the best of the best for each browser...
 
+#Google Chrome
+
+Best Extensions
+---
+
+* Chrome Remote Desktop
+* Secure Shell
+* Devtools Terminal
+* JSONView
+* Postman - REST Client
+* Scratch JS
+* Wappalyzer
+* Chrome Logger
+
+
 #Firefox
 
 Best Themes

@@ -16,8 +16,8 @@ or operating systems to communicate in one type of protocol. That way as technol
 change, the method of communication with the database and server logic can remaind
 the same. Just remember, the application we are building is meant to be used
 with client applications and not really meant for actual users to be using it...
-so it's not going to look very pretty. We will be building a nice looking client
-application later that will be used to interact with the API-and that will look pretty.
+so it's not going to look very pretty. We will be building [a nice looking client
+application later]({{url}}/2015/03/20/getting-started-with-slim-framework-pt-2/) that will be used to interact with the API--and that will look pretty.
 
 **Why use Slim?**
 
@@ -124,7 +124,7 @@ $app->get('/', function(){
 $app->run();
 ```
 
-If you visit `http://localhost/your-app/` you should now see your home message
+If you visit `http://localhost/slim-cars/` you should now see your home message
 from above.
 
 We have the Slim application working, so now we are going to setup routes for
@@ -159,14 +159,14 @@ Here is what happens: First, we tell Slim we are setting up a HTTP GET Route
 `/cars`. We add paramaters `$app` and `$db` to tell Slim to use the Slim app and
 NotORM database library. We then create an empty cars array and loop through the
 database getting all cars. Finally, we set the repsonse header to JSON and echo
-the cars array as a JSON object. If you hit `http://localhost/your-app/cars` in
+the cars array as a JSON object. If you hit `http://localhost/slim-cars/cars` in
 your browser, you should now see all the cars in the database as JSON.
 
 Alternatively , we can use cURL to test the GET request. Pull up your terminal
 and type:
 
 ```
-curl -i -X GET http://localhost/your-app/cars
+curl -i -X GET http://localhost/slim-cars/cars
 ```
 
 You should get a response similar to this:
@@ -219,7 +219,7 @@ doesn't exist, it returns an error message.
 Now let's test it out using cURL:
 
 ```
-curl -i -X GET http://localhost/your-app/cars/1
+curl -i -X GET http://localhost/slim-cars/cars/1
 ```
 
 You should get back:
@@ -238,7 +238,7 @@ Content-Type: application/json
 ### 9. Adding a Car
 
 We retrieved cars from the database, but what about adding a new one? We will be
-using the POST web service to signal creatation of a new car in the database. To
+using the POST web service to signal creation of a new car in the database. To
 do this, let's add this below the `Get a single car` route:
 
 ```
@@ -343,7 +343,7 @@ expanded to include more methods, routes, and even authentication.
 You can download the source of this app in a step by step (in GIT) version on [Github](https://github.com/cdmedia/slim-cars).
 
 The next step in this tutorial is to create a client that will communicate with
-this REST API that we've just built. Stay tuned.
+this REST API that we've just built - [Getting Started with Slim Framework - Part 2]({{url}}/2015/03/20/getting-started-with-slim-framework-pt-2/)
 
 
 

@@ -88,7 +88,7 @@ function dbQuery($sql)
 ```
 
 You can read through the comments of the function to see how it all works, but basically what happens
-here is it queries the database and loops through looking for the specified params.
+here is the function queries the database and loops through looking for the specified parameters.
 
 Next, lets create a function that will get all the cars in the database. Just below the `dbQuery` function,
 add this:
@@ -138,4 +138,4 @@ var_dump($cars);
 ```
 
 That about wraps it up for a nice intro to using PHP with SQLite. Make sure to take a look at the [links](http://cdmedia.github.io/links/) page
-for further reading a resources.
+for further reading and resources.

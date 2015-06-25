@@ -7,7 +7,7 @@ tags: [jekyll, bash]
 
 Here is a quick tip for automatically generating a new Jekyll post in terminal with a quick bash function.
 
-First start out by creating a default Jekyll post and placing it in your `_posts` folder.
+First, start out by creating a default Jekyll post and placing it in your `_posts` folder.
 Call it `2014-01-01-post-template.md` and place this template code in as a starting point.
 Feel free to change this as you see fit.
 

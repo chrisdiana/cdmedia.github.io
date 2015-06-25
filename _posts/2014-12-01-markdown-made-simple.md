@@ -7,7 +7,7 @@ tags: markdown
 
 It seems like Markdown is everywhere these days.
 Markdown is awesome, but can be a bit intimidating if you dont know where to start.
-Here Ive provided a simple guide to getting started with .md.
+Here I've provided a simple guide to getting started with .md.
 Each section is broken into the example code, followed by the result. Enjoy!
 
 #1. Header/Title tags
