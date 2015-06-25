@@ -14,7 +14,7 @@ tagline:             'Web Designer & Developer'
 description:         'Useful things found'
 url:                 http://cdmedia.github.io/
 baseurl:             /
-paginate:            5
+paginate:            10
 
 # About/contact
 author:
