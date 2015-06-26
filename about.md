@@ -158,6 +158,16 @@ Feel free to download my resume by clicking the link below:
 </div>
 
 <div id="portfolio-gallery" class="portfolio">
+	<div class="mix mobile">
+		<a href="#" data-featherlight="{{ site.baseurl }}public/img/projects/loclii-full.jpg">
+			<img src="{{ site.baseurl }}public/img/projects/loclii.jpg" />
+		</a>
+	</div>
+	<div class="mix mobile">
+		<a href="#" data-featherlight="{{ site.baseurl }}public/img/portfolio/mobile/heinz-full.jpg">
+			<img src="{{ site.baseurl }}public/img/portfolio/mobile/heinz.jpg" />
+		</a>
+	</div>
 	<div class="mix websites">
 		<a href="#" data-featherlight="{{ site.baseurl }}public/img/portfolio/websites/truckduty-full.jpg">
 			<img src="{{ site.baseurl }}public/img/portfolio/websites/truckduty.jpg" />
