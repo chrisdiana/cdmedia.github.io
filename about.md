@@ -168,11 +168,6 @@ Feel free to download my resume by clicking the link below:
 			<img src="{{ site.baseurl }}public/img/portfolio/mobile/heinz.jpg" />
 		</a>
 	</div>
-	<div class="mix websites">
-		<a href="#" data-featherlight="{{ site.baseurl }}public/img/portfolio/websites/truckduty-full.jpg">
-			<img src="{{ site.baseurl }}public/img/portfolio/websites/truckduty.jpg" />
-		</a>
-	</div>
 	<div class="mix mobile">
 		<a href="#" data-featherlight="{{ site.baseurl }}public/img/portfolio/mobile/pghcares-full.jpg">
 			<img src="{{ site.baseurl }}public/img/portfolio/mobile/pghcares.jpg" />
@@ -186,6 +181,11 @@ Feel free to download my resume by clicking the link below:
 	<div class="mix mobile">
 		<a href="#" data-featherlight="{{ site.baseurl }}public/img/portfolio/mobile/realsocial-full.jpg">
 			<img src="{{ site.baseurl }}public/img/portfolio/mobile/realsocial.jpg" />
+		</a>
+	</div>
+	<div class="mix websites">
+		<a href="#" data-featherlight="{{ site.baseurl }}public/img/portfolio/websites/truckduty-full.jpg">
+			<img src="{{ site.baseurl }}public/img/portfolio/websites/truckduty.jpg" />
 		</a>
 	</div>
 	<div class="mix websites">
