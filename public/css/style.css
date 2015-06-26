@@ -284,6 +284,7 @@ a.resumebtn:hover {
 
 @media (max-width: 48em) {
 	.content { margin-left: 0; }
+	.updates-home{ display: none; }
 	#menu-toggle {
 		text-decoration: none;
 		display: block;
@@ -308,6 +309,13 @@ a.resumebtn:hover {
 	.sidebar-nav-item { text-align: left; }
 	.search-icon { color: #fff; }
 	#about-info { display: none !important; }
+	input#search-input {
+	  font-size: 30px;
+	  margin: 45px 0px 0px 5px;
+	}
+	#results-container {
+	  width: 95%;
+	}
 }
 @media screen and (max-height: 30.5em) {
 	.overlay .search-container {

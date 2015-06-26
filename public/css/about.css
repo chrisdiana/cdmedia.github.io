@@ -473,11 +473,18 @@ a.filter {
   color: white;
   padding: 6px 10px;
   font-size: 14px;
+  line-height: 35px;
 }
 a.filter:hover{
   background: rgb(120, 149, 176);
   text-decoration: none;
   cursor: pointer;
+}
+
+@media (max-width: 48em) {
+  .emedu-list-1__date {
+      font-size: 11px;
+    }
 }
 
 @media all and (min-width: 420px){
