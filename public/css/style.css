@@ -39,7 +39,7 @@ hr { z-index: -999; }
 /* Posts */
 .page-title, .post-title {
 	margin-top: 0;
-	background-image: -webkit-gradient(linear,0% 0%,40% 100%,from(#FFA32C),to(#66B8FF));
+	background-image: -webkit-gradient(linear,0% 0%,40% 100%,from(#FFA32C),to(#99c9ff));
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
