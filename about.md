@@ -112,7 +112,7 @@ Feel free to download my resume by clicking the link below:
 		</div>
 	</li>
 	<li>
-		<div class="skill-list-1__bar" style="width: 54%;">
+		<div class="skill-list-1__bar" style="width: 64%;">
 			<span class="skill-list-1__value">Python</span><span class="skill-list-1__percentage"></span>
 		</div>
 	</li>
