@@ -30,6 +30,12 @@ Latest files written in system
 find $1 -type f -exec stat --format '%Y :%y %n' {} \; | sort -nr | cut -d: -f2- | head
 ```
 
+List all installed packages on system
+
+```
+dpkg --get-selections
+```
+
 Remove apt-get packages
 
 ```

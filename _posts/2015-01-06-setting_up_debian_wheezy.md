@@ -16,13 +16,19 @@ Linux image file. Then, navigate into the directory with the image.
 cd ~/Downloads/Debian/
 ```
 
+View all the disks on the drive
+
+```
+diskutil list
+```
+
 Check the name of the device you are going to flash
 
 ```
 mount
 ```
 
-It should looks something like:
+It should look something like:
 
 ```
 /dev/disk2s1 on /Volumes/SYSTEM (msdos, local, nodev, nosuid, noowners)
