@@ -20,12 +20,12 @@ Next, move all the files you would like to have the ability to sync into your
 new `.dotfiles` folder. Remember, these files will be public (unless you plan
 on using Bitbucket) so make sure there's nothing personal in them.
 
-In this example, I just plan on syncing my bash profile, VIM settings and
+In this example, I just plan on syncing my bashrc, VIM settings and
 GIT settings.
 
 ```
 cd ~
-mv .bash_profile .dotfiles/.bash_profile
+mv .bash_profile .dotfiles/.bashrc
 mv .gitconfig .dotfiles/.gitconfig
 mv .vim .dotfiles/.vim
 mv .vimrc .dotfiles/.vimrc
@@ -37,7 +37,7 @@ looks in the default locations.
 
 ```
 cd ~
-ln -s .dotfiles/.bash_profile .bash_profile
+ln -s .dotfiles/.bashrc .bashrc
 ln -s .dotfiles/.gitconfig .gitconfig
 ln -s .dotfiles/.vim .vim
 ln -s .dotfiles/.vimrc .vimrc
@@ -79,7 +79,7 @@ Finally, create the symlinks similar to what you did on your local computer.
 
 ```
 cd ~
-ln -s .dotfiles/.bash_profile .bash_profile
+ln -s .dotfiles/.bashrc .bashrc
 ln -s .dotfiles/.gitconfig .gitconfig
 ln -s .dotfiles/.vim .vim
 ln -s .dotfiles/.vimrc .vimrc
@@ -91,8 +91,73 @@ computers but also be in version control.
 
 One last thing to note. If you happen to have some personal or computer specific
 things in your bash profile, one way you manage this is by placing these
-rules inside your `~/.bashrc` file. This way you can keep
+rules inside a local .bashrc file (like `~/.bashrc-local`) file. This way you can keep
 the majority of your bash settings synced, while more specific things such as
 alias can be separated and not public.
 
+You can do this by creating a local bash file:
 
+```
+touch .bash-local
+```
+
+Then, adding this to your `.bashrc` file:
+
+```
+# Load local .bashrc if it exists
+test -f ~/.bashrc-local && source ~/.bashrc-local
+```
+
+#Automating wih a shell script
+
+This is all great but can become a huge PITA if you do this on every computer
+you work on. You can use a simple bash script to automate the process. In your
+`~/.dotfiles` folder create a `make.sh` file.
+
+```
+vi ~/.dotfiles/make.sh
+```
+
+In this file add the following:
+
+```
+#!/bin/bash
+############################
+# .make.sh
+# This script creates symlinks from the home directory to any desired dotfiles in ~/.dotfiles
+############################
+
+# variables
+dir=~/.dotfiles                    		# dotfiles directory
+olddir=~/dotfiles_old             		# old dotfiles backup directory
+files="bashrc vimrc vim gitconfig"    	# list of files/folders to symlink in homedir
+
+# move dotfiles to .dotfiles hidden folder
+mv ~/dotfiles $dir
+
+# create dotfiles_old in homedir
+echo "Creating $olddir for backup of any existing dotfiles in ~"
+mkdir -p $olddir
+echo "...done"
+
+# change to the dotfiles directory
+echo "Changing to the $dir directory"
+cd $dir
+echo "...done"
+
+# move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
+for file in $files; do
+	echo "Moving any existing dotfiles from ~ to $olddir"
+	mv ~/.$file ~/dotfiles_old/
+	echo "Creating symlink to $file in home directory."
+	ln -s $dir/.$file ~/.$file
+done
+```
+
+Basically what this script does is everything I've described about in a quick
+script you can run each time you jump to a new computer. You can read through
+the comments to see what each step does.
+
+For further dotfile examples, you can take a look at [my dotfiles
+repo](https://github.com/cdmedia/dotfiles) or see plenty of [others here on
+Github](https://dotfiles.github.io/).

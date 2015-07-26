@@ -257,6 +257,45 @@ curl -sL https://deb.nodesource.com/setup | bash -
 apt-get install -y nodejs
 ```
 
+Setup apache
+
+
+Start it
+
+```
+sudo apachectl start
+```
+
+If you run into isses like 'No such file or directory: apache2: could not open
+error log file', create the folder. This may have not been created when apache
+was installed.
+
+```
+mkdir /var/log/apache2/
+sudo chown www-data:www-data /var/log/apache2/
+```
+
+
+Setup apache permissions
+
+```
+#Make sure the group is www-data on '/var/www'
+sudo chgrp www-data /var/www
+
+#Make '/var/www' writable for the group
+sudo chmod 775 /var/www
+
+#Set the GID for www-data for all sub-folders
+sudo chmod g+s /var/www
+
+# Your directory should look like this on an ls -l output.
+# drwxrwsr-x
+
+#Last, add your username to the www-data group (secondary group)
+sudo usermod -a -G www-data [YOURUSERNAME]
+```
+
+
 ###7. Create Virtual Hosts
 
 First, make sure that vhost is enable in apache configuraton. Check to see if this is
