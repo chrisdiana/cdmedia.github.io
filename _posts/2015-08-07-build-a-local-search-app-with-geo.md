@@ -597,7 +597,7 @@ HTML. Last, we will update the contact links with the associated geo place.
 
 ### Conclusion
 
-![Local Search App]()
+![Local Search App](https://raw.githubusercontent.com/cdmedia/cdmedia.github.io/master/public/img/tuts/loclii-demo.gif)
 
 There you have it, we have built a local search web app w/ geolocation using Yahoo's YQL.
 You can view the full source on [github](https://github.com/cdmedia/loclii) or see a working [demo here](http://cdmedia.github.io/loclii).
