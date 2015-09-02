@@ -34,7 +34,7 @@ movies.forEach(function(movie) {
 
 	var template = '<li><span class="movie-name">' + movie.name + '</span><span class="movie-rating">' + movie.rating + '</span></li>';
 	
-	$('ul.movie-list').append(template);
+	$('#list').append(template);
 
 });
 
@@ -92,6 +92,8 @@ templates, this can really come in handy.
 
 **index.html**
 {% highlight html %}
+<ul id="list"></ul>
+
 <!--Our template placed somewhere in our HTML-->
 <script id="my-template" type="x-template">
 	<li>
@@ -124,7 +126,7 @@ movies.forEach(function(movie) {
 	$template.find('.movie-name').text(movie.name);
 	$template.find('.movie-rating').text(movie.rating);
 	
-	$('ul.movie-list').append($template);
+	$('#list').append($template);
 });
 
 {% endhighlight %}
