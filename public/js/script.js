@@ -88,4 +88,26 @@ $(function() {
     	$('.sidebar-logo').fadeOut();
     });
 
+    $('.close-sidebar').on('click', function(){
+    	if($('.sidebar').hasClass('sidebar-collapsed')){
+			$('.sidebar-content').fadeIn(2500);
+    		$('.sidebar').removeClass('sidebar-collapsed');
+    		$('.sidebar').css({width:'16rem'});
+    		$('.content').css({marginLeft:'20rem'});
+    		$('.close-sidebar').removeClass('rotated');
+    		$('.close-sidebar').css({right: '0px'});
+    	} else {
+    		$('.sidebar-content').fadeOut(300, function(){
+	    		$('.sidebar').addClass('sidebar-collapsed');
+	    		$('.sidebar').css({width:'0px'});
+	    		$('.content').css({marginLeft:'4rem'});
+	    		$('.close-sidebar').addClass('rotated');
+	    		$('.close-sidebar').css({right: '10px'});
+    		});
+    		
+    	}
+    	
+    	//$('.sidebar > div').hide();
+    });
+
 });

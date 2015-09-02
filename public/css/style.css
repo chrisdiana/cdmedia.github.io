@@ -39,6 +39,7 @@ hr { z-index: -999; }
 /* Posts */
 .page-title, .post-title {
 	margin-top: 0;
+	margin-bottom: 20px;
 	background-image: -webkit-gradient(linear,0% 0%,40% 100%,from(#FFA32C),to(#99c9ff));
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
@@ -68,6 +69,19 @@ img.profile-pic {
 }
 span.footer { font-size: 12px; }
 .sidebar-icon { padding-right: 10px; }
+.close-sidebar {
+	position: absolute;
+    right: 0;
+    color: #3F3F3F !important;
+    top: 7px;
+}
+.rotated {
+    -webkit-transform: rotate(180deg);  /* Chrome, Safari 3.1+ */
+    -moz-transform: rotate(180deg);  /* Firefox 3.5-15 */
+    -ms-transform: rotate(180deg);  /* IE 9 */
+    -o-transform: rotate(180deg);  /* Opera 10.50-12.00 */
+    transform: rotate(180deg);  /* Firefox 16+, IE 10+, Opera 12.10+ */
+}
 
 /* Tagging */
 ul.tag_list, ul.tag_list_in_post {
@@ -290,6 +304,10 @@ a.resumebtn:hover {
 	display :none;
 }
 
+.related-posts.popular a {
+
+}
+
 @media (max-width: 48em) {
 	.content { margin-left: 0; }
 	.updates-home{ display: none; }
@@ -311,6 +329,7 @@ a.resumebtn:hover {
 	    -o-transition: max-height 0.3s ease-in-out;
 	    transition: max-height 0.3s ease-in-out;
 	}
+	.close-sidebar { display: none;}
 	.slidedown {
 	    max-height: 140px ;
 	}

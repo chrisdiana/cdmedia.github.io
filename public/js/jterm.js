@@ -60,7 +60,8 @@ termStyleClose[8]='<\/STRIKE>';
 
 // buttons UI
 
-var termImgNames=new Array('left_lo', 'left_hi', 'right_lo', 'right_hi', 'delete_lo', 'delete_hi', 'esc_lo', 'esc_hi', 'kbd_show_lo', 'kbd_show_hi', 'kbd_hide_lo', 'kbd_hide_hi');
+//var termImgNames=new Array('left_lo', 'left_hi', 'right_lo', 'right_hi', 'delete_lo', 'delete_hi', 'esc_lo', 'esc_hi', 'kbd_show_lo', 'kbd_show_hi', 'kbd_hide_lo', 'kbd_hide_hi');
+var termImgNames=new Array();
 var termImages=new Array();
 
 function termImgPreload(path,imgnames) {
