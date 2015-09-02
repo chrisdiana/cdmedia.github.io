@@ -55,7 +55,7 @@ Feel free to download my resume by clicking the link below:
 		<div class="emedu-list-1__date">2011-2014</div>
 		<div class="emedu-list-1__location">SMARTSolution Technologies</div>
 		<div class="emedu-list-1__title">Web Developer/ Designer</div>
-		<div class="emedu-list-1__desc">Designed and implemented internal web applications, set milestones for projects, tracked progress, scheduled meetings, and designed workflows. Maintained enterprise infrastructure for company-wide applications using several platforms: Microsoft Enterprise Infrastructure, Ubuntu, Linux, IIS 6/7, WAMP, LAMP, MAMP.
+		<div class="emedu-list-1__desc">Designed and implemented internal web applications, set milestones for projects, tracked progress, scheduled meetings, and designed workflows. Maintained enterprise infrastructure for company-wide applications using several platforms: Microsoft Enterprise Infrastructure, Ubuntu, Linux, IIS 6/7, Apache/PHP/MySQL.
 		</div>
 	</li>
 	<li>
@@ -97,7 +97,7 @@ Feel free to download my resume by clicking the link below:
 		</div>
 	</li>
 	<li>
-		<div class="skill-list-1__bar" style="width: 80%;">
+		<div class="skill-list-1__bar" style="width: 94%;">
 			<span class="skill-list-1__value">Javascript/jQuery</span><span class="skill-list-1__percentage"></span>
 		</div>
 	</li>
@@ -107,7 +107,7 @@ Feel free to download my resume by clicking the link below:
 		</div>
 	</li>
 	<li>
-		<div class="skill-list-1__bar" style="width: 84%;">
+		<div class="skill-list-1__bar" style="width: 89%;">
 			<span class="skill-list-1__value">PHP/MySQL</span><span class="skill-list-1__percentage"></span>
 		</div>
 	</li>
@@ -135,7 +135,7 @@ Feel free to download my resume by clicking the link below:
 * **Design Software:** Adobe Suite, Photoshop, Dreamweaver, Illustrator, InDesign, Acrobat, GIMP
 * **Version Control Systems:** GIT, BitBucket, Github, SourceTree
 * **CMS/CRM:** Wordpress, Joomla, ExpressionEngine, PulseCMS, MonstraCMS, AnchorCMS, Magento, SugarCRM, vTiger, WooCommerce, PageKit
-* **General/ OS:** MS Office Suite, Windows/Mac OS (all versions), Linux/Command-line, Ubuntu, Vagrant, Bower, Grunt, Bash/Shell
+* **General/ OS:** MS Office Suite, Windows/Mac OS (all versions), Linux/Command-line, Ubuntu, Vagrant, Bower, Grunt, Bash/Shell, NPM
 * **Other:** Web Services, RESTful API, Three.js, XML, XHTML, Responsive Design
 
 ---
