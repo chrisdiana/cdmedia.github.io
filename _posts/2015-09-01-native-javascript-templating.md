@@ -5,7 +5,7 @@ comments: true
 tags: [javascript, jquery]
 ---
 
-Ditch your javascript template plugin for a native javascript template solution 
+Ditch your javascript template plugin for a native javascript template solution
 you can use in your next app. Impliment PHP-like templating on the client-side without the fluff.
 
 
@@ -23,8 +23,8 @@ messy and begin to mesh views and logic.
 {% highlight js %}
 
 // Simple array of movies
-var movies = [ 
-	{ "name" : "Inception", "rating": "4" },  
+var movies = [
+	{ "name" : "Inception", "rating": "4" },
 	{ "name" : "Goodfellas", "rating": "5" },
 	{ "name" : "Fight Club", "rating": "4" },
 ];
@@ -33,14 +33,14 @@ var movies = [
 movies.forEach(function(movie) {
 
 	var template = '<li><span class="movie-name">' + movie.name + '</span><span class="movie-rating">' + movie.rating + '</span></li>';
-	
+
 	$('#list').append(template);
 
 });
 
 {% endhighlight %}
 
-This may work for smaller templates like the one above, but as you can imagine 
+This may work for smaller templates like the one above, but as you can imagine
 when you get into larger sets of nodes, it can become a real PITA to maintain.
 
 ---
@@ -53,27 +53,27 @@ as [Handlebar.js](http://handlebarsjs.com/), [Mustache](https://mustache.github.
 [Hogan.js](http://twitter.github.io/hogan.js/) to name a few. I even found a really nice
 [Javascript Template Chooser](http://garann.github.io/template-chooser/).
 
-In addition, plenty of modern front-end frameworks already include templating 
+In addition, plenty of modern front-end frameworks already include templating
 as a feature (such as Angular.js, React.js and Underscore.js) but I was looking for something that was
 lightweight and focused more on separating the logic from the view. It made
 me wonder if there was a better way...in pure javascript to handle this problem.
 
 ### Why Native?
 
-Frameworks and plugins all come and go with the tide... but one thing that will 
-remain is vanilla javascript (and most likely jQuery). A few years ago Mustache was all the rage. 
+Frameworks and plugins all come and go with the tide... but one thing that will
+remain is vanilla javascript (and most likely jQuery). A few years ago Mustache was all the rage.
 Now Handlebars.js is the new hot kid on the block ( [a little Handlebars warning](https://bryce.fisher-fleig.org/blog/handlebars-considered-harmful/)
 ). Why keep having to relearn (and rebuild)
 your projects everytime a new framework or plugin is released? If you aren't using a front-end
-framework like Angular or React, stick with the core language (if you can) or 
+framework like Angular or React, stick with the core language (if you can) or
 something that has been battle-tested and won't be going anywhere soon (jQuery).
 
 
 ### The Solution
 
-I began researching if there were any native javascript template patterns floating around. 
+I began researching if there were any native javascript template patterns floating around.
 The search was scarce, but I did come across a pattern used in a Backbone.js example and one in a
-[YUI Todo App](http://yuilibrary.com/yui/docs/app/app-todo.html) example referencing a 
+[YUI Todo App](http://yuilibrary.com/yui/docs/app/app-todo.html) example referencing a
 javascript mime type called `type="x-template"`. Take a look at the example below:
 
 {% highlight html %}
@@ -107,8 +107,8 @@ templates, this can really come in handy.
 {% highlight js %}
 
 // Simple array of movies
-var movies = [ 
-	{ "name" : "Inception", "rating": "4" },  
+var movies = [
+	{ "name" : "Inception", "rating": "4" },
 	{ "name" : "Goodfellas", "rating": "5" },
 	{ "name" : "Fight Club", "rating": "4" },
 ];
@@ -125,7 +125,7 @@ movies.forEach(function(movie) {
 	// Insert the data into the template
 	$template.find('.movie-name').text(movie.name);
 	$template.find('.movie-rating').text(movie.rating);
-	
+
 	$('#list').append($template);
 });
 
@@ -146,14 +146,14 @@ movies.forEach(function(movie) {
 
     var template = document.getElementById("my-template").innerHTML,
     	el = document.createElement('div');
-    
+
     el.innerHTML = template;
-  
+
     el.getElementsByClassName("movie-name")[0].innerHTML += movie.name;
-    el.getElementsByClassName("movie-name")[0].innerHTML += movie.rating;
-  
+    el.getElementsByClassName("movie-rating")[0].innerHTML += movie.rating;
+
     document.getElementById("list").appendChild(el);
-}); 
+});
 
 {% endhighlight %}
 
