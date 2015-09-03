@@ -6,7 +6,7 @@ tags: [javascript, jquery]
 ---
 
 Ditch your javascript template plugin for a native javascript template solution
-you can use in your next app. Impliment PHP-like templating on the client-side without the fluff.
+you can use in your next app. Implement PHP-like templating on the client-side without the fluff.
 
 
 
