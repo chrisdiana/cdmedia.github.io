@@ -6,7 +6,7 @@ tags: [javascript, jquery]
 ---
 
 Ditch your javascript template plugin for a native javascript template solution
-you can use in your next app. Implement PHP-like templating on the client-side without the fluff.
+you can use in your next app.
 
 
 
@@ -64,15 +64,12 @@ Frameworks and plugins all come and go with the tide... but one thing that will
 remain is vanilla javascript (and most likely jQuery). A few years ago Mustache was all the rage.
 Now Handlebars.js is the new hot kid on the block ( [a little Handlebars warning](https://bryce.fisher-fleig.org/blog/handlebars-considered-harmful/)
 ). Why keep having to relearn (and rebuild)
-your projects everytime a new framework or plugin is released? If you aren't using a front-end
-framework like Angular or React, stick with the core language (if you can) or
-something that has been battle-tested and won't be going anywhere soon (jQuery).
-
+your projects everytime a new framework or plugin is released?
 
 ### The Solution
 
 I began researching if there were any native javascript template patterns floating around.
-The search was scarce, but I did come across a pattern used in a Backbone.js example and one in a
+I came across a pattern used in a Backbone.js example and one in a
 [YUI Todo App](http://yuilibrary.com/yui/docs/app/app-todo.html) example referencing a
 javascript mime type called `type="x-template"`. Take a look at the example below:
 
