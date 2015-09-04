@@ -14,9 +14,10 @@ I am a web developer and designer with a passion for innovative technology curre
 By day, Im part of the software development team at *[The Search Monitor](http://thesearchmonitor.com)*
 where we provide real-time competitive intelligence to monitor competitive advertisers. In my freetime,
 I enjoy experimenting with the latest web technologies.
-Feel free to download my resume by clicking the link below:
 
+<!--<p>Feel free to download my resume by clicking the link below:</p>
 <a target="_blank" href="{{ site.baseurl }}public/assets/resume/chris_diana_resume.pdf" class="resumebtn">Resume</a>
+-->
 
 ---
 
