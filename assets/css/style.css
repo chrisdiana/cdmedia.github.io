@@ -96,6 +96,25 @@ a.resumebtn:hover {
 	background: rgb(120, 149, 176);
 	text-decoration: none;
 }
+.triangle-banner {
+    /*position: fixed;
+    width: 100%;
+    height: 100%;*/
+    position: fixed;
+    width: 15%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0.7;
+    background: #fafafa url(../img/flight-background.jpg) !important;
+    -webkit-background-size: cover !important;
+    -moz-background-size: cover !important;
+    -o-background-size: cover !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
 
 /* ------------ Company List ------------ */
 .company-list {
@@ -502,6 +521,20 @@ a.resumebtn:hover {
   background: rgba(138,174,206,0.9);
 }
 
+table.other-skills {
+    border: none;
+}
+table.other-skills tbody tr:nth-child(odd) td, tbody tr:nth-child(odd) th {
+    background-color: transparent;
+}
+table.other-skills td {
+    border: none;
+    vertical-align: top;
+}
+table.other-skills td.table-header {
+  width: 170px;
+}
+
 /* ------- Portfolio -------- */
 .portfolio{
   padding-top: 2%;
@@ -609,6 +642,9 @@ a.filter:hover{
     width: 100%;
     text-align: center;
     border-left: none;
+  }
+  table.other-skills td.table-header {
+    width: 0px;
   }
 }
 
