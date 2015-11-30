@@ -30,14 +30,15 @@ html {
 .headline {
     overflow: auto;
     background: #303030;
-    margin: 0 -9999rem;
-    padding: 1.25rem 9999rem;
+    position: relative;
+    width: 100%;
+    padding: 1.25rem 0;
     margin-bottom: 2rem;
 }
 img.logo {
     display: block;
     margin: 14px auto;
-    width: 34%;
+    width: 24%;
     z-index: 995;
     position: relative;
 }
@@ -757,9 +758,12 @@ a.filter:hover{
   .emedu-list-1__date {
     font-size: 11px;
   }
+  .overlay nav {
+    font-size: 38px;
+  }
   img.logo {
     float: none;
-    width: 100%;
+    width: 60%;
     height: auto;
     margin-top: 0.2rem;
     max-width: 15rem;
