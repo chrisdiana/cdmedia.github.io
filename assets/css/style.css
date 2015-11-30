@@ -39,6 +39,7 @@ img.logo {
     display: block;
     margin: 14px auto;
     width: 24%;
+    max-width: 275px;
     z-index: 995;
     position: relative;
 }
