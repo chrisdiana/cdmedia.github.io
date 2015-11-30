@@ -1,2 +1,0 @@
-<meta http-equiv="refresh" content="0; url=http://codoki.com/2015/03/20/getting-started-with-slim-framework-pt-2/">
-<link rel="canonical" href="http://codoki.com/2015/03/20/getting-started-with-slim-framework-pt-2/" />

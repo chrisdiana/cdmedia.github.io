@@ -1,2 +1,0 @@
-<meta http-equiv="refresh" content="0; url=http://codoki.com/2014/11/14/best-practices-for-moving-a-site-to-live-production/">
-<link rel="canonical" href="http://codoki.com/2014/11/14/best-practices-for-moving-a-site-to-live-production/" />

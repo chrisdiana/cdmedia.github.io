@@ -1,2 +1,0 @@
-<meta http-equiv="refresh" content="0; url=http://codoki.com/2015/02/10/tips-to-speed-up-ssh-connections/">
-<link rel="canonical" href="http://codoki.com/2015/02/10/tips-to-speed-up-ssh-connections/" />

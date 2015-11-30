@@ -1,2 +1,0 @@
-<meta http-equiv="refresh" content="0; url=http://codoki.com/2015/08/07/build-a-local-search-app-with-geo/">
-<link rel="canonical" href="http://codoki.com/2015/08/07/build-a-local-search-app-with-geo/" />
