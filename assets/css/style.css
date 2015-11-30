@@ -84,9 +84,9 @@ img.logo {
   opacity: .7;
 }
 .nav-button.active .top {
-  -webkit-transform: translateY(11px) translateX(0) rotate(45deg);
-      -ms-transform: translateY(11px) translateX(0) rotate(45deg);
-          transform: translateY(11px) translateX(0) rotate(45deg);
+  -webkit-transform: translateY(11px) translateX(0) translateZ(0) rotate(45deg);
+      -ms-transform: translateY(11px) translateX(0) translateZ(0) rotate(45deg);
+          transform: translateY(11px) translateX(0) translateZ(0) rotate(45deg);
   background: #FFF;
 }
 .nav-button.active .middle {
@@ -94,9 +94,9 @@ img.logo {
   background: #FFF;
 }
 .nav-button.active .bottom {
-  -webkit-transform: translateY(-11px) translateX(0) rotate(-45deg);
-      -ms-transform: translateY(-11px) translateX(0) rotate(-45deg);
-          transform: translateY(-11px) translateX(0) rotate(-45deg);
+  -webkit-transform: translateY(-11px) translateX(0) translateZ(0) rotate(-45deg);
+      -ms-transform: translateY(-11px) translateX(0) translateZ(0) rotate(-45deg);
+          transform: translateY(-11px) translateX(0) translateZ(0) rotate(-45deg);
   background: #FFF;
 }
 .nav-button span {
@@ -130,6 +130,7 @@ img.logo {
   visibility: hidden;
   -webkit-transition: opacity .35s, visibility .35s, height .35s;
           transition: opacity .35s, visibility .35s, height .35s;
+  -webkit-transform: translateZ(0);
   overflow: hidden;
 }
 .overlay.open {
@@ -143,6 +144,7 @@ img.logo {
           animation: fadeInRight .5s ease forwards;
   -webkit-animation-delay: .35s;
           animation-delay: .35s;
+  -webkit-transform: translateZ(0);
 }
 .overlay.open li:nth-of-type(2) {
   -webkit-animation-delay: .4s;
@@ -207,9 +209,9 @@ img.logo {
   bottom: 0;
   left: 50%;
   width: 0%;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
+  -webkit-transform: translateX(-50%) translateZ(0);
+      -ms-transform: translateX(-50%) translateZ(0);
+          transform: translateX(-50%) translateZ(0);
   height: 3px;
   background: #FFF;
   -webkit-transition: .35s;
