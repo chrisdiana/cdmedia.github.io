@@ -38,4 +38,9 @@
         }
     };
 
+    // <pre style=line-height:1>
+    // for(i=1;i<4001;i++) {
+    //     document.write((Math.random()<.5?"\u2571":"\u2572")+(i%80?"":"\n"));
+    // }
+
 })();
