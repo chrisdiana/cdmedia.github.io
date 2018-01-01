@@ -1,83 +1,23 @@
-<!DOCTYPE html>
-<html lang="en-us">
-
-<head>
-<link href="http://gmpg.org/xfn/11" rel="profile">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="description" content="Codoki is a web development and design
-blog about the latest trends in web technology.">
-
-<!-- Enable responsiveness on mobile devices-->
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-<title>
-
-Chris Diana &middot; Blog & Tutorials
-
-</title>
-
-<!-- CSS -->
-<link href="//cdn.rawgit.com/noelboss/featherlight/1.0.4/release/featherlight.min.css" type="text/css" rel="stylesheet" title="Featherlight Styles" />
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
-<link rel="stylesheet" href="../../assets/css/poole.min.css">
-<link rel="stylesheet" href="../../assets/css/blog.css">
-<!--<link rel="stylesheet" href="/blog/public/css/monokai.css">-->
-<!--<link rel="stylesheet" href="/blog/public/css/lanyon.css">-->
-<!--<link rel="stylesheet" href="/blog/public/css/codoki.css">-->
-
-<!-- Icons -->
-<!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog/public/apple-touch-icon-precomposed.png">-->
-<!--<link rel="shortcut icon" href="/blog/public/favicon.ico">-->
-
-<!-- JS -->
-<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
-
-<!-- RSS -->
-<!--<link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
-</head>
-
-<body class="layout">
-
-  <div class="wrap">
-    <div class="masthead">
-      <div class="container">
-        <h3 class="masthead-title">
-          <a class="logo-wrap" href="/blog/" title="Home"></a>
-          <a class="title" href="/blog/" title="Home">Chris Diana</a>
-          <small>Blog & Tutorials</small>
-        </h3>
-    </div>
-  </div>
-
-  <div class="container content">
-<hr />
-
-<p>layout: post
+---
+layout: post
 title: Unicode Symbol Cheatsheet
-comments: true</p>
+comments: true
+tags: [unicode, cheatsheet]
+---
 
-<h2>tags: [unicode, cheatsheet]</h2>
-
-<p>Here is a great collection of unicode symbols taken from <a href="http://tutorialzine.com/2014/12/you-dont-need-icons-here-are-100-unicode-symbols-that-you-can-use/">Tutorialzine</a>.
-If you have not checked out this site, I highly recommend it.</p>
+Here is a great collection of unicode symbols taken from [Tutorialzine](http://tutorialzine.com/2014/12/you-dont-need-icons-here-are-100-unicode-symbols-that-you-can-use/).
+If you have not checked out this site, I highly recommend it.
 
 <p><strong>Tip:</strong> <a href="http://www.joelonsoftware.com/articles/Unicode.html" target="_blank">There is a good article</a> which explains everything you need to know about character encodings and unicode, which we recommend for every software developer to read.</p>
-
 <h3>How to use these icons</h3>
-
 <p>The icons given in the tables below, are regular characters, which you can copy and paste as if they are letters of text. But if the encoding used to save your HTML/CSS files is not UTF-8 they might not show up. This is why we&#8217;ve provided an HTML escape code, which will always work. <strong>Here is what you need to do to use these icons:</strong></p>
-
 <ol>
 <li><strong>Find an icon</strong> that you like. We&#8217;ve provided small and large previews.</li>
 <li><strong>Copy the code</strong>.</li>
 <li><strong>Paste it</strong> in your HTML as regular text. In your CSS, you can use it as the value of the content property. In JS, PHP and other programming languages, you can use it as text in strings.</li>
 <li>You can <strong>customize</strong> the icons by setting a font-size, color and text shadows, just like regular text.</li>
 </ol>
-
 <h3>Icon-like</h3>
-
 <table>
 <thead>
 <tr>
@@ -275,9 +215,7 @@ If you have not checked out this site, I highly recommend it.</p>
 </tr>
 </tbody>
 </table>
-
 <h3>Arrows</h3>
-
 <table>
 <thead>
 <tr>
@@ -525,9 +463,7 @@ If you have not checked out this site, I highly recommend it.</p>
 </tr>
 </tbody>
 </table>
-
 <h3>Special</h3>
-
 <table>
 <thead>
 <tr>
@@ -581,9 +517,7 @@ If you have not checked out this site, I highly recommend it.</p>
 </tr>
 </tbody>
 </table>
-
 <h3>Currency</h3>
-
 <table>
 <thead>
 <tr>
@@ -631,9 +565,7 @@ If you have not checked out this site, I highly recommend it.</p>
 </tr>
 </tbody>
 </table>
-
 <h3>Weather</h3>
-
 <table>
 <thead>
 <tr>
@@ -687,9 +619,7 @@ If you have not checked out this site, I highly recommend it.</p>
 </tr>
 </tbody>
 </table>
-
 <h3>Pointers</h3>
-
 <table>
 <thead>
 <tr>
@@ -737,9 +667,7 @@ If you have not checked out this site, I highly recommend it.</p>
 </tr>
 </tbody>
 </table>
-
 <h3>Card Suits</h3>
-
 <table>
 <thead>
 <tr>
@@ -799,9 +727,7 @@ If you have not checked out this site, I highly recommend it.</p>
 </tr>
 </tbody>
 </table>
-
 <h3>Chess</h3>
-
 <table>
 <thead>
 <tr>
@@ -885,9 +811,7 @@ If you have not checked out this site, I highly recommend it.</p>
 </tr>
 </tbody>
 </table>
-
 <h3>Maths</h3>
-
 <table>
 <thead>
 <tr>
@@ -1061,9 +985,7 @@ If you have not checked out this site, I highly recommend it.</p>
 </tr>
 </tbody>
 </table>
-
 <h3>Fractions</h3>
-
 <table>
 <thead>
 <tr>
@@ -1129,9 +1051,7 @@ If you have not checked out this site, I highly recommend it.</p>
 </tr>
 </tbody>
 </table>
-
 <h3>Roman Numerals</h3>
-
 <table>
 <thead>
 <tr>
@@ -1215,19 +1135,13 @@ If you have not checked out this site, I highly recommend it.</p>
 </tr>
 </tbody>
 </table>
-
 <h3>Bonus!</h3>
+Hamburger icon with unicode
+&#x2261; or with CSS:
 
-<p>Hamburger icon with unicode
-&#x2261; or with CSS:</p>
-
-<p><code>
+```
 :before { content:'\2630'; }
-</code></p>
+```
 
 <h3>A few notes</h3>
-
 <p>There are some rendering differences between these symbols across operating symbols. This is caused by the different font families that are used. Also, iOS and Android replace some Unicode characters with emoji, so be sure to test there to make sure that this doesn&#8217;t happen and the icons show as intended.</p>
-  </div>
-  </body>
-</html>

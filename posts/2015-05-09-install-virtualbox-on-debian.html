@@ -1,40 +1,96 @@
----
-layout: post
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<link href="http://gmpg.org/xfn/11" rel="profile">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="description" content="Codoki is a web development and design
+blog about the latest trends in web technology.">
+
+<!-- Enable responsiveness on mobile devices-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+<title>
+
+Chris Diana &middot; Blog & Tutorials
+
+</title>
+
+<!-- CSS -->
+<link href="//cdn.rawgit.com/noelboss/featherlight/1.0.4/release/featherlight.min.css" type="text/css" rel="stylesheet" title="Featherlight Styles" />
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+<link rel="stylesheet" href="../../assets/css/poole.min.css">
+<link rel="stylesheet" href="../../assets/css/blog.css">
+<!--<link rel="stylesheet" href="/blog/public/css/monokai.css">-->
+<!--<link rel="stylesheet" href="/blog/public/css/lanyon.css">-->
+<!--<link rel="stylesheet" href="/blog/public/css/codoki.css">-->
+
+<!-- Icons -->
+<!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog/public/apple-touch-icon-precomposed.png">-->
+<!--<link rel="shortcut icon" href="/blog/public/favicon.ico">-->
+
+<!-- JS -->
+<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<!-- RSS -->
+<!--<link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+
+<body class="layout">
+
+  <div class="wrap">
+    <div class="masthead">
+      <div class="container">
+        <h3 class="masthead-title">
+          <a class="logo-wrap" href="/blog/" title="Home"></a>
+          <a class="title" href="/blog/" title="Home">Chris Diana</a>
+          <small>Blog & Tutorials</small>
+        </h3>
+    </div>
+  </div>
+
+  <div class="container content">
+<hr />
+
+<p>layout: post
 title: Install Vagrant on Debian
-comments: true
-tags: [vagrant]
----
+comments: true</p>
 
-I ran into some linux header issues when installing Virtualbox, so here is a few
-tips to make sure it builds smoothly.
+<h2>tags: [vagrant]</h2>
 
-###Install linux headers for your system
+<p>I ran into some linux header issues when installing Virtualbox, so here is a few
+tips to make sure it builds smoothly.</p>
 
-```
+<h3>Install linux headers for your system</h3>
+
+<p><code>
 sudo apt-get install build-essential libssl-dev linux-headers-`uname -r`
-```
+</code></p>
 
-###Install dkms module
+<h3>Install dkms module</h3>
 
-```
+<p><code>
 sudo apt-get install dkms
-```
+</code></p>
 
-###Install Virtualbox
+<h3>Install Virtualbox</h3>
 
-Use their website download as the repo may be out of date
+<p>Use their website download as the repo may be out of date</p>
 
-```
+<p><code>
 wget http://download.virtualbox.org/virtualbox/4.3.26/virtualbox-4.3_4.3.26-98988~Debian~wheezy_amd64.deb
 dpkg -i virtualbox-4.3_4.3.26-98988~Debian~wheezy_amd64.deb
-```
+</code></p>
 
-**Note** If you get a dependency error, try running this then try installing
-Virutalbox
+<p><strong>Note</strong> If you get a dependency error, try running this then try installing
+Virutalbox</p>
 
-```
+<p><code>
 sudo apt-get -f install
 dpkg -i virtualbox-4.3_4.3.26-98988~Debian~wheezy_amd64.deb
-```
-
-
+</code></p>
+  </div>
+  </body>
+</html>

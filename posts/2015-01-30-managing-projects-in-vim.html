@@ -1,32 +1,89 @@
----
-layout: post
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<link href="http://gmpg.org/xfn/11" rel="profile">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="description" content="Codoki is a web development and design
+blog about the latest trends in web technology.">
+
+<!-- Enable responsiveness on mobile devices-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+<title>
+
+Chris Diana &middot; Blog & Tutorials
+
+</title>
+
+<!-- CSS -->
+<link href="//cdn.rawgit.com/noelboss/featherlight/1.0.4/release/featherlight.min.css" type="text/css" rel="stylesheet" title="Featherlight Styles" />
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+<link rel="stylesheet" href="../../assets/css/poole.min.css">
+<link rel="stylesheet" href="../../assets/css/blog.css">
+<!--<link rel="stylesheet" href="/blog/public/css/monokai.css">-->
+<!--<link rel="stylesheet" href="/blog/public/css/lanyon.css">-->
+<!--<link rel="stylesheet" href="/blog/public/css/codoki.css">-->
+
+<!-- Icons -->
+<!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog/public/apple-touch-icon-precomposed.png">-->
+<!--<link rel="shortcut icon" href="/blog/public/favicon.ico">-->
+
+<!-- JS -->
+<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<!-- RSS -->
+<!--<link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+
+<body class="layout">
+
+  <div class="wrap">
+    <div class="masthead">
+      <div class="container">
+        <h3 class="masthead-title">
+          <a class="logo-wrap" href="/blog/" title="Home"></a>
+          <a class="title" href="/blog/" title="Home">Chris Diana</a>
+          <small>Blog & Tutorials</small>
+        </h3>
+    </div>
+  </div>
+
+  <div class="container content">
+<hr />
+
+<p>layout: post
 title: Managing Projects in VIM
-comments: true
-tags: []
----
+comments: true</p>
 
-Heres a quick tip for managing projects in VIM, similar to
-how you can have 'projects' in Sublime.
+<h2>tags: []</h2>
 
-Theres a cool little feature that comes with VIM called
+<p>Heres a quick tip for managing projects in VIM, similar to
+how you can have 'projects' in Sublime.</p>
+
+<p>Theres a cool little feature that comes with VIM called
 VIM Sessions. These are basically saved workspaces with
-all your tabs and what-not.
+all your tabs and what-not.</p>
 
-To create a session:
+<p>To create a session:</p>
 
-```
+<p><code>
 :mksession ~/mysession.vim
-```
+</code></p>
 
-Then, to restore your old session from inside vim:
+<p>Then, to restore your old session from inside vim:</p>
 
-```
+<p><code>
 :source ~/mysession.vim
-```
+</code></p>
 
-If you want to restore the session outside of vim:
+<p>If you want to restore the session outside of vim:</p>
 
-```
+<p><code>
 $ vim -S ~/mysession.vim
-```
-
+</code></p>
+  </div>
+  </body>
+</html>

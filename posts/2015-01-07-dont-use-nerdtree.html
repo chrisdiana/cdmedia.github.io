@@ -1,48 +1,106 @@
----
-layout: post
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<link href="http://gmpg.org/xfn/11" rel="profile">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="description" content="Codoki is a web development and design
+blog about the latest trends in web technology.">
+
+<!-- Enable responsiveness on mobile devices-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+<title>
+
+Chris Diana &middot; Blog & Tutorials
+
+</title>
+
+<!-- CSS -->
+<link href="//cdn.rawgit.com/noelboss/featherlight/1.0.4/release/featherlight.min.css" type="text/css" rel="stylesheet" title="Featherlight Styles" />
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+<link rel="stylesheet" href="../../assets/css/poole.min.css">
+<link rel="stylesheet" href="../../assets/css/blog.css">
+<!--<link rel="stylesheet" href="/blog/public/css/monokai.css">-->
+<!--<link rel="stylesheet" href="/blog/public/css/lanyon.css">-->
+<!--<link rel="stylesheet" href="/blog/public/css/codoki.css">-->
+
+<!-- Icons -->
+<!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog/public/apple-touch-icon-precomposed.png">-->
+<!--<link rel="shortcut icon" href="/blog/public/favicon.ico">-->
+
+<!-- JS -->
+<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<!-- RSS -->
+<!--<link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+
+<body class="layout">
+
+  <div class="wrap">
+    <div class="masthead">
+      <div class="container">
+        <h3 class="masthead-title">
+          <a class="logo-wrap" href="/blog/" title="Home"></a>
+          <a class="title" href="/blog/" title="Home">Chris Diana</a>
+          <small>Blog & Tutorials</small>
+        </h3>
+    </div>
+  </div>
+
+  <div class="container content">
+<hr />
+
+<p>layout: post
 title: Dont Use Nerdtree -  A vimrc replacement
-comments: true
-tags: [vim, nerdtree]
----
+comments: true</p>
 
-Here is a great way to achieve the same functionality of the VIM Nerdtree plugin
-without all the hassle of installing it...all within the .vimrc file using VIMs own netrw
+<h2>tags: [vim, nerdtree]</h2>
 
-```
+<p>Here is a great way to achieve the same functionality of the VIM Nerdtree plugin
+without all the hassle of installing it...all within the .vimrc file using VIMs own netrw</p>
+
+<p>```
 "" Toggle Vexplore with Ctrl-E
 function! ToggleVExplorer()
-    if exists("t:expl_buf_num")
-        let expl_win_num = bufwinnr(t:expl_buf_num)
-        if expl_win_num != -1
-            let cur_win_nr = winnr()
-            exec expl_win_num . 'wincmd w'
+    if exists("t:expl<em>buf</em>num")
+        let expl<em>win</em>num = bufwinnr(t:expl<em>buf</em>num)
+        if expl<em>win</em>num != -1
+            let cur<em>win</em>nr = winnr()
+            exec expl<em>win</em>num . 'wincmd w'
             close
-            exec cur_win_nr . 'wincmd w'
-            unlet t:expl_buf_num
+            exec cur<em>win</em>nr . 'wincmd w'
+            unlet t:expl<em>buf</em>num
         else
-            unlet t:expl_buf_num
+            unlet t:expl<em>buf</em>num
         endif
     else
         exec '1wincmd w'
         Vexplore
-        let t:expl_buf_num = bufnr("%")
+        let t:expl<em>buf</em>num = bufnr("%")
     endif
 endfunction
-map <silent> <C-E> :call ToggleVExplorer()<CR>
+map <silent> <C-E> :call ToggleVExplorer()<CR></p>
 
-"" Hit enter in the file browser to open the selected
+<p>"" Hit enter in the file browser to open the selected
 "" file with :vsplit to the right of the browser.
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
-let g:netrw_winsize = 20
+let g:netrw<em>browse</em>split = 4
+let g:netrw<em>altv = 1
+let g:netrw</em>winsize = 20</p>
 
-"" Default to tree mode
-let g:netrw_liststyle=3
+<p>"" Default to tree mode
+let g:netrw_liststyle=3</p>
 
-"" Change directory to the current buffer when opening files.
+<p>"" Change directory to the current buffer when opening files.
 set autochdir
-```
+```</p>
 
-Taken from this [Stack Overflow](http://stackoverflow.com/questions/5006950/setting-netrw-like-nerdtree) article.
-Here is also a link to some further [tweaks](http://ellengummesson.com/blog/2014/02/22/make-vim-really-behave-like-netrw/)
-Here is a quick guide to using [Explore](https://medium.com/@mozhuuuuu/vimmers-you-dont-need-nerdtree-18f627b561c3)
+<p>Taken from this <a href="http://stackoverflow.com/questions/5006950/setting-netrw-like-nerdtree">Stack Overflow</a> article.
+Here is also a link to some further <a href="http://ellengummesson.com/blog/2014/02/22/make-vim-really-behave-like-netrw/">tweaks</a>
+Here is a quick guide to using <a href="https://medium.com/@mozhuuuuu/vimmers-you-dont-need-nerdtree-18f627b561c3">Explore</a></p>
+  </div>
+  </body>
+</html>

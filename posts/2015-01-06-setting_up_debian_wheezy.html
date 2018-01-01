@@ -1,469 +1,541 @@
----
-layout: post
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<link href="http://gmpg.org/xfn/11" rel="profile">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="description" content="Codoki is a web development and design
+blog about the latest trends in web technology.">
+
+<!-- Enable responsiveness on mobile devices-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+<title>
+
+Chris Diana &middot; Blog & Tutorials
+
+</title>
+
+<!-- CSS -->
+<link href="//cdn.rawgit.com/noelboss/featherlight/1.0.4/release/featherlight.min.css" type="text/css" rel="stylesheet" title="Featherlight Styles" />
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+<link rel="stylesheet" href="../../assets/css/poole.min.css">
+<link rel="stylesheet" href="../../assets/css/blog.css">
+<!--<link rel="stylesheet" href="/blog/public/css/monokai.css">-->
+<!--<link rel="stylesheet" href="/blog/public/css/lanyon.css">-->
+<!--<link rel="stylesheet" href="/blog/public/css/codoki.css">-->
+
+<!-- Icons -->
+<!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog/public/apple-touch-icon-precomposed.png">-->
+<!--<link rel="shortcut icon" href="/blog/public/favicon.ico">-->
+
+<!-- JS -->
+<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<!-- RSS -->
+<!--<link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+
+<body class="layout">
+
+  <div class="wrap">
+    <div class="masthead">
+      <div class="container">
+        <h3 class="masthead-title">
+          <a class="logo-wrap" href="/blog/" title="Home"></a>
+          <a class="title" href="/blog/" title="Home">Chris Diana</a>
+          <small>Blog & Tutorials</small>
+        </h3>
+    </div>
+  </div>
+
+  <div class="container content">
+<hr />
+
+<p>layout: post
 title: Setting Up Debian Wheezy as a Web Server
-comments: true
-tags: [server]
----
+comments: true</p>
 
-Here is quick guide to a Debian Wheezy web server up and running.
+<h2>tags: [server]</h2>
 
-###1. Load Debian Image
+<p>Here is quick guide to a Debian Wheezy web server up and running.</p>
 
-Flash the Linux image to a hard drive or flash drive. First download the `.img` or `.raw`
-Linux image file. Then, navigate into the directory with the image.
+<h3>1. Load Debian Image</h3>
 
-```
+<p>Flash the Linux image to a hard drive or flash drive. First download the <code>.img</code> or <code>.raw</code>
+Linux image file. Then, navigate into the directory with the image.</p>
+
+<p><code>
 cd ~/Downloads/Debian/
-```
+</code></p>
 
-View all the disks on the drive
+<p>View all the disks on the drive</p>
 
-```
+<p><code>
 diskutil list
-```
+</code></p>
 
-Check the name of the device you are going to flash
+<p>Check the name of the device you are going to flash</p>
 
-```
+<p><code>
 mount
-```
+</code></p>
 
-It should look something like:
+<p>It should look something like:</p>
 
-```
+<p><code>
 /dev/disk2s1 on /Volumes/SYSTEM (msdos, local, nodev, nosuid, noowners)
-```
+</code></p>
 
-Unmount that disk
+<p>Unmount that disk</p>
 
-```
+<p><code>
 sudo diskutil unmountDisk /dev/disk2
-```
+</code></p>
 
-WARNING. Make sure to double check before you run this command or you could wipe
-your entire hard drive if you select the wrong one!
+<p>WARNING. Make sure to double check before you run this command or you could wipe
+your entire hard drive if you select the wrong one!</p>
 
-```
+<p><code>
 sudo dd if=Debian_2.2_wheezy_3.14.14.raw of=/dev/rdisk2 bs=4096
-```
+</code></p>
 
-This will take some time to flash and won't show any progress but you can press Ctrl+T to send to SIGNINFO
-and it will output it's process.
+<p>This will take some time to flash and won't show any progress but you can press Ctrl+T to send to SIGNINFO
+and it will output it's process.</p>
 
+<h3>2. Setup Static Network Configuration</h3>
 
-###2. Setup Static Network Configuration
+<p>Make a backup of the network configuration file just in case:</p>
 
-Make a backup of the network configuration file just in case:
-
-```
+<p><code>
 sudo cp /etc/network/interfaces /etc/network/interfaces.bak
-```
+</code></p>
 
-Change `iface eth0 inet6 dhcp` to shown below and change these IP addresses
-to fit you config
+<p>Change <code>iface eth0 inet6 dhcp</code> to shown below and change these IP addresses
+to fit you config</p>
 
-Tip: To find you default gateway, try `route -n get default`
+<p>Tip: To find you default gateway, try <code>route -n get default</code></p>
 
-```
+<p><code>
 face eth0 inet static
     address 192.168.2.105
     netmask 255.255.255.0
     gateway 192.168.2.1
-```
+</code></p>
 
-Restart networking
+<p>Restart networking</p>
 
-```
+<p><code>
 /etc/init.d/networking restart
-```
+</code></p>
 
-Make sure your adapter is UP and if not bring it up
+<p>Make sure your adapter is UP and if not bring it up</p>
 
-```
+<p><code>
 ip a
 iwconfig
 ip link set wlan0 up
-```
+</code></p>
 
----
+<hr />
 
-**NOTE**
+<p><strong>NOTE</strong>
 If you are setting up a for wireless instead of ethernet, set this in your
-`/etc/network/interfaces` file:
+<code>/etc/network/interfaces</code> file:</p>
 
-First in terminal, find your wireless device:
+<p>First in terminal, find your wireless device:</p>
 
-```
+<p><code>
 iwconfig
 OR
 iwconfig | grep wlan0
-```
+</code></p>
 
-For DHCP
+<p>For DHCP</p>
 
-```
+<p><code>
 auto wlan0
 iface wlan0 inet dhcp
     wpa-ssid network-name
     wpa-psk pre-shared-key
-```
+</code></p>
 
-For Static
+<p>For Static</p>
 
-```
+<p><code>
 face wlan0 inet static
     address 192.168.2.105
     netmask 255.255.255.0
     gateway 192.168.2.1
     wpa-ssid network-name
     wpa-psk pre-shared-key
-```
+</code></p>
 
-Then in terminal, bring up the wlan or restart networking:
+<p>Then in terminal, bring up the wlan or restart networking:</p>
 
-```
+<p><code>
 ifup wlan0
 OR
 /etc/init.d/networking restart
-```
+</code></p>
 
-Check that its working:
+<p>Check that its working:</p>
 
-```
+<p><code>
 ifconfig
 ping google.com
-```
+</code></p>
 
----
+<hr />
 
-Here is a sample `/etc/network/interface` file:
+<p>Here is a sample <code>/etc/network/interface</code> file:</p>
 
-```
-# The loopback network interface
-auto lo
-iface lo inet loopback
+<p>```</p>
 
-# The primary network interface
-auto eth0
+<h1>The loopback network interface</h1>
+
+<p>auto lo
+iface lo inet loopback</p>
+
+<h1>The primary network interface</h1>
+
+<p>auto eth0
 iface eth0 inet static
         address 192.168.1.5
         netmask 255.255.255.0
         network 192.168.1.0
-        gateway 192.168.1.1
+        gateway 192.168.1.1</p>
 
-# The wireless network interface with dhcp
-auto wlan0
+<h1>The wireless network interface with dhcp</h1>
+
+<p>auto wlan0
 iface wlan0 inet dhcp
     wpa-ssid nixcraft
     wpa-key-mgmt WPA-PSK
     wpa-group TKIP CCMP
     wpa-psk YOYR-PASSWORD-HERE
-```
+```</p>
 
-**Troubleshooting**
-Check the logs if issues arise:
+<p><strong>Troubleshooting</strong>
+Check the logs if issues arise:</p>
 
-```
+<p><code>
 tail -f /var/log/wpa_supplicant.wlan0.log
 grep 'something' /var/log/wpa_supplicant.wlan0.log
-```
+</code></p>
 
-while your at it....set your servers date and time
+<p>while your at it....set your servers date and time</p>
 
-```
+<p><code>
 date --set 1998-11-02
 date --set 21:08:00
-```
+</code></p>
 
-###3. Add a user
+<h3>3. Add a user</h3>
 
-```
+<p><code>
 adduser someuser
-```
+</code></p>
 
-Grant sudo privileges to new user
+<p>Grant sudo privileges to new user</p>
 
-```
+<p><code>
 gpasswd -a someuser sudo
-```
+</code></p>
 
-OR
+<p>OR</p>
 
-```
+<p><code>
 sudo visudo
-```
+</code></p>
 
-```
-# User privilege specification
-root        ALL=(ALL:ALL) ALL
+<p>```</p>
+
+<h1>User privilege specification</h1>
+
+<p>root        ALL=(ALL:ALL) ALL
 someuser    ALL=(ALL:ALL) ALL
-```
+```</p>
 
-###4. Harden SSH
+<h3>4. Harden SSH</h3>
 
-If you don't have SSH installed, install it:
+<p>If you don't have SSH installed, install it:</p>
 
-```
+<p><code>
 sudo apt-get install openssh-client openssh-server
-```
+</code></p>
 
-Edit the `/etc/ssh/sshd_config` file
+<p>Edit the <code>/etc/ssh/sshd_config</code> file</p>
 
-```
+<p><code>
 PermitRootLogin no
 X11Forwarding no
 AllowUsers youruser
-```
+</code></p>
 
-Then, restart ssh service using `systemctl restart ssh.service`
+<p>Then, restart ssh service using <code>systemctl restart ssh.service</code></p>
 
-###5. Add a hostname
+<h3>5. Add a hostname</h3>
 
-Edit your `/etc/hostname` to your liking
+<p>Edit your <code>/etc/hostname</code> to your liking</p>
 
-```
+<p><code>
 servername
-```
+</code></p>
 
-and now your `/etc/hosts` file so it resolves correctly
+<p>and now your <code>/etc/hosts</code> file so it resolves correctly</p>
 
-```
+<p><code>
 127.0.0.1   localhost servername
 ::1         localhost servername ip6-localhost ip6-loopback
-```
+</code></p>
 
-Add your gateway into the `/etc/resolv.conf` if it isn't generated
+<p>Add your gateway into the <code>/etc/resolv.conf</code> if it isn't generated</p>
 
-```
+<p><code>
 domain Belkin
 search Belkin
 nameserver 192.168.2.1
-```
+</code></p>
 
+<h3>6. Install Apache, MySQL, NodeJS and PHP</h3>
 
-###6. Install Apache, MySQL, NodeJS and PHP
-
-```
+<p><code>
 sudo apt-get install apache2
 sudo apt-get install mysql-server
 sudo apt-get install php5 php-pear php5-mysql php5-curl
-```
+</code></p>
 
-Then install NodeJS
+<p>Then install NodeJS</p>
 
-```
+<p><code>
 apt-get install curl
 curl -sL https://deb.nodesource.com/setup | bash -
 apt-get install -y nodejs
-```
+</code></p>
 
-Setup apache
+<p>Setup apache</p>
 
+<p>Start it</p>
 
-Start it
-
-```
+<p><code>
 sudo apachectl start
-```
+</code></p>
 
-If you run into isses like 'No such file or directory: apache2: could not open
+<p>If you run into isses like 'No such file or directory: apache2: could not open
 error log file', create the folder. This may have not been created when apache
-was installed.
+was installed.</p>
 
-```
+<p><code>
 mkdir /var/log/apache2/
 sudo chown www-data:www-data /var/log/apache2/
-```
+</code></p>
 
+<p>Setup apache permissions</p>
 
-Setup apache permissions
+<p>```</p>
 
-```
-#Make sure the group is www-data on '/var/www'
-sudo chgrp www-data /var/www
+<h1>Make sure the group is www-data on '/var/www'</h1>
 
-#Make '/var/www' writable for the group
-sudo chmod 775 /var/www
+<p>sudo chgrp www-data /var/www</p>
 
-#Set the GID for www-data for all sub-folders
-sudo chmod g+s /var/www
+<h1>Make '/var/www' writable for the group</h1>
 
-# Your directory should look like this on an ls -l output.
-# drwxrwsr-x
+<p>sudo chmod 775 /var/www</p>
 
-#Last, add your username to the www-data group (secondary group)
-sudo usermod -a -G www-data [YOURUSERNAME]
-```
+<h1>Set the GID for www-data for all sub-folders</h1>
 
+<p>sudo chmod g+s /var/www</p>
 
-###7. Create Virtual Hosts
+<h1>Your directory should look like this on an ls -l output.</h1>
 
-First, make sure that vhost is enable in apache configuraton. Check to see if this is
-uncommented in `/etc/apache2/apache2.conf`
+<h1>drwxrwsr-x</h1>
 
-```
+<h1>Last, add your username to the www-data group (secondary group)</h1>
+
+<p>sudo usermod -a -G www-data [YOURUSERNAME]
+```</p>
+
+<h3>7. Create Virtual Hosts</h3>
+
+<p>First, make sure that vhost is enable in apache configuraton. Check to see if this is
+uncommented in <code>/etc/apache2/apache2.conf</code></p>
+
+<p><code>
 Include sites-enabled/
-```
+</code></p>
 
-Next, create a file like `/etc/apache2/sites-available/example.com.conf` and use this template:
+<p>Next, create a file like <code>/etc/apache2/sites-available/example.com.conf</code> and use this template:</p>
 
-```
-<VirtualHost *:80>
+<p><code>
+&lt;VirtualHost *:80&gt;
     ServerAdmin webmaster@example.com
     ServerName example.com
     ServerAlias www.example.com
     DocumentRoot /var/www/example.com/public_html/
     ErrorLog ${APACHE_LOG_DIR}/error.log
     CustomLog ${APACHE_LOG_DIR}/access.log combined
-</VirtualHost>
-```
+&lt;/VirtualHost&gt;
+</code></p>
 
-Now you need to enable the site. You can use the shorcut command `sudo a2ensite example.com.conf`
-or to do it manually run this command to setup a link to your new available site:
+<p>Now you need to enable the site. You can use the shorcut command <code>sudo a2ensite example.com.conf</code>
+or to do it manually run this command to setup a link to your new available site:</p>
 
-```
+<p><code>
 sudo ln -s /etc/apache2/sites-available/example.com.conf /etc/apache2/sites-enabled/example.com.conf
-```
+</code></p>
 
-Now reload apache using:
+<p>Now reload apache using:</p>
 
-```
+<p><code>
 sudo /etc/init.d/apache2 reload
-```
+</code></p>
 
-If you end up getting an error like "apache2: Could not reliably determine the servers fully qualified domain name, using ::1 for ServerName"
-you can fix this error by editing `/etc/apache2/apache2.conf` and adding this:
+<p>If you end up getting an error like "apache2: Could not reliably determine the servers fully qualified domain name, using ::1 for ServerName"
+you can fix this error by editing <code>/etc/apache2/apache2.conf</code> and adding this:</p>
 
-```
+<p><code>
 ServerName localhost
-```
+</code></p>
 
-Finally, make sure to add your new site to `/etc/hosts` like:
+<p>Finally, make sure to add your new site to <code>/etc/hosts</code> like:</p>
 
-```
+<p><code>
 127.0.0.1   localhost example.com
-```
+</code></p>
 
-###8. Fix permission issues
+<h3>8. Fix permission issues</h3>
 
-If you want to work on your site and not be logged in as root, run this to fix
-your sites permissions:
+<p>If you want to work on your site and not be logged in as root, run this to fix
+your sites permissions:</p>
 
-```
+<p><code>
 sudo chown -R $USER:$USER /var/www/example.com
-```
+</code></p>
 
-Also, youll want to make sure everyone is able to read your files:
+<p>Also, youll want to make sure everyone is able to read your files:</p>
 
-```
+<p><code>
 sudo chmod -R 775 /var/www
-```
+</code></p>
 
-###9. Harden Apache
+<h3>9. Harden Apache</h3>
 
-By default apache lists all the content of the directory in absence of an index file.
-Edit or add this to your `/etc/apache2/apache2.conf` or `httpd.conf` and
+<p>By default apache lists all the content of the directory in absence of an index file.
+Edit or add this to your <code>/etc/apache2/apache2.conf</code> or <code>httpd.conf</code> and</p>
 
-```
-<Directory /var/www/html>
+<p><code>
+&lt;Directory /var/www/html&gt;
     Options -Indexes
-</Directory>
-```
+&lt;/Directory&gt;
+</code></p>
 
-You will also want to turn off server version on server-generated
-pages.
+<p>You will also want to turn off server version on server-generated
+pages.</p>
 
-```
+<p><code>
 ServerSignature Off
-```
+</code></p>
 
-Now, reload apache:
+<p>Now, reload apache:</p>
 
-```
+<p><code>
 sudo /etc/init.d/apache2 reload
-```
+</code></p>
 
-###10. Create a Firewall
+<h3>10. Create a Firewall</h3>
 
-If your server isnt sitting behind a router or firewall, I highly
-suggest setting up a firewall to protect your server from attacks.
+<p>If your server isnt sitting behind a router or firewall, I highly
+suggest setting up a firewall to protect your server from attacks.</p>
 
-Check current firewall rules using:
+<p>Check current firewall rules using:</p>
 
-```
+<p><code>
 sudo iptables -L
-```
+</code></p>
 
-If you havent created any firewall rules, you should see something
-similar to this:
+<p>If you havent created any firewall rules, you should see something
+similar to this:</p>
 
-```
+<p>```
 Chain INPUT (policy ACCEPT)
+target     prot opt source               destination</p>
+
+<p>Chain FORWARD (policy ACCEPT)
+target     prot opt source               destination</p>
+
+<p>Chain OUTPUT (policy ACCEPT)
 target     prot opt source               destination
+```</p>
 
-Chain FORWARD (policy ACCEPT)
-target     prot opt source               destination
+<p>Create a file to hold your firewall rules using:</p>
 
-Chain OUTPUT (policy ACCEPT)
-target     prot opt source               destination
-```
-
-Create a file to hold your firewall rules using:
-
-```
+<p><code>
 sudo nano /etc/iptables.firewall.rules
-```
+</code></p>
 
-Use this as a default firewall. These rules allow traffic on ports:
+<p>Use this as a default firewall. These rules allow traffic on ports:
 HTTP(80), HTTPS(443), SSH(22) and ping. All other ports will be
-blocked.
+blocked.</p>
 
-```
-*filter
+<p>```
+*filter</p>
 
-#  Allow all loopback (lo0) traffic and drop all traffic to 127/8 that doesnt use lo0
--A INPUT -i lo -j ACCEPT
--A INPUT -d 127.0.0.0/8 -j REJECT
+<h1>Allow all loopback (lo0) traffic and drop all traffic to 127/8 that doesnt use lo0</h1>
 
-#  Accept all established inbound connections
--A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+<p>-A INPUT -i lo -j ACCEPT
+-A INPUT -d 127.0.0.0/8 -j REJECT</p>
 
-#  Allow all outbound traffic - you can modify this to only allow certain traffic
--A OUTPUT -j ACCEPT
+<h1>Accept all established inbound connections</h1>
 
-#  Allow HTTP and HTTPS connections from anywhere (the normal ports for websites and SSL).
--A INPUT -p tcp --dport 80 -j ACCEPT
--A INPUT -p tcp --dport 443 -j ACCEPT
+<p>-A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT</p>
 
-#  Allow SSH connections
-#
-#  The -dport number should be the same port number you set in sshd_config
-#
--A INPUT -p tcp -m state --state NEW --dport 22 -j ACCEPT
+<h1>Allow all outbound traffic - you can modify this to only allow certain traffic</h1>
 
-#  Allow ping
--A INPUT -p icmp --icmp-type echo-request -j ACCEPT
+<p>-A OUTPUT -j ACCEPT</p>
 
-#  Log iptables denied calls
--A INPUT -m limit --limit 5/min -j LOG --log-prefix "iptables denied: " --log-level 7
+<h1>Allow HTTP and HTTPS connections from anywhere (the normal ports for websites and SSL).</h1>
 
-#  Drop all other inbound - default deny unless explicitly allowed policy
--A INPUT -j DROP
--A FORWARD -j DROP
+<p>-A INPUT -p tcp --dport 80 -j ACCEPT
+-A INPUT -p tcp --dport 443 -j ACCEPT</p>
 
-COMMIT
-```
+<h1>Allow SSH connections</h1>
 
-Next, activate the firewall rules by entering:
+<p>#</p>
 
-```
-sudo iptables-restore < /etc/iptables.firewall.rules
-```
+<h1>The -dport number should be the same port number you set in sshd_config</h1>
 
-Finally recheck your firewall rules using `sudo iptables -L` and
-the output should look like:
+<p>#
+-A INPUT -p tcp -m state --state NEW --dport 22 -j ACCEPT</p>
 
-```
+<h1>Allow ping</h1>
+
+<p>-A INPUT -p icmp --icmp-type echo-request -j ACCEPT</p>
+
+<h1>Log iptables denied calls</h1>
+
+<p>-A INPUT -m limit --limit 5/min -j LOG --log-prefix "iptables denied: " --log-level 7</p>
+
+<h1>Drop all other inbound - default deny unless explicitly allowed policy</h1>
+
+<p>-A INPUT -j DROP
+-A FORWARD -j DROP</p>
+
+<p>COMMIT
+```</p>
+
+<p>Next, activate the firewall rules by entering:</p>
+
+<p><code>
+sudo iptables-restore &lt; /etc/iptables.firewall.rules
+</code></p>
+
+<p>Finally recheck your firewall rules using <code>sudo iptables -L</code> and
+the output should look like:</p>
+
+<p>```
 Chain INPUT (policy ACCEPT)
     target     prot opt source               destination
     ACCEPT     all  --  anywhere             anywhere
@@ -474,128 +546,130 @@ Chain INPUT (policy ACCEPT)
     ACCEPT     tcp  --  anywhere             anywhere             state NEW tcp dpt:ssh
     ACCEPT     icmp --  anywhere             anywhere
     LOG        all  --  anywhere             anywhere             limit: avg 5/min burst 5 LOG level debug prefix "iptables denied: "
-    DROP       all  --  anywhere             anywhere
+    DROP       all  --  anywhere             anywhere</p>
 
-Chain FORWARD (policy ACCEPT)
+<p>Chain FORWARD (policy ACCEPT)
     target     prot opt source               destination
-    DROP       all  --  anywhere             anywhere
+    DROP       all  --  anywhere             anywhere</p>
 
-Chain OUTPUT (policy ACCEPT)
+<p>Chain OUTPUT (policy ACCEPT)
     target     prot opt source               destination
     ACCEPT     all  --  anywhere             anywhere
-```
+```</p>
 
-To make sure that the firewall rules are activated everytime you
-restart your box, create a new script using:
+<p>To make sure that the firewall rules are activated everytime you
+restart your box, create a new script using:</p>
 
-```
+<p><code>
 sudo nano /etc/network/if-pre-up.d/firewall
-```
+</code></p>
 
-and enter this into that file:
+<p>and enter this into that file:</p>
 
-```
-#!/bin/sh
-/sbin/iptables-restore < /etc/iptables.firewall.rules
-```
+<p>```</p>
 
-Finally, set the scripts permissions using:
+<h1>!/bin/sh</h1>
 
-```
+<p>/sbin/iptables-restore &lt; /etc/iptables.firewall.rules
+```</p>
+
+<p>Finally, set the scripts permissions using:</p>
+
+<p><code>
 sudo chmod +x /etc/network/if-pre-up.d/firewall
-```
+</code></p>
 
-###11. Extra security measures
+<h3>11. Extra security measures</h3>
 
-Install mod_security, fail2ban and/or psad
+<p>Install mod_security, fail2ban and/or psad</p>
 
-```
+<p><code>
 sudo apt-get install libapache2-modsecurity
 apt-get install fail2ban
 apt-get install psad
 sudo a2enmod mod-security
 sudo /etc/init.d/apache2 force-reload
-```
+</code></p>
 
-###12. Generate SSH Key
+<h3>12. Generate SSH Key</h3>
 
-Check for SSH keys
+<p>Check for SSH keys</p>
 
-```
+<p><code>
 ls -al ~/.ssh
-```
+</code></p>
 
-If none exist, run keygen to generate a new ssh key
+<p>If none exist, run keygen to generate a new ssh key</p>
 
-```
+<p><code>
 ssh-keygen -t rsa -C "your_email@example.com"
-```
+</code></p>
 
-then copy it to use
+<p>then copy it to use</p>
 
-```
+<p><code>
 cat ~/.ssh/id_rsa.pub
-```
+</code></p>
 
+<hr />
 
----
+<h3>Extra:</h3>
 
-### Extra:
+<p>Upgrade to a simple desktop environment</p>
 
-Upgrade to a simple desktop environment
-
-```
+<p><code>
 apt-get -y install xorg lightdm xfce4 xfce4-goodies tango-icon-theme gnome-icon-theme
 reboot
-```
+</code></p>
 
-Install VNC Server for remote viewing
+<p>Install VNC Server for remote viewing</p>
 
-```
+<p><code>
 sudo apt-get update
 sudo apt-get install tightvncserver
-```
+</code></p>
 
-Now start the server
+<p>Now start the server</p>
 
-```
+<p><code>
 vncserver
-```
+</code></p>
 
-This will create a file in `~/.vnc/` similar to ``. The trailing number is the number
+<p>This will create a file in <code>~/.vnc/</code> similar to ``. The trailing number is the number
 after the port used to connect to your desktop. For instance, if your IP is
 192.168.0.101, you would connect to VNC using 192.168.0.101:5901. If the you create
 a second desktop it should 2, 3 and so on. The port will change depending on that
-(5902, 5903, etc).
+(5902, 5903, etc).</p>
 
+<p>You can stop the server by this command. Change the <code>:1</code> depending on what vnc instance
+you have running similar to above.</p>
 
-You can stop the server by this command. Change the `:1` depending on what vnc instance
-you have running similar to above.
-
-```
+<p><code>
 vncserver -kill :1
-```
+</code></p>
 
+<hr />
 
----
+<p>Additional resources:</p>
 
-Additional resources:
-
-* [How to setup apache virtual hosts on Debian 7](https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-debian-7)
-* [LAMP Server on Debian Wheezy](https://www.linode.com/docs/websites/lamp/lamp-server-on-debian-7-wheezy)
-* [Debian Wheezy Dedicated Web Server](http://www.pontikis.net/blog/debian-wheezy-web-server-setup)
-* [Apache Security Tips](http://www.tecmint.com/apache-security-tips/)
-* [Securing your Server](https://www.linode.com/docs/security/securing-your-server)
-* [How to setup mod_security on Debian](https://www.digitalocean.com/community/tutorials/how-to-set-up-mod_security-with-apache-on-debian-ubuntu)
-* [Apache Security Tips](http://www.tecmint.com/apache-security-tips/)
-* [Tighten Apache](http://www.thegeekstuff.com/2011/03/apache-hardening/)
-* [Debian Stable Web Server Step-by-step](http://nickj.org/Debian_stable_Web_Server_step-by-step)
-* [What steps do you take to secure a debian server?](http://serverfault.com/questions/11659/what-steps-do-you-take-to-secure-a-debian-server)
-* [Debian Wifi](https://wiki.debian.org/WiFi/HowToUse)
-* [Setup a Bluetooth keyboard on Rasberry Pi](http://www.ctheroux.com/2012/08/a-step-by-step-guide-to-setup-a-bluetooth-keyboard-and-mouse-on-the-raspberry-pi/)
-* [Cubox-i Debian SD image](http://www.igorpecovnik.com/2014/08/19/cubox-i-hummingboard-debian-sd-image/)
-* [Flash an image](http://wiki.solid-run.com/Flash_an_image)
-* [Wireless network setup](http://www.cyberciti.biz/faq/debian-linux-wpa-wpa2-wireless-wifi-networking/)
-* [TightVNC](http://www.penguintutor.com/linux/tightvnc)
-
-
+<ul>
+<li><a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-debian-7">How to setup apache virtual hosts on Debian 7</a></li>
+<li><a href="https://www.linode.com/docs/websites/lamp/lamp-server-on-debian-7-wheezy">LAMP Server on Debian Wheezy</a></li>
+<li><a href="http://www.pontikis.net/blog/debian-wheezy-web-server-setup">Debian Wheezy Dedicated Web Server</a></li>
+<li><a href="http://www.tecmint.com/apache-security-tips/">Apache Security Tips</a></li>
+<li><a href="https://www.linode.com/docs/security/securing-your-server">Securing your Server</a></li>
+<li><a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-mod_security-with-apache-on-debian-ubuntu">How to setup mod_security on Debian</a></li>
+<li><a href="http://www.tecmint.com/apache-security-tips/">Apache Security Tips</a></li>
+<li><a href="http://www.thegeekstuff.com/2011/03/apache-hardening/">Tighten Apache</a></li>
+<li><a href="http://nickj.org/Debian_stable_Web_Server_step-by-step">Debian Stable Web Server Step-by-step</a></li>
+<li><a href="http://serverfault.com/questions/11659/what-steps-do-you-take-to-secure-a-debian-server">What steps do you take to secure a debian server?</a></li>
+<li><a href="https://wiki.debian.org/WiFi/HowToUse">Debian Wifi</a></li>
+<li><a href="http://www.ctheroux.com/2012/08/a-step-by-step-guide-to-setup-a-bluetooth-keyboard-and-mouse-on-the-raspberry-pi/">Setup a Bluetooth keyboard on Rasberry Pi</a></li>
+<li><a href="http://www.igorpecovnik.com/2014/08/19/cubox-i-hummingboard-debian-sd-image/">Cubox-i Debian SD image</a></li>
+<li><a href="http://wiki.solid-run.com/Flash_an_image">Flash an image</a></li>
+<li><a href="http://www.cyberciti.biz/faq/debian-linux-wpa-wpa2-wireless-wifi-networking/">Wireless network setup</a></li>
+<li><a href="http://www.penguintutor.com/linux/tightvnc">TightVNC</a></li>
+</ul>
+  </div>
+  </body>
+</html>

@@ -1,41 +1,99 @@
----
-layout: post
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<link href="http://gmpg.org/xfn/11" rel="profile">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="description" content="Codoki is a web development and design
+blog about the latest trends in web technology.">
+
+<!-- Enable responsiveness on mobile devices-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+<title>
+
+Chris Diana &middot; Blog & Tutorials
+
+</title>
+
+<!-- CSS -->
+<link href="//cdn.rawgit.com/noelboss/featherlight/1.0.4/release/featherlight.min.css" type="text/css" rel="stylesheet" title="Featherlight Styles" />
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+<link rel="stylesheet" href="../../assets/css/poole.min.css">
+<link rel="stylesheet" href="../../assets/css/blog.css">
+<!--<link rel="stylesheet" href="/blog/public/css/monokai.css">-->
+<!--<link rel="stylesheet" href="/blog/public/css/lanyon.css">-->
+<!--<link rel="stylesheet" href="/blog/public/css/codoki.css">-->
+
+<!-- Icons -->
+<!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog/public/apple-touch-icon-precomposed.png">-->
+<!--<link rel="shortcut icon" href="/blog/public/favicon.ico">-->
+
+<!-- JS -->
+<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<!-- RSS -->
+<!--<link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+
+<body class="layout">
+
+  <div class="wrap">
+    <div class="masthead">
+      <div class="container">
+        <h3 class="masthead-title">
+          <a class="logo-wrap" href="/blog/" title="Home"></a>
+          <a class="title" href="/blog/" title="Home">Chris Diana</a>
+          <small>Blog & Tutorials</small>
+        </h3>
+    </div>
+  </div>
+
+  <div class="container content">
+<hr />
+
+<p>layout: post
 title: Fix Slow SSH Connections
-comments: true
-tags: [ssh]
----
+comments: true</p>
 
-Here are a few tips to fix slow SSH connections on *nix or Mac systems
+<h2>tags: [ssh]</h2>
 
-### Disable GSSAPIKeyExchange
+<p>Here are a few tips to fix slow SSH connections on *nix or Mac systems</p>
 
-Edit `/etc/ssh_config` and replace `# GSSAPIKeyExchange yes` with:
+<h3>Disable GSSAPIKeyExchange</h3>
 
-```
+<p>Edit <code>/etc/ssh_config</code> and replace <code># GSSAPIKeyExchange yes</code> with:</p>
+
+<p><code>
 GSSAPIKeyExchange no
-```
+</code></p>
 
-### Disable reverse DNS lookup by editing
+<h3>Disable reverse DNS lookup by editing</h3>
 
-Edit `/etc/sshd_config` or `/etc/ssh/sshd_config` and # add this line
-or replace `#UseDNS yes` with:
+<p>Edit <code>/etc/sshd_config</code> or <code>/etc/ssh/sshd_config</code> and # add this line
+or replace <code>#UseDNS yes</code> with:</p>
 
-```
+<p><code>
 UseDNS no
-```
+</code></p>
 
-### Add the IP Address to hosts file
+<h3>Add the IP Address to hosts file</h3>
 
-Add the IP address you are going to connect to in `/etc/hosts` file, for instance:
+<p>Add the IP address you are going to connect to in <code>/etc/hosts</code> file, for instance:</p>
 
-```
+<p><code>
 192.168.2.6 myserver
-```
+</code></p>
 
-### Disable GSSAPI Authentication (Linux)
+<h3>Disable GSSAPI Authentication (Linux)</h3>
 
-Edit the `/etc/ssh/sshd_config` to:
+<p>Edit the <code>/etc/ssh/sshd_config</code> to:</p>
 
-```
+<p><code>
 GSSAPIAuthentication no
-```
+</code></p>
+  </div>
+  </body>
+</html>

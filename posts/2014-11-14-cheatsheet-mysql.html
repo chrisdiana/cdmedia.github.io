@@ -1,156 +1,216 @@
----
-layout: post
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<link href="http://gmpg.org/xfn/11" rel="profile">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="description" content="Codoki is a web development and design
+blog about the latest trends in web technology.">
+
+<!-- Enable responsiveness on mobile devices-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+<title>
+
+Chris Diana &middot; Blog & Tutorials
+
+</title>
+
+<!-- CSS -->
+<link href="//cdn.rawgit.com/noelboss/featherlight/1.0.4/release/featherlight.min.css" type="text/css" rel="stylesheet" title="Featherlight Styles" />
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+<link rel="stylesheet" href="../../assets/css/poole.min.css">
+<link rel="stylesheet" href="../../assets/css/blog.css">
+<!--<link rel="stylesheet" href="/blog/public/css/monokai.css">-->
+<!--<link rel="stylesheet" href="/blog/public/css/lanyon.css">-->
+<!--<link rel="stylesheet" href="/blog/public/css/codoki.css">-->
+
+<!-- Icons -->
+<!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog/public/apple-touch-icon-precomposed.png">-->
+<!--<link rel="shortcut icon" href="/blog/public/favicon.ico">-->
+
+<!-- JS -->
+<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<!-- RSS -->
+<!--<link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+
+<body class="layout">
+
+  <div class="wrap">
+    <div class="masthead">
+      <div class="container">
+        <h3 class="masthead-title">
+          <a class="logo-wrap" href="/blog/" title="Home"></a>
+          <a class="title" href="/blog/" title="Home">Chris Diana</a>
+          <small>Blog & Tutorials</small>
+        </h3>
+    </div>
+  </div>
+
+  <div class="container content">
+<hr />
+
+<p>layout: post
 title: MySQL Cheatsheet
-comments: true
-tags: [cheatsheet, mysql]
----
+comments: true</p>
 
-A few helpful hints for MySQL
+<h2>tags: [cheatsheet, mysql]</h2>
 
-Create DB
+<p>A few helpful hints for MySQL</p>
 
-```
+<p>Create DB</p>
+
+<p><code>
 create database dbname;
-```
+</code></p>
 
-Create Table
+<p>Create Table</p>
 
-```
+<p><code>
 CREATE TABLE people (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(30) NOT NULL,
     email VARCHAR(50),
     reg_date TIMESTAMP
 );
-```
+</code></p>
 
----
+<hr />
 
-## Data
+<h2>Data</h2>
 
-Select Record
+<p>Select Record</p>
 
-```
+<p><code>
 SELECT field1, field2 table_name1, table_name2 WHERE id=whatever;
-```
+</code></p>
 
-Update Record
+<p>Update Record</p>
 
-```
+<p><code>
 UPDATE table_name SET field1=new-value1, field2=new-value2 WHERE id=whatever;
-```
+</code></p>
 
-Insert Record
+<p>Insert Record</p>
 
-```
+<p><code>
 INSERT INTO table_name ( field1, field2, fieldN ) VALUES ( value1, value2, valueN );
-```
+</code></p>
 
-Delete Record
+<p>Delete Record</p>
 
-```
+<p><code>
 DELETE FROM table_name WHERE id=whatever;
-```
+</code></p>
 
-Copy Records
+<p>Copy Records</p>
 
-```
-INSERT INTO table_b (id, title, description, params) (SELECT "someotherID#", title, description, params FROM table_a WHERE id IN (id1, id2, id3, id4, id5));
+<p>```
+INSERT INTO table<em>b (id, title, description, params) (SELECT "someotherID#", title, description, params FROM table</em>a WHERE id IN (id1, id2, id3, id4, id5));</p>
 
-or
+<p>or</p>
 
-INSERT INTO `users` ( username, first_name, last_name, address, city, state )
+<p>INSERT INTO <code>users</code> ( username, first<em>name, last</em>name, address, city, state )
 SELECT "chrisdoe", "Chris", last_name, address, city, state
-FROM `users`
-WHERE `username`='johndoe'
-```
+FROM <code>users</code>
+WHERE <code>username</code>='johndoe'
+```</p>
 
----
+<hr />
 
-## Columns
+<h2>Columns</h2>
 
-Add Column to Table
+<p>Add Column to Table</p>
 
-```
+<p>```
 ALTER TABLE contacts ADD email VARCHAR(60);
-ALTER TABLE contacts ADD email VARCHAR(60) AFTER name;
-# If the column is not null
-ALTER TABLE contacts ADD email VARCHAR(60) NOT NULL FIRST;
-```
+ALTER TABLE contacts ADD email VARCHAR(60) AFTER name;</p>
 
-Inner Join
+<h1>If the column is not null</h1>
 
-```
+<p>ALTER TABLE contacts ADD email VARCHAR(60) NOT NULL FIRST;
+```</p>
+
+<p>Inner Join</p>
+
+<p><code>
 SELECT a.column_a, b.column_b, c.column_c
 FROM table_a a
 INNER JOIN table_b b ON a.column_a = a.id
 INNER JOIN table_c c ON a.column_a = c.id
 WHERE c.column_c = ?;
-```
+</code></p>
 
----
+<hr />
 
-## Other
+<h2>Other</h2>
 
-Multiple Updates using a single query
+<p>Multiple Updates using a single query</p>
 
-```
+<p><code>
 UPDATE mytable SET title = CASE
 WHEN id = 1 THEN 'Great Expectations';
 WHEN id = 2 THEN 'War and Peace';
 ELSE title
 END;
-```
+</code></p>
 
-Create/Assign User to DB
+<p>Create/Assign User to DB</p>
 
-```
+<p>```
 CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password';
 grant all on dbname.* to username@localhost;
 grant SELECT on dbname.* to username@localhost;
-set password for username@localhost = password(‘yourpassword‘);
+set password for username@localhost = password(‘yourpassword‘);</p>
 
-OR TO GRANT ALL PRIVLEGES....
+<p>OR TO GRANT ALL PRIVLEGES....
 GRANT ALL PRIVILEGES ON * . * TO 'newuser'@'localhost';
 FLUSH PRIVILEGES;
-```
+```</p>
 
----
+<hr />
 
-## Terminal commands
+<h2>Terminal commands</h2>
 
-### Start SQL
+<h3>Start SQL</h3>
 
-```
+<p><code>
 sudo /usr/local/mysql/support-files/mysql.server start
-```
+</code></p>
 
-Version
+<p>Version</p>
 
-```
+<p><code>
 /usr/local/mysql/bin/mysql -v
-```
+</code></p>
 
-Login
+<p>Login</p>
 
-```
+<p><code>
 mysql -u root -p
-```
+</code></p>
 
-Import SQL data file
+<p>Import SQL data file</p>
 
-```
-mysql -u username -p -h localhost DATA-BASE-NAME &lt; data.sql ``` ### SQL Dump ``` mysqldump -u root -p[root_password] [database_name] &amp;gt; dumpfilename.sql
-```
+<p><code>
+mysql -u username -p -h localhost DATA-BASE-NAME &amp;lt; data.sql</code> ### SQL Dump <code>mysqldump -u root -p[root_password] [database_name] &amp;amp;gt; dumpfilename.sql
+</code></p>
 
-SQL Dump
+<p>SQL Dump</p>
 
-```
-mysqldump -u root -p[root_password] [database_name] &gt; dumpfilename.sql
-```
+<p><code>
+mysqldump -u root -p[root_password] [database_name] &amp;gt; dumpfilename.sql
+</code></p>
 
-SCP SSH File Transfer
+<p>SCP SSH File Transfer</p>
 
-```
+<p><code>
 scp data.sql vivek@example.cyberciti.biz:/home/vivek
-```
+</code></p>
+  </div>
+  </body>
+</html>

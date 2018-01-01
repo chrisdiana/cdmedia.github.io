@@ -1,41 +1,100 @@
----
-layout: post
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<link href="http://gmpg.org/xfn/11" rel="profile">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="description" content="Codoki is a web development and design
+blog about the latest trends in web technology.">
+
+<!-- Enable responsiveness on mobile devices-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+<title>
+
+Chris Diana &middot; Blog & Tutorials
+
+</title>
+
+<!-- CSS -->
+<link href="//cdn.rawgit.com/noelboss/featherlight/1.0.4/release/featherlight.min.css" type="text/css" rel="stylesheet" title="Featherlight Styles" />
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+<link rel="stylesheet" href="../../assets/css/poole.min.css">
+<link rel="stylesheet" href="../../assets/css/blog.css">
+<!--<link rel="stylesheet" href="/blog/public/css/monokai.css">-->
+<!--<link rel="stylesheet" href="/blog/public/css/lanyon.css">-->
+<!--<link rel="stylesheet" href="/blog/public/css/codoki.css">-->
+
+<!-- Icons -->
+<!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog/public/apple-touch-icon-precomposed.png">-->
+<!--<link rel="shortcut icon" href="/blog/public/favicon.ico">-->
+
+<!-- JS -->
+<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<!-- RSS -->
+<!--<link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+
+<body class="layout">
+
+  <div class="wrap">
+    <div class="masthead">
+      <div class="container">
+        <h3 class="masthead-title">
+          <a class="logo-wrap" href="/blog/" title="Home"></a>
+          <a class="title" href="/blog/" title="Home">Chris Diana</a>
+          <small>Blog & Tutorials</small>
+        </h3>
+    </div>
+  </div>
+
+  <div class="container content">
+<hr />
+
+<p>layout: post
 title: Shortcut to Add Jekyll post from Terminal
-comments: true
-tags: [jekyll, bash]
----
+comments: true</p>
 
-Here is a quick tip for automatically generating a new Jekyll post in terminal with a quick bash function.
+<h2>tags: [jekyll, bash]</h2>
 
-First, start out by creating a default Jekyll post and placing it in your `_posts` folder.
-Call it `2014-01-01-post-template.md` and place this template code in as a starting point.
-Feel free to change this as you see fit.
+<p>Here is a quick tip for automatically generating a new Jekyll post in terminal with a quick bash function.</p>
 
-```
----
-layout: post
+<p>First, start out by creating a default Jekyll post and placing it in your <code>_posts</code> folder.
+Call it <code>2014-01-01-post-template.md</code> and place this template code in as a starting point.
+Feel free to change this as you see fit.</p>
+
+<h2>```</h2>
+
+<p>layout: post
 title:
-comments: true
-tags: []
----
-```
+comments: true</p>
 
-Next, add this to your `~/.bash_profile`
+<h2>tags: []</h2>
 
-```
+<p>```</p>
+
+<p>Next, add this to your <code>~/.bash_profile</code></p>
+
+<p><code>
 DATE=`date +%Y-%m-%d`
 newJekyllPost() {
-	cp ~/Sites/yourusername.github.io/_posts/2014-01-01-post-template.md ~/Sites/yourusername.github.io/_posts/$DATE-$1.md
-	vi ~/Sites/yourusername.github.io/_posts/$DATE-$1.md
+    cp ~/Sites/yourusername.github.io/_posts/2014-01-01-post-template.md ~/Sites/yourusername.github.io/_posts/$DATE-$1.md
+    vi ~/Sites/yourusername.github.io/_posts/$DATE-$1.md
 }
 alias newpost=newJekyllPost
 alias editpost='vi ~/Sites/yourusername.github.io/_posts'
-```
+</code></p>
 
-Then, save your .bash_profile and restart terminal.
+<p>Then, save your .bash_profile and restart terminal.
 This function copies your post template and renames it using the correct Jekyll naming convention.
-Type `newpost your-new-post` and this little bash function will automatically generate
+Type <code>newpost your-new-post</code> and this little bash function will automatically generate
 a new jekyll post with the right date and open VIM.
-I also added a bash alias at the end that easily allows me to view my posts folder in VIM to choose which to edit.
+I also added a bash alias at the end that easily allows me to view my posts folder in VIM to choose which to edit.</p>
 
-No more manually adding posts (and trying to remember what day it is)!
+<p>No more manually adding posts (and trying to remember what day it is)!</p>
+  </div>
+  </body>
+</html>

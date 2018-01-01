@@ -1,25 +1,86 @@
----
-layout: post
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<link href="http://gmpg.org/xfn/11" rel="profile">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="description" content="Codoki is a web development and design
+blog about the latest trends in web technology.">
+
+<!-- Enable responsiveness on mobile devices-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+<title>
+
+Chris Diana &middot; Blog & Tutorials
+
+</title>
+
+<!-- CSS -->
+<link href="//cdn.rawgit.com/noelboss/featherlight/1.0.4/release/featherlight.min.css" type="text/css" rel="stylesheet" title="Featherlight Styles" />
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+<link rel="stylesheet" href="../../assets/css/poole.min.css">
+<link rel="stylesheet" href="../../assets/css/blog.css">
+<!--<link rel="stylesheet" href="/blog/public/css/monokai.css">-->
+<!--<link rel="stylesheet" href="/blog/public/css/lanyon.css">-->
+<!--<link rel="stylesheet" href="/blog/public/css/codoki.css">-->
+
+<!-- Icons -->
+<!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog/public/apple-touch-icon-precomposed.png">-->
+<!--<link rel="shortcut icon" href="/blog/public/favicon.ico">-->
+
+<!-- JS -->
+<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<!-- RSS -->
+<!--<link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+
+<body class="layout">
+
+  <div class="wrap">
+    <div class="masthead">
+      <div class="container">
+        <h3 class="masthead-title">
+          <a class="logo-wrap" href="/blog/" title="Home"></a>
+          <a class="title" href="/blog/" title="Home">Chris Diana</a>
+          <small>Blog & Tutorials</small>
+        </h3>
+    </div>
+  </div>
+
+  <div class="container content">
+<hr />
+
+<p>layout: post
 title: Moving a Wordpress site to production
-comments: true
-tags: wordpress
----
-A few tips on moving a Wordpress site to a production environment
+comments: true</p>
 
-1. Copy all files over to subfolder on production server
-2. Install WP-Migrate-DB plugin on site you are moving and set the new URL and root folder directory
-3. Download a copy of the database and move it to the production server. Copy/Export any other Wordpress or theme settings as they may note transfer
-4. Create a new database on the production server
-5. Import the newly migrated database into the new database
-6. Edit the wp-config.php in the root directory and set the database,host, user and password to connect to MySQL
-7. Add these lines in order to test the site in the subdirectory before moving to root directory
+<h2>tags: wordpress</h2>
 
-```
+<p>A few tips on moving a Wordpress site to a production environment</p>
+
+<ol>
+<li>Copy all files over to subfolder on production server</li>
+<li>Install WP-Migrate-DB plugin on site you are moving and set the new URL and root folder directory</li>
+<li>Download a copy of the database and move it to the production server. Copy/Export any other Wordpress or theme settings as they may note transfer</li>
+<li>Create a new database on the production server</li>
+<li>Import the newly migrated database into the new database</li>
+<li>Edit the wp-config.php in the root directory and set the database,host, user and password to connect to MySQL</li>
+<li>Add these lines in order to test the site in the subdirectory before moving to root directory</li>
+</ol>
+
+<p><code>
 define('WP_HOME','http://www.yoursite.com/subdir');
 define('WP_SITEURL','http://www.yoursite.com/subdir');
-```
+</code>
 8. Make changes as needed, import theme settings etc.
 9. When ready, move all old Wordpress file into some subdirectory, like "oldsite" and move all new Wordpress files to the root
 10. Comment or edit out the 2 lines added above in the wp-config.php file.
 11. Restart apache
-12. OR lookup doing it with Wordpress in it's own directory method.
+12. OR lookup doing it with Wordpress in it's own directory method.</p>
+  </div>
+  </body>
+</html>

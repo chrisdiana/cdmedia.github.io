@@ -1,163 +1,233 @@
----
-layout: post
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<link href="http://gmpg.org/xfn/11" rel="profile">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="description" content="Codoki is a web development and design
+blog about the latest trends in web technology.">
+
+<!-- Enable responsiveness on mobile devices-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+<title>
+
+Chris Diana &middot; Blog & Tutorials
+
+</title>
+
+<!-- CSS -->
+<link href="//cdn.rawgit.com/noelboss/featherlight/1.0.4/release/featherlight.min.css" type="text/css" rel="stylesheet" title="Featherlight Styles" />
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+<link rel="stylesheet" href="../../assets/css/poole.min.css">
+<link rel="stylesheet" href="../../assets/css/blog.css">
+<!--<link rel="stylesheet" href="/blog/public/css/monokai.css">-->
+<!--<link rel="stylesheet" href="/blog/public/css/lanyon.css">-->
+<!--<link rel="stylesheet" href="/blog/public/css/codoki.css">-->
+
+<!-- Icons -->
+<!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog/public/apple-touch-icon-precomposed.png">-->
+<!--<link rel="shortcut icon" href="/blog/public/favicon.ico">-->
+
+<!-- JS -->
+<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<!-- RSS -->
+<!--<link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+
+<body class="layout">
+
+  <div class="wrap">
+    <div class="masthead">
+      <div class="container">
+        <h3 class="masthead-title">
+          <a class="logo-wrap" href="/blog/" title="Home"></a>
+          <a class="title" href="/blog/" title="Home">Chris Diana</a>
+          <small>Blog & Tutorials</small>
+        </h3>
+    </div>
+  </div>
+
+  <div class="container content">
+<hr />
+
+<p>layout: post
 title: Sync your Preferences Across Multiple Computers with GIT
-comments: true
-tags: [git, vim]
----
+comments: true</p>
 
-Here's quick trick for syncing your dotfiles across multiple computers with GIT.
+<h2>tags: [git, vim]</h2>
+
+<p>Here's quick trick for syncing your dotfiles across multiple computers with GIT.
 This way, you can always have the most up to date copy of your bash profile or
-vimrc without having to worry about manually copying them.
+vimrc without having to worry about manually copying them.</p>
 
-First, create a dotfiles folder in your home directory. This is where all your
-preferences and settings that will be backed up in version control will go.
+<p>First, create a dotfiles folder in your home directory. This is where all your
+preferences and settings that will be backed up in version control will go.</p>
 
-```
+<p><code>
 mkdir ~/.dotfiles
-```
+</code></p>
 
-Next, move all the files you would like to have the ability to sync into your
-new `.dotfiles` folder. Remember, these files will be public (unless you plan
-on using Bitbucket) so make sure there's nothing personal in them.
+<p>Next, move all the files you would like to have the ability to sync into your
+new <code>.dotfiles</code> folder. Remember, these files will be public (unless you plan
+on using Bitbucket) so make sure there's nothing personal in them.</p>
 
-In this example, I just plan on syncing my bashrc, VIM settings and
-GIT settings.
+<p>In this example, I just plan on syncing my bashrc, VIM settings and
+GIT settings.</p>
 
-```
+<p><code>
 cd ~
 mv .bash_profile .dotfiles/.bashrc
 mv .gitconfig .dotfiles/.gitconfig
 mv .vim .dotfiles/.vim
 mv .vimrc .dotfiles/.vimrc
-```
+</code></p>
 
-Now we are going to create symlinks to link to the new location in the
-`.dotfiles` folder that way your computer knows where to find them when it
-looks in the default locations.
+<p>Now we are going to create symlinks to link to the new location in the
+<code>.dotfiles</code> folder that way your computer knows where to find them when it
+looks in the default locations.</p>
 
-```
+<p><code>
 cd ~
 ln -s .dotfiles/.bashrc .bashrc
 ln -s .dotfiles/.gitconfig .gitconfig
 ln -s .dotfiles/.vim .vim
 ln -s .dotfiles/.vimrc .vimrc
-```
+</code></p>
 
-Next, we need to initialize the GIT repo, add the remote and push up the changes.
-(Make sure to have already created a new repo on GitHub or Bitbucket)
+<p>Next, we need to initialize the GIT repo, add the remote and push up the changes.
+(Make sure to have already created a new repo on GitHub or Bitbucket)</p>
 
-```
+<p><code>
 cd ~/.dotfiles
 git init
 git add .
 git commit -m "initial commit"
 git remote add origin https://github.com/youruser/dotfiles.git
 git push -u origin master
-```
+</code></p>
 
-Now you have version control on your dotfiles! To sync them with another server or
+<p>Now you have version control on your dotfiles! To sync them with another server or
 computer, ssh or access terminal on another machine and remove all your old settings
-(make sure to backup any settings if there are important to you).
+(make sure to backup any settings if there are important to you).</p>
 
-```
+<p><code>
 ssh youruser@yourmachine
 cd ~
 rm .bash_profile .vimrc .gitconfig
 rm -rf .vim
-```
+</code></p>
 
-Clone your dotfiles repo and pull down the changes
+<p>Clone your dotfiles repo and pull down the changes</p>
 
-```
+<p><code>
 git clone https://github.com/youruser/dotfiles.git
 mv dotfiles .dotfiles
 cd ~/.dotfiles
 git pull
-```
+</code></p>
 
-Finally, create the symlinks similar to what you did on your local computer.
+<p>Finally, create the symlinks similar to what you did on your local computer.</p>
 
-```
+<p><code>
 cd ~
 ln -s .dotfiles/.bashrc .bashrc
 ln -s .dotfiles/.gitconfig .gitconfig
 ln -s .dotfiles/.vim .vim
 ln -s .dotfiles/.vimrc .vimrc
-```
+</code></p>
 
-Now, when you make a change on any computer all you have to do is commit and push
+<p>Now, when you make a change on any computer all you have to do is commit and push
 your changes and your preferences can not only synced across multiple servers or
-computers but also be in version control.
+computers but also be in version control.</p>
 
-One last thing to note. If you happen to have some personal or computer specific
+<p>One last thing to note. If you happen to have some personal or computer specific
 things in your bash profile, one way you manage this is by placing these
-rules inside a local .bashrc file (like `~/.bashrc-local`) file. This way you can keep
+rules inside a local .bashrc file (like <code>~/.bashrc-local</code>) file. This way you can keep
 the majority of your bash settings synced, while more specific things such as
-alias can be separated and not public.
+alias can be separated and not public.</p>
 
-You can do this by creating a local bash file:
+<p>You can do this by creating a local bash file:</p>
 
-```
+<p><code>
 touch .bash-local
-```
+</code></p>
 
-Then, adding this to your `.bashrc` file:
+<p>Then, adding this to your <code>.bashrc</code> file:</p>
 
-```
-# Load local .bashrc if it exists
-test -f ~/.bashrc-local && source ~/.bashrc-local
-```
+<p>```</p>
 
-#Automating wih a shell script
+<h1>Load local .bashrc if it exists</h1>
 
-This is all great but can become a huge PITA if you do this on every computer
+<p>test -f ~/.bashrc-local &amp;&amp; source ~/.bashrc-local
+```</p>
+
+<h1>Automating wih a shell script</h1>
+
+<p>This is all great but can become a huge PITA if you do this on every computer
 you work on. You can use a simple bash script to automate the process. In your
-`~/.dotfiles` folder create a `make.sh` file.
+<code>~/.dotfiles</code> folder create a <code>make.sh</code> file.</p>
 
-```
+<p><code>
 vi ~/.dotfiles/make.sh
-```
+</code></p>
 
-In this file add the following:
+<p>In this file add the following:</p>
 
-```
-#!/bin/bash
-############################
-# .make.sh
-# This script creates symlinks from the home directory to any desired dotfiles in ~/.dotfiles
-############################
+<p>```</p>
 
-# variables
-dir=~/.dotfiles                    		# dotfiles directory
-olddir=~/dotfiles_old             		# old dotfiles backup directory
-files="bashrc vimrc vim gitconfig"    	# list of files/folders to symlink in homedir
+<h1>!/bin/bash</h1>
 
-# move dotfiles to .dotfiles hidden folder
-mv ~/dotfiles $dir
+<h6>#</h6>
 
-# create dotfiles_old in homedir
-echo "Creating $olddir for backup of any existing dotfiles in ~"
+<h1>.make.sh</h1>
+
+<h1>This script creates symlinks from the home directory to any desired dotfiles in ~/.dotfiles</h1>
+
+<h6>#</h6>
+
+<h1>variables</h1>
+
+<p>dir=~/.dotfiles                         # dotfiles directory
+olddir=~/dotfiles_old                   # old dotfiles backup directory
+files="bashrc vimrc vim gitconfig"      # list of files/folders to symlink in homedir</p>
+
+<h1>move dotfiles to .dotfiles hidden folder</h1>
+
+<p>mv ~/dotfiles $dir</p>
+
+<h1>create dotfiles_old in homedir</h1>
+
+<p>echo "Creating $olddir for backup of any existing dotfiles in ~"
 mkdir -p $olddir
-echo "...done"
+echo "...done"</p>
 
-# change to the dotfiles directory
-echo "Changing to the $dir directory"
+<h1>change to the dotfiles directory</h1>
+
+<p>echo "Changing to the $dir directory"
 cd $dir
-echo "...done"
+echo "...done"</p>
 
-# move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
-for file in $files; do
-	echo "Moving any existing dotfiles from ~ to $olddir"
-	mv ~/.$file ~/dotfiles_old/
-	echo "Creating symlink to $file in home directory."
-	ln -s $dir/.$file ~/.$file
+<h1>move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks</h1>
+
+<p>for file in $files; do
+    echo "Moving any existing dotfiles from ~ to $olddir"
+    mv ~/.$file ~/dotfiles_old/
+    echo "Creating symlink to $file in home directory."
+    ln -s $dir/.$file ~/.$file
 done
-```
+```</p>
 
-Basically what this script does is everything I've described about in a quick
+<p>Basically what this script does is everything I've described about in a quick
 script you can run each time you jump to a new computer. You can read through
-the comments to see what each step does.
+the comments to see what each step does.</p>
 
-For further dotfile examples, you can take a look at [my dotfiles
-repo](https://github.com/cdmedia/dotfiles) or see plenty of [others here on
-Github](https://dotfiles.github.io/).
+<p>For further dotfile examples, you can take a look at <a href="https://github.com/cdmedia/dotfiles">my dotfiles
+repo</a> or see plenty of <a href="https://dotfiles.github.io/">others here on
+Github</a>.</p>
+  </div>
+  </body>
+</html>

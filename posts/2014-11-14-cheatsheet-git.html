@@ -1,192 +1,260 @@
----
-layout: post
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<link href="http://gmpg.org/xfn/11" rel="profile">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="description" content="Codoki is a web development and design
+blog about the latest trends in web technology.">
+
+<!-- Enable responsiveness on mobile devices-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+<title>
+
+Chris Diana &middot; Blog & Tutorials
+
+</title>
+
+<!-- CSS -->
+<link href="//cdn.rawgit.com/noelboss/featherlight/1.0.4/release/featherlight.min.css" type="text/css" rel="stylesheet" title="Featherlight Styles" />
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+<link rel="stylesheet" href="../../assets/css/poole.min.css">
+<link rel="stylesheet" href="../../assets/css/blog.css">
+<!--<link rel="stylesheet" href="/blog/public/css/monokai.css">-->
+<!--<link rel="stylesheet" href="/blog/public/css/lanyon.css">-->
+<!--<link rel="stylesheet" href="/blog/public/css/codoki.css">-->
+
+<!-- Icons -->
+<!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog/public/apple-touch-icon-precomposed.png">-->
+<!--<link rel="shortcut icon" href="/blog/public/favicon.ico">-->
+
+<!-- JS -->
+<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<!-- RSS -->
+<!--<link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+
+<body class="layout">
+
+  <div class="wrap">
+    <div class="masthead">
+      <div class="container">
+        <h3 class="masthead-title">
+          <a class="logo-wrap" href="/blog/" title="Home"></a>
+          <a class="title" href="/blog/" title="Home">Chris Diana</a>
+          <small>Blog & Tutorials</small>
+        </h3>
+    </div>
+  </div>
+
+  <div class="container content">
+<hr />
+
+<p>layout: post
 title: GIT Cheatsheet
-comments: true
-tags: [cheatsheet, git]
----
+comments: true</p>
 
-Here is some great tips and tricks to get around git.
-Some helpful sites:
+<h2>tags: [cheatsheet, git]</h2>
 
-* [git - the simple guide](http://rogerdudler.github.io/git-guide/)
-* [Bitbucket - Atlassian Tutorial on Git](https://www.atlassian.com/git/tutorials/setting-up-a-repository)
-* [Git - Official site](http://git-scm.com/book/en/v2/Getting-Started-About-Version-Control)
+<p>Here is some great tips and tricks to get around git.
+Some helpful sites:</p>
 
-Git Config Examples
+<ul>
+<li><a href="http://rogerdudler.github.io/git-guide/">git - the simple guide</a></li>
+<li><a href="https://www.atlassian.com/git/tutorials/setting-up-a-repository">Bitbucket - Atlassian Tutorial on Git</a></li>
+<li><a href="http://git-scm.com/book/en/v2/Getting-Started-About-Version-Control">Git - Official site</a></li>
+</ul>
 
-* [git config that doesnt suck](http://northisup.com/blog/git-config-that-doesnt-suck-2)
+<p>Git Config Examples</p>
 
-#### Add all files but untracked
+<ul>
+<li><a href="http://northisup.com/blog/git-config-that-doesnt-suck-2">git config that doesnt suck</a></li>
+</ul>
 
-```
+<h4>Add all files but untracked</h4>
+
+<p><code>
 git add -a
-```
+</code></p>
 
-#### Add all files
+<h4>Add all files</h4>
 
-```
+<p><code>
 git add -A
-```
+</code></p>
 
-#### Add
+<h4>Add</h4>
 
-```
-# For the next commit
-$ git add .   # add to index only files created/modified and not those deleted
+<p>```</p>
+
+<h1>For the next commit</h1>
+
+<p>$ git add .   # add to index only files created/modified and not those deleted
 $ git add -u  # add to index only files deleted/modified and not those created
 $ git add -A  # do both operation at once, add to index all files
-```
+```</p>
 
-#### Commit all staged files with a commit message
+<h4>Commit all staged files with a commit message</h4>
 
-```
+<p><code>
 git commit -a -m "Your message"
-```
+</code></p>
 
-#### Edit latest commit message
+<h4>Edit latest commit message</h4>
 
-```
+<p><code>
 git commit --amend -m "Your edited message"
-```
+</code></p>
 
-#### Stash current changes temporarily
+<h4>Stash current changes temporarily</h4>
 
-```
+<p>```
 // Stash some changes
-git stash
+git stash</p>
 
-// Stash with name
-git stash save "Some description"
+<p>// Stash with name
+git stash save "Some description"</p>
 
-// Reapply changes
-git stash apply
+<p>// Reapply changes
+git stash apply</p>
 
-// Reapply changes to specific stash
-git stash apply stash@{0}
+<p>// Reapply changes to specific stash
+git stash apply stash@{0}</p>
 
-// List all stashes
-git stash list
+<p>// List all stashes
+git stash list</p>
 
-// Clear stashes
+<p>// Clear stashes
 git stash clear
-```
+```</p>
 
-#### See what files have been changed
+<h4>See what files have been changed</h4>
 
-```
+<p><code>
 git whatchanged
-```
+</code></p>
 
-#### See what changes have been made in last commit
+<h4>See what changes have been made in last commit</h4>
 
-```
+<p><code>
 git show
-```
+</code></p>
 
-#### Undo a git add - remove files staged for a git commit
+<h4>Undo a git add - remove files staged for a git commit</h4>
 
-```
+<p><code>
 git reset
-```
+</code></p>
 
-#### Rever all local uncommited changes
-```
+<h4>Rever all local uncommited changes</h4>
+
+<p><code>
 git checkout .
-```
+</code></p>
 
-#### Revert unommited changes to a particular file or directory
-```
+<h4>Revert unommited changes to a particular file or directory</h4>
+
+<p><code>
 git checkout [some_dir|file.txt]
-```
+</code></p>
 
-#### Remove all local untracked files, so only git tracked files remain:
-```
+<h4>Remove all local untracked files, so only git tracked files remain:</h4>
+
+<p><code>
 git clean -fdx
-```
+</code></p>
 
-#### Clone just branch
+<h4>Clone just branch</h4>
 
-```
+<p><code>
 git clone --branch=stable ssh://git@bitbucket.org/yourrepo/project.git
-```
+</code></p>
 
-#### Switch to branch
-```
+<h4>Switch to branch</h4>
+
+<p><code>
 git checkout wip
-```
+</code></p>
 
-#### Add remote repo
+<h4>Add remote repo</h4>
 
-```
+<p><code>
 git remote add project git@bitbucket.org:yourrepo/project.git
-```
+</code></p>
 
-#### Pull GIT Branch from Remote
+<h4>Pull GIT Branch from Remote</h4>
 
-```
+<p><code>
 git checkout -b newdesign origin/newdesign
-```
+</code></p>
 
-#### Delete branch
+<h4>Delete branch</h4>
 
-```
+<p><code>
 git branch -d create_feature
-```
+</code></p>
 
-#### Creating a remote called "github"
+<h4>Creating a remote called "github"</h4>
 
-```
+<p><code>
 git remote add github git://github.com/yourrepo/project.git
 git fetch github
-```
+</code></p>
 
-#### List all remote branches:
+<h4>List all remote branches:</h4>
 
-```
+<p><code>
 git branch -r
-```
+</code></p>
 
-#### Add remote
+<h4>Add remote</h4>
 
-```
+<p><code>
 git remote add origin ssh://git@bitbucket.org/yourrepo/project.git
-```
+</code></p>
 
-#### Push a new rep
+<h4>Push a new rep</h4>
 
-```
+<p><code>
 git push -u origin --all
-```
+</code></p>
 
-#### Commit for another author
+<h4>Commit for another author</h4>
 
-```
---author=&lt;author&gt;
-```
+<p><code>
+--author=&amp;lt;author&amp;gt;
+</code></p>
 
-#### Setup a local directory
+<h4>Setup a local directory</h4>
 
-```
+<p><code>
 mkdir /path/to/your/project
 cd /path/to/your/project
 git init
 git remote add origin git@bitbucket.org:yourrepo/test.git
-```
+</code></p>
 
-Create your first file, commit, and push
+<p>Create your first file, commit, and push</p>
 
-```
-echo "Chris Diana" &gt;&gt; contributors.txt
+<p><code>
+echo "Chris Diana" &amp;gt;&amp;gt; contributors.txt
 git add contributors.txt
 git commit -m 'Initial commit with contributors'
 git push -u origin master
-```
+</code></p>
 
-#### Existing project setup
+<h4>Existing project setup</h4>
 
-```
+<p><code>
 cd /path/to/my/repo
 git remote add origin git@bitbucket.org:yourrepo/project.git
 git push -u origin --all # pushes up the repo and its refs for the first time
 git push -u origin --tags # pushes up any tags
-```
+</code></p>
+  </div>
+  </body>
+</html>

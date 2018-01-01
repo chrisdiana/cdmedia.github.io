@@ -1,91 +1,151 @@
----
-layout: post
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<link href="http://gmpg.org/xfn/11" rel="profile">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="description" content="Codoki is a web development and design
+blog about the latest trends in web technology.">
+
+<!-- Enable responsiveness on mobile devices-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+<title>
+
+Chris Diana &middot; Blog & Tutorials
+
+</title>
+
+<!-- CSS -->
+<link href="//cdn.rawgit.com/noelboss/featherlight/1.0.4/release/featherlight.min.css" type="text/css" rel="stylesheet" title="Featherlight Styles" />
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+<link rel="stylesheet" href="../../assets/css/poole.min.css">
+<link rel="stylesheet" href="../../assets/css/blog.css">
+<!--<link rel="stylesheet" href="/blog/public/css/monokai.css">-->
+<!--<link rel="stylesheet" href="/blog/public/css/lanyon.css">-->
+<!--<link rel="stylesheet" href="/blog/public/css/codoki.css">-->
+
+<!-- Icons -->
+<!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog/public/apple-touch-icon-precomposed.png">-->
+<!--<link rel="shortcut icon" href="/blog/public/favicon.ico">-->
+
+<!-- JS -->
+<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<!-- RSS -->
+<!--<link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+
+<body class="layout">
+
+  <div class="wrap">
+    <div class="masthead">
+      <div class="container">
+        <h3 class="masthead-title">
+          <a class="logo-wrap" href="/blog/" title="Home"></a>
+          <a class="title" href="/blog/" title="Home">Chris Diana</a>
+          <small>Blog & Tutorials</small>
+        </h3>
+    </div>
+  </div>
+
+  <div class="container content">
+<hr />
+
+<p>layout: post
 title: Tips to Speed Up SSH Connections
-comments: true
-tags: [ssh]
----
+comments: true</p>
 
-Ever run across laggy SSH connections when trying to type? Here are few tips
-to speed up connections.
+<h2>tags: [ssh]</h2>
 
-### 1. Make sure your remote computer is resolving correctly
+<p>Ever run across laggy SSH connections when trying to type? Here are few tips
+to speed up connections.</p>
 
-In your remote `/etc/hosts` file, make sure you have a localhost host entry
-with the correct hostname.
+<h3>1. Make sure your remote computer is resolving correctly</h3>
 
-```
+<p>In your remote <code>/etc/hosts</code> file, make sure you have a localhost host entry
+with the correct hostname.</p>
+
+<p><code>
 127.0.0.1   localhost yourcomputer
 ::1        localhost yourcomputer ip6-localhost ip6-loopback
-```
+</code></p>
 
-### 2. Make sure your SSH if correctly setup
+<h3>2. Make sure your SSH if correctly setup</h3>
 
-If you haven't generated an SSH key and setup your SSH keys on your remote computer, follow the guide [here](https://help.github.com/articles/generating-ssh-keys/).
+<p>If you haven't generated an SSH key and setup your SSH keys on your remote computer, follow the guide <a href="https://help.github.com/articles/generating-ssh-keys/">here</a>.</p>
 
-### 3. Add your SSH key to authorized_keys
+<h3>3. Add your SSH key to authorized_keys</h3>
 
-Add your local SSH public key to the remote authorized_keys file.
+<p>Add your local SSH public key to the remote authorized_keys file.</p>
 
-On your local machine
+<p>On your local machine</p>
 
-```
-pbcopy < ~/.ssh/id_rsa.pub
-```
+<p><code>
+pbcopy &lt; ~/.ssh/id_rsa.pub
+</code></p>
 
-On your remote machine
+<p>On your remote machine</p>
 
-```
-vi authorized_keys
-# paste in your key - should look similar to "ssh-rsa AAB3Nz1y2..."
-```
+<p>```
+vi authorized_keys</p>
 
-### 4. Add your remote host to local hosts file
+<h1>paste in your key - should look similar to "ssh-rsa AAB3Nz1y2..."</h1>
 
-Edit your local computer's `/etc/hosts` file and add the IP and hostname to the file:
+<p>```</p>
 
-```
-192.168.0.101	yourcomputer
-```
+<h3>4. Add your remote host to local hosts file</h3>
 
-### 5. Update Local Configuration
+<p>Edit your local computer's <code>/etc/hosts</code> file and add the IP and hostname to the file:</p>
 
-Edit the local computer's `/etc/ssh_config` file to
+<p><code>
+192.168.0.101   yourcomputer
+</code></p>
 
-```
+<h3>5. Update Local Configuration</h3>
+
+<p>Edit the local computer's <code>/etc/ssh_config</code> file to</p>
+
+<p><code>
 GSSAPIKeyExchange no
-```
+</code></p>
 
-### 6. Update Remote Configuration
+<h3>6. Update Remote Configuration</h3>
 
-Edit the `/etc/sshd_config` file to
+<p>Edit the <code>/etc/sshd_config</code> file to</p>
 
-```
+<p><code>
 UseDNS no
-```
+</code></p>
 
-### 7. Try SSH Compression
+<h3>7. Try SSH Compression</h3>
 
-By default compression is not enabled for outgoing ssh connections.
+<p>By default compression is not enabled for outgoing ssh connections.
 Very simple compression is no problem for modern CPUs and even on a gigabit network it is faster to compress data first before sending it over the network instead of leaving it uncompressed.
-Create an ssh config file if you don't already have one in your home's `.ssh/` folder:
+Create an ssh config file if you don't already have one in your home's <code>.ssh/</code> folder:</p>
 
-```
+<p><code>
 vi ~/.ssh/config
-```
+</code></p>
 
-Then, add this to the file
+<p>Then, add this to the file</p>
 
-```
+<p><code>
 Compression yes
 CompressionLevel 6
-```
+</code></p>
 
-You can play around with the setting till you get one you like.
+<p>You can play around with the setting till you get one you like.</p>
 
----
+<hr />
 
-### Once you've tried a few of these tips, restart SSH:
+<h3>Once you've tried a few of these tips, restart SSH:</h3>
 
-```
+<p><code>
 /etc/init.d/ssh restart
-```
+</code></p>
+  </div>
+  </body>
+</html>

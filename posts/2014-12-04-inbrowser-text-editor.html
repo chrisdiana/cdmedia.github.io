@@ -1,56 +1,118 @@
----
-layout: post
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<link href="http://gmpg.org/xfn/11" rel="profile">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="description" content="Codoki is a web development and design
+blog about the latest trends in web technology.">
+
+<!-- Enable responsiveness on mobile devices-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+<title>
+
+Chris Diana &middot; Blog & Tutorials
+
+</title>
+
+<!-- CSS -->
+<link href="//cdn.rawgit.com/noelboss/featherlight/1.0.4/release/featherlight.min.css" type="text/css" rel="stylesheet" title="Featherlight Styles" />
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+<link rel="stylesheet" href="../../assets/css/poole.min.css">
+<link rel="stylesheet" href="../../assets/css/blog.css">
+<!--<link rel="stylesheet" href="/blog/public/css/monokai.css">-->
+<!--<link rel="stylesheet" href="/blog/public/css/lanyon.css">-->
+<!--<link rel="stylesheet" href="/blog/public/css/codoki.css">-->
+
+<!-- Icons -->
+<!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog/public/apple-touch-icon-precomposed.png">-->
+<!--<link rel="shortcut icon" href="/blog/public/favicon.ico">-->
+
+<!-- JS -->
+<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<!-- RSS -->
+<!--<link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+
+<body class="layout">
+
+  <div class="wrap">
+    <div class="masthead">
+      <div class="container">
+        <h3 class="masthead-title">
+          <a class="logo-wrap" href="/blog/" title="Home"></a>
+          <a class="title" href="/blog/" title="Home">Chris Diana</a>
+          <small>Blog & Tutorials</small>
+        </h3>
+    </div>
+  </div>
+
+  <div class="container content">
+<hr />
+
+<p>layout: post
 title: In-browser Text Editor 
-comments: true
-tags: browsers 
----
+comments: true</p>
 
-Make any browser a text editor with these cool bookmarklets.
+<h2>tags: browsers </h2>
 
-Copy and paste any of these into your browsers URL or save as a bookmarklet to have an instant text
-editor anywhere you go.
+<p>Make any browser a text editor with these cool bookmarklets.</p>
 
-**Basic notepad**
+<p>Copy and paste any of these into your browsers URL or save as a bookmarklet to have an instant text
+editor anywhere you go.</p>
 
-```
-data:text/html, <html contenteditable>
-```
+<p><strong>Basic notepad</strong></p>
 
-**Monospace notepad**
+<p><code>
+data:text/html, &lt;html contenteditable&gt;
+</code></p>
 
-```
+<p><strong>Monospace notepad</strong></p>
+
+<p>```
 // Big text
-data:text/html, <body contenteditable style="font: 2rem/1.5 monospace;max-width:60rem;margin:0 auto;padding:4rem;">
+data:text/html, <body contenteditable style="font: 2rem/1.5 monospace;max-width:60rem;margin:0 auto;padding:4rem;"></p>
 
-// Smaller text
+<p>// Smaller text
 data:text/html,%20<body%20contenteditable%20style="font:%201rem/1%20monospace;max-width:90rem;margin:0%20auto;padding:1rem;">
-```
+```</p>
 
-**Sublime-like text editor w/Syntax Highlighting (thanks to ACE)**
+<p><strong>Sublime-like text editor w/Syntax Highlighting (thanks to ACE)</strong></p>
 
-```
-data:text/html, <style type="text/css">.e{position:absolute;top:0;right:0;bottom:0;left:0;}</style><div class="e" id="editor"></div><script src="http://d1n0x3qji82z53.cloudfront.net/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script><script>var e=ace.edit("editor");e.setTheme("ace/theme/monokai");e.getSession().setMode("ace/mode/ruby");</script>
-```
+<p><code>
+data:text/html, &lt;style type="text/css"&gt;.e{position:absolute;top:0;right:0;bottom:0;left:0;}&lt;/style&gt;&lt;div class="e" id="editor"&gt;&lt;/div&gt;&lt;script src="http://d1n0x3qji82z53.cloudfront.net/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;&lt;script&gt;var e=ace.edit("editor");e.setTheme("ace/theme/monokai");e.getSession().setMode("ace/mode/ruby");&lt;/script&gt;
+</code></p>
 
-For other language: Instead of  `ace/mode/ruby`, Use
+<p>For other language: Instead of  <code>ace/mode/ruby</code>, Use</p>
 
-* Markdown -> `ace/mode/markdown`
-* Python -> `ace/mode/python`
-* C/C++ -> `ace/mode/c_cpp`
-* Javscript -> `ace/mode/javascript`
-* Java -> `ace/mode/java`
-* Scala- -> `ace/mode/scala`
-* CoffeeScript -> `ace/mode/coffee`
-* and css, html, php, latex, 
+<ul>
+<li>Markdown -> <code>ace/mode/markdown</code></li>
+<li>Python -> <code>ace/mode/python</code></li>
+<li>C/C++ -> <code>ace/mode/c_cpp</code></li>
+<li>Javscript -> <code>ace/mode/javascript</code></li>
+<li>Java -> <code>ace/mode/java</code></li>
+<li>Scala- -> <code>ace/mode/scala</code></li>
+<li>CoffeeScript -> <code>ace/mode/coffee</code></li>
+<li>and css, html, php, latex, 
 tex, sh, sql, lua, clojure, dart, typescript, go, groovy, json, jsp, less, lisp, 
-lucene, perl, powershell, scss, textile, xml, yaml, xquery, liquid, diff and many more...
+lucene, perl, powershell, scss, textile, xml, yaml, xquery, liquid, diff and many more...</li>
+</ul>
 
----------------------------------------------------------------------------------------
+<hr />
 
-For other theme: Instead of  `ace/theme/monokai`, Use
+<p>For other theme: Instead of  <code>ace/theme/monokai</code>, Use</p>
 
-* Eclipse -> ace/theme/eclipse
-* GitHub -> ace/theme/github
-* TextMate -> ace/theme/textmate
-* and ambiance, dawn, chaos, chrome, dreamweaver, xcode, vibrant_ink, solarized_dark, solarized_light, tomorrow, tomorrow_night, tomorrow_night_blue, 
-twilight, tomorrow_night_eighties, pastel_on_dark and many more..
+<ul>
+<li>Eclipse -> ace/theme/eclipse</li>
+<li>GitHub -> ace/theme/github</li>
+<li>TextMate -> ace/theme/textmate</li>
+<li>and ambiance, dawn, chaos, chrome, dreamweaver, xcode, vibrant<em>ink, solarized</em>dark, solarized<em>light, tomorrow, tomorrow</em>night, tomorrow<em>night</em>blue, 
+twilight, tomorrow<em>night</em>eighties, pastel<em>on</em>dark and many more..</li>
+</ul>
+  </div>
+  </body>
+</html>

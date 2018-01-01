@@ -1,47 +1,102 @@
----
-layout: post
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<link href="http://gmpg.org/xfn/11" rel="profile">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="description" content="Codoki is a web development and design
+blog about the latest trends in web technology.">
+
+<!-- Enable responsiveness on mobile devices-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+<title>
+
+Chris Diana &middot; Blog & Tutorials
+
+</title>
+
+<!-- CSS -->
+<link href="//cdn.rawgit.com/noelboss/featherlight/1.0.4/release/featherlight.min.css" type="text/css" rel="stylesheet" title="Featherlight Styles" />
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+<link rel="stylesheet" href="../../assets/css/poole.min.css">
+<link rel="stylesheet" href="../../assets/css/blog.css">
+<!--<link rel="stylesheet" href="/blog/public/css/monokai.css">-->
+<!--<link rel="stylesheet" href="/blog/public/css/lanyon.css">-->
+<!--<link rel="stylesheet" href="/blog/public/css/codoki.css">-->
+
+<!-- Icons -->
+<!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog/public/apple-touch-icon-precomposed.png">-->
+<!--<link rel="shortcut icon" href="/blog/public/favicon.ico">-->
+
+<!-- JS -->
+<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<!-- RSS -->
+<!--<link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+
+<body class="layout">
+
+  <div class="wrap">
+    <div class="masthead">
+      <div class="container">
+        <h3 class="masthead-title">
+          <a class="logo-wrap" href="/blog/" title="Home"></a>
+          <a class="title" href="/blog/" title="Home">Chris Diana</a>
+          <small>Blog & Tutorials</small>
+        </h3>
+    </div>
+  </div>
+
+  <div class="container content">
+<hr />
+
+<p>layout: post
 title: Getting Started with Slim Framework - Part 2
-comments: true
-tags: [slim, rest, api]
----
+comments: true</p>
 
-This is part 2 of the Getting Started with Slim Framework
-tutorial in which we will build a frontend interface to access our API.
+<h2>tags: [slim, rest, api]</h2>
 
-In the first part of the tutorial, we focused on building a functional
+<p>This is part 2 of the Getting Started with Slim Framework
+tutorial in which we will build a frontend interface to access our API.</p>
+
+<p>In the first part of the tutorial, we focused on building a functional
 API that we could create, delete, update and view items...but there was
 no interface to allow a user to actually use the application unless running
-commands via cURL or through HTTP protocol manually.
+commands via cURL or through HTTP protocol manually.</p>
 
-In this part of the tutorial, we are going to focus on building the front-end
+<p>In this part of the tutorial, we are going to focus on building the front-end
 interface to allow the user to easily use the API (using HTML, Javascript and AJAX).
 The beauty of using a RESTful
 API is that once an API is build, it can be accessed by any device or language
 that can use HTTP protocols...which gives plenty of flexibility for expanding
 to new platforms or languages. This means you can use the same API with a Web
 Application as an iPhone or Andriod application. You can see how RESTful APIs
-have become extremely popular over the recent years.
+have become extremely popular over the recent years.</p>
 
-**Note:** When going through this tutorial, make sure to keep your web browser console open to
-see all the requests, responses and function calls as I've placed `console.log`
-throughout the project.
+<p><strong>Note:</strong> When going through this tutorial, make sure to keep your web browser console open to
+see all the requests, responses and function calls as I've placed <code>console.log</code>
+throughout the project.</p>
 
-### 1. Setup directory and files
+<h3>1. Setup directory and files</h3>
 
-First, what we are going to do is setup our basic front-end template in which the data
+<p>First, what we are going to do is setup our basic front-end template in which the data
 from the API will eventually load into. We are going to use
-[Skeleton](http://getskeleton.com) as our CSS framework because it is very light, fast
+<a href="http://getskeleton.com">Skeleton</a> as our CSS framework because it is very light, fast
 framework (as opposed to the standard Bootstrap starting point). I like Skeleton
 because it has all the basics you need, without the bloat. We are also going to
-use [Zepto.js](http://zeptojs.com/). Zepto is just like jQuery (if you use
-jQuery, you already know Zepto) but much lighter and faster.
+use <a href="http://zeptojs.com/">Zepto.js</a>. Zepto is just like jQuery (if you use
+jQuery, you already know Zepto) but much lighter and faster.</p>
 
-Download the latest versions of Zepto.js and Skeleton CSS. Then create a `css`
-and `js` folder and place the files in accordingly. After, create a `style.css`
-,`index.html` and a `script.js` file. (Note: You should also have a Normalize.css file that
-comes with Skeleton). Your file directory should look like this:
+<p>Download the latest versions of Zepto.js and Skeleton CSS. Then create a <code>css</code>
+and <code>js</code> folder and place the files in accordingly. After, create a <code>style.css</code>
+,<code>index.html</code> and a <code>script.js</code> file. (Note: You should also have a Normalize.css file that
+comes with Skeleton). Your file directory should look like this:</p>
 
-```
+<p><code>
 - index.html
 - css/
 - - normalize.css
@@ -50,25 +105,25 @@ comes with Skeleton). Your file directory should look like this:
 - js/
 - - script.js
 - - zepto.min.js
-```
+</code></p>
 
-### 2. Add the API
+<h3>2. Add the API</h3>
 
-We need a way to access the API, so for simplicity's sake we are going to just
+<p>We need a way to access the API, so for simplicity's sake we are going to just
 place it in our current directory. Let's clone it into our root directory and
-rename the folder to `api`:
+rename the folder to <code>api</code>:</p>
 
-```
+<p><code>
 git clone https://github.com/cdmedia/slim-cars.git
 mv slim-cars/ api/
-```
+</code></p>
 
-### 3. Setup the template
+<h3>3. Setup the template</h3>
 
-Now that we have our structure in place, let's get the front-end HTML template
-made. Add this to your `index.html` file:
+<p>Now that we have our structure in place, let's get the front-end HTML template
+made. Add this to your <code>index.html</code> file:</p>
 
-{% highlight html %}
+<p>{% highlight html %}
 <DOCTYPE html>
 <html lang="en">
 <head>
@@ -84,398 +139,418 @@ made. Add this to your `index.html` file:
 </head>
 <body>
   <div class="container">
-    <div class="row main">
+    <div class="row main"></p>
 
-    <!-- Sidebar -->
-    <div class="three columns">
-      <b>Garage</b>
-      <ul id="car-list"></ul>
-    </div>
+<pre><code>&lt;!-- Sidebar --&gt;
+&lt;div class="three columns"&gt;
+  &lt;b&gt;Garage&lt;/b&gt;
+  &lt;ul id="car-list"&gt;&lt;/ul&gt;
+&lt;/div&gt;
 
-    <!-- Main Content -->
-    <div class="nine columns">
-      <a class="button button-primary" href="#" id="btnAdd">New Car</a>
+&lt;!-- Main Content --&gt;
+&lt;div class="nine columns"&gt;
+  &lt;a class="button button-primary" href="#" id="btnAdd"&gt;New Car&lt;/a&gt;
 
-      <form id="carForm">
-        <div class="detail-view">
-          <input type="hidden" id="id">
-          <label for="year">Year</label>
-          <input class="u-full-width" type="text" id="year">
-          <label for="make">Make</label>
-          <input class="u-full-width" type="text" id="make">
-          <label for="year">Model</label>
-          <input class="u-full-width" type="text" id="model">
-          <a class="button" href="#" id="btnSave">Save</a>
-          <a class="button" href="#" id="btnDelete">Delete</a>
-        </div>
-      </form>
-    </div>
+  &lt;form id="carForm"&gt;
+    &lt;div class="detail-view"&gt;
+      &lt;input type="hidden" id="id"&gt;
+      &lt;label for="year"&gt;Year&lt;/label&gt;
+      &lt;input class="u-full-width" type="text" id="year"&gt;
+      &lt;label for="make"&gt;Make&lt;/label&gt;
+      &lt;input class="u-full-width" type="text" id="make"&gt;
+      &lt;label for="year"&gt;Model&lt;/label&gt;
+      &lt;input class="u-full-width" type="text" id="model"&gt;
+      &lt;a class="button" href="#" id="btnSave"&gt;Save&lt;/a&gt;
+      &lt;a class="button" href="#" id="btnDelete"&gt;Delete&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/form&gt;
+&lt;/div&gt;
 
-    </div>
-  </div>
+&lt;/div&gt;
+</code></pre>
+
+<p></div>
   <script src="js/zepto.min.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>
-{% endhighlight %}
+{% endhighlight %}</p>
 
-Couple things to point out here: We created a sidebar where we will list all of
-the cars in our garage in the `<ul id="car-list"></ul>` element. Next, we have a
-`<a class="button button-primary" href="#" id="btnAdd">New Car</a>` button for creating a new car.
-Now to the heart of the app: We created a form for adding and updating cars in our garage in the `<form id="carForm">` form element. The
+<p>Couple things to point out here: We created a sidebar where we will list all of
+the cars in our garage in the <code>&lt;ul id="car-list"&gt;&lt;/ul&gt;</code> element. Next, we have a
+<code>&lt;a class="button button-primary" href="#" id="btnAdd"&gt;New Car&lt;/a&gt;</code> button for creating a new car.
+Now to the heart of the app: We created a form for adding and updating cars in our garage in the <code>&lt;form id="carForm"&gt;</code> form element. The
 form will populate with the car's info when the car is selected from the sidebar. Note
-that we have a hidden form element for `id`. This will allow our app to tell which car
-is currently in the form. Then, to save or delete a car we have the `<a class="button" href="#" id="btnSave">Save</a>`
-and `<a class="button" href="#" id="btnDelete">Delete</a>` buttons.
+that we have a hidden form element for <code>id</code>. This will allow our app to tell which car
+is currently in the form. Then, to save or delete a car we have the <code>&lt;a class="button" href="#" id="btnSave"&gt;Save&lt;/a&gt;</code>
+and <code>&lt;a class="button" href="#" id="btnDelete"&gt;Delete&lt;/a&gt;</code> buttons.</p>
 
-Finally, we'll apply some CSS to clean it up a bit for future steps. Add these
-few lines to your `css/style.css` file:
+<p>Finally, we'll apply some CSS to clean it up a bit for future steps. Add these
+few lines to your <code>css/style.css</code> file:</p>
 
-{% highlight css %}
+<p>{% highlight css %}
 .main {
-	margin-top: 25px;
+    margin-top: 25px;
 }
 .detail-view {
-	padding: 20px 25px;
-	margin: 15px 0px;
-	background: #F6F6F6;
+    padding: 20px 25px;
+    margin: 15px 0px;
+    background: #F6F6F6;
 }
 ul#car-list {
-	list-style: none;
-}
-#car-list a {
-	text-decoration: none;
-}
-#car-list li {
-	margin: 0px;
-	padding: 10px 0px 10px 5px;
-	border-bottom: 1px solid #eee;
-}
-#car-list li:hover {
-	background: #f6f6f6;
-}
-#car-list li:last-child {
-	border-bottom: 0px solid #eee;
-}
-{% endhighlight %}
+    list-style: none;
+}</p>
 
-### 4. Start working with the API - Get all cars
+<h1>car-list a {</h1>
 
-Now that we have our template and style set up, we can start pulling data
+<pre><code>text-decoration: none;
+</code></pre>
+
+<p>}</p>
+
+<h1>car-list li {</h1>
+
+<pre><code>margin: 0px;
+padding: 10px 0px 10px 5px;
+border-bottom: 1px solid #eee;
+</code></pre>
+
+<p>}</p>
+
+<h1>car-list li:hover {</h1>
+
+<pre><code>background: #f6f6f6;
+</code></pre>
+
+<p>}</p>
+
+<h1>car-list li:last-child {</h1>
+
+<pre><code>border-bottom: 0px solid #eee;
+</code></pre>
+
+<p>}
+{% endhighlight %}</p>
+
+<h3>4. Start working with the API - Get all cars</h3>
+
+<p>Now that we have our template and style set up, we can start pulling data
 from our API and get our application working. From here on out, you'll only
-be working in your `js/script.js` file. In that file, we are going to
+be working in your <code>js/script.js</code> file. In that file, we are going to
 initialize Zepto.js and setup our root URL for our API. In addition, we will
-add a `ajaxBeforeSend` function which may be useful when debugging AJAX calls.
+add a <code>ajaxBeforeSend</code> function which may be useful when debugging AJAX calls.</p>
 
-{% highlight js %}
-Zepto(function($){
+<p>{% highlight js %}
+Zepto(function($){</p>
 
-	// Setup the root url for the RESTful services
-	var rootURL = 'http://localhost/slim-cars/api/';
+<pre><code>// Setup the root url for the RESTful services
+var rootURL = 'http://localhost/slim-cars/api/';
 
-	$(document).on('ajaxBeforeSend', function(e, xhr, options){
-		// This gets fired for every Ajax request performed on the page.
-		// The xhr object and $.ajax() options are available for editing.
-		// Return false to cancel this request.
-	});
-
+$(document).on('ajaxBeforeSend', function(e, xhr, options){
+    // This gets fired for every Ajax request performed on the page.
+    // The xhr object and $.ajax() options are available for editing.
+    // Return false to cancel this request.
 });
-{% endhighlight %}
+</code></pre>
 
-We are going to using AJAX for all our calls to our API. The first thing we need
-to do is get a list of all cars in the database. Just below the `ajaxBeforeSend`
-function add this:
+<p>});
+{% endhighlight %}</p>
 
-{% highlight js %}
+<p>We are going to using AJAX for all our calls to our API. The first thing we need
+to do is get a list of all cars in the database. Just below the <code>ajaxBeforeSend</code>
+function add this:</p>
+
+<p>{% highlight js %}
 // Retrieve car list when application starts
-findAll();
+findAll();</p>
 
-// Get all cars
+<p>// Get all cars
 function findAll() {
-	$.ajax({
-		type: 'GET',
-		url: rootURL + 'cars',
-		dataType: 'json',
-		success: function(response){
-			console.log('Success: ', response);
-			renderList(response);
-		},
-		error: function(xhr, type){
-		   console.log(xhr, type);
-		}
-	});
-}
+    $.ajax({
+        type: 'GET',
+        url: rootURL + 'cars',
+        dataType: 'json',
+        success: function(response){
+            console.log('Success: ', response);
+            renderList(response);
+        },
+        error: function(xhr, type){
+           console.log(xhr, type);
+        }
+    });
+}</p>
 
-// Render list of all cars
+<p>// Render list of all cars
 function renderList(data) {
-	$('#car-list li').remove();
-	$.each(data, function(index, car) {
-		$('#car-list').append('<li><a href="#" data-identity="' + car.id + '">' + car.model + '</a></li>');
-	});
+    $('#car-list li').remove();
+    $.each(data, function(index, car) {
+        $('#car-list').append('<li><a href="#" data-identity="' + car.id + '">' + car.model + '</a></li>');
+    });
 }
-{% endhighlight %}
+{% endhighlight %}</p>
 
-First, we are calling the `findAll()` function as soon as the application loads, this way
-we have a list of cars when the user first visits the app. Next part is the actual `findAll()`
-function. We use Zepto's `$.ajax` function with the 'GET' parameter to hit the URL `http://localhost/slim-cars/api/cars`.
-This URL the returns a JSON object of all the cars in the database. Then, use the `renderList()` function
-to render each of the cars as list items in our `#car-list` element. Note, we also add the `data-identity` parameter
-using the car's id. This way we know which car to populate the fields with down the line.
+<p>First, we are calling the <code>findAll()</code> function as soon as the application loads, this way
+we have a list of cars when the user first visits the app. Next part is the actual <code>findAll()</code>
+function. We use Zepto's <code>$.ajax</code> function with the 'GET' parameter to hit the URL <code>http://localhost/slim-cars/api/cars</code>.
+This URL the returns a JSON object of all the cars in the database. Then, use the <code>renderList()</code> function
+to render each of the cars as list items in our <code>#car-list</code> element. Note, we also add the <code>data-identity</code> parameter
+using the car's id. This way we know which car to populate the fields with down the line.</p>
 
-You can now test this by visiting your app at `http://localhost/slim-cars/` and see the list of cars
-in your database.
+<p>You can now test this by visiting your app at <code>http://localhost/slim-cars/</code> and see the list of cars
+in your database.</p>
 
-### 5. Find a car by ID
+<h3>5. Find a car by ID</h3>
 
+<p>Now we have all the cars, but if we need to get a car by just the ID, we can use our API by calling the ID
+after the url like <code>cars/3</code>. Now we are going to create an AJAX call which will get a car by id:</p>
 
-Now we have all the cars, but if we need to get a car by just the ID, we can use our API by calling the ID
-after the url like `cars/3`. Now we are going to create an AJAX call which will get a car by id:
-
-{% highlight js %}
+<p>{% highlight js %}
 // Get car by id
 function findById(id) {
-	console.log('findById:' + id);
-	$.ajax({
-		type: 'GET',
-		url: rootURL + 'cars/' + id,
-		dataType: 'json',
-		success: function(data){
-			$('#btnDelete').show();
-			console.log('findById success: ' + data);
-			currentCar = data;
-			renderDetails(currentCar);
-		},
-		error: function(xhr, type){
-		   console.log(xhr, type);
-		}
-	});
+    console.log('findById:' + id);
+    $.ajax({
+        type: 'GET',
+        url: rootURL + 'cars/' + id,
+        dataType: 'json',
+        success: function(data){
+            $('#btnDelete').show();
+            console.log('findById success: ' + data);
+            currentCar = data;
+            renderDetails(currentCar);
+        },
+        error: function(xhr, type){
+           console.log(xhr, type);
+        }
+    });
 }
-{% endhighlight %}
+{% endhighlight %}</p>
 
-Similarly to above, we are using the AJAX with the GET method to get a car... but unlike above,
-our `findByID()` function takes an input parameter of `id`. This function will call the url
-including the id (`http://localhost/slim-cars/api/3`). On AJAX success, we will also set the
+<p>Similarly to above, we are using the AJAX with the GET method to get a car... but unlike above,
+our <code>findByID()</code> function takes an input parameter of <code>id</code>. This function will call the url
+including the id (<code>http://localhost/slim-cars/api/3</code>). On AJAX success, we will also set the
 currentCar (we will be adding shortly) in order for our application to tell
-which car is currently in our 'detail view' (form area).
+which car is currently in our 'detail view' (form area).</p>
 
-Our application needs a way for us to view one car at a time in a kind of 'detail view'. This
-detail view will be using the form to display the current car.
+<p>Our application needs a way for us to view one car at a time in a kind of 'detail view'. This
+detail view will be using the form to display the current car.</p>
 
-Let's initialize a `currentCar` variable just below our `rootURL` variable:
+<p>Let's initialize a <code>currentCar</code> variable just below our <code>rootURL</code> variable:</p>
 
-{% highlight js %}
+<p>{% highlight js %}
 var currentCar;
-{% endhighlight %}
+{% endhighlight %}</p>
 
-Now, we need a way for our form to render a car's details when a car is selected from the sidebar.
-Add this line just below the `findAll()` function
+<p>Now, we need a way for our form to render a car's details when a car is selected from the sidebar.
+Add this line just below the <code>findAll()</code> function</p>
 
-{% highlight js %}
+<p>{% highlight js %}
 // Retrieve car details when list item is clicked
 $('#car-list a').live('click', function() {
-	findById($(this).data('identity'));
+    findById($(this).data('identity'));
 });
-{% endhighlight %}
+{% endhighlight %}</p>
 
-Finally, we add a `renderDetails()` function which takes a car as an input. This function then
+<p>Finally, we add a <code>renderDetails()</code> function which takes a car as an input. This function then
 populates our form with the car data. (This also fixes whether we have an empty object and
-blanks out the form).
+blanks out the form).</p>
 
-{% highlight js %}
+<p>{% highlight js %}
 // Render detail view
 function renderDetails(car) {
-	if($.isEmptyObject(car)){
-		$('#id').val('');
-		$('#year').val('');
-		$('#make').val('');
-		$('#model').val('');
-	}else{
-		$('#id').val(car.id);
-		$('#year').val(car.year);
-		$('#make').val(car.make);
-		$('#model').val(car.model);
-	}
+    if($.isEmptyObject(car)){
+        $('#id').val('');
+        $('#year').val('');
+        $('#make').val('');
+        $('#model').val('');
+    }else{
+        $('#id').val(car.id);
+        $('#year').val(car.year);
+        $('#make').val(car.make);
+        $('#model').val(car.model);
+    }
 }
-{% endhighlight %}
+{% endhighlight %}</p>
 
-Now if you view your application, you will see if you click on one of your car items,
-the form fields should populate with the data.
+<p>Now if you view your application, you will see if you click on one of your car items,
+the form fields should populate with the data.</p>
 
-### 6. Adding a new car
+<h3>6. Adding a new car</h3>
 
-First, we need to have our form clear out once the 'New Car' button is clicked. Add this just
-above your `findAll()` function.
+<p>First, we need to have our form clear out once the 'New Car' button is clicked. Add this just
+above your <code>findAll()</code> function.</p>
 
-{% highlight js %}
+<p>{% highlight js %}
 // Call new car function when button is clicked
 $('#btnAdd').click(function() {
-	newCar();
-	return false;
-});
+    newCar();
+    return false;
+});</p>
 
-// Hide delete button and empty out form
+<p>// Hide delete button and empty out form
 function newCar() {
-	$('#btnDelete').hide();
-	currentCar = {};
-	renderDetails(currentCar); // Display empty form
+    $('#btnDelete').hide();
+    currentCar = {};
+    renderDetails(currentCar); // Display empty form
 }
-{% endhighlight %}
+{% endhighlight %}</p>
 
-Next, we need to get the form data from the HTML form in order to URL encode this data
-and place it in our request. Place this just below the `renderDetails()` function.
+<p>Next, we need to get the form data from the HTML form in order to URL encode this data
+and place it in our request. Place this just below the <code>renderDetails()</code> function.</p>
 
-{% highlight js %}
+<p>{% highlight js %}
 // Helper function to get form fields
 function getForm() {
-	var car = {
-		'year': $('#year').val(),
-		'make': $('#make').val(),
-		'model': $('#model').val()
-	};
-	return car;
+    var car = {
+        'year': $('#year').val(),
+        'make': $('#make').val(),
+        'model': $('#model').val()
+    };
+    return car;
 }
-{% endhighlight %}
+{% endhighlight %}</p>
 
-In order to add a car, we will be using Zepto's `$.ajax` method, but instead of using `GET` we will use `POST` as a parameter.
-This tells Zepto to use HTTP POST method. Add the `addCar()` function just below `findById()`
+<p>In order to add a car, we will be using Zepto's <code>$.ajax</code> method, but instead of using <code>GET</code> we will use <code>POST</code> as a parameter.
+This tells Zepto to use HTTP POST method. Add the <code>addCar()</code> function just below <code>findById()</code></p>
 
-{% highlight js %}
+<p>{% highlight js %}
 // Add new car
 function addCar() {
-	console.log('addCar');
-	$.ajax({
-		type: 'POST',
-		url: rootURL + 'car',
-		dataType: 'json',
-		data: $.param(getForm()), // URI encode data for request
-		success: function(data, xhr, type, textStatus) {
-			console.log(data, xhr, type, textStatus);
-			alert('Car added successfully');
-			$('#btnDelete').show();
-			$('#id').val(data.id);
-			findAll(); // reload list
-		},
-		error: function(xhr, type, textStatus, errorThrown) {
-			console.log(xhr, type, errorThrown, textStatus);
-		}
-	});
+    console.log('addCar');
+    $.ajax({
+        type: 'POST',
+        url: rootURL + 'car',
+        dataType: 'json',
+        data: $.param(getForm()), // URI encode data for request
+        success: function(data, xhr, type, textStatus) {
+            console.log(data, xhr, type, textStatus);
+            alert('Car added successfully');
+            $('#btnDelete').show();
+            $('#id').val(data.id);
+            findAll(); // reload list
+        },
+        error: function(xhr, type, textStatus, errorThrown) {
+            console.log(xhr, type, errorThrown, textStatus);
+        }
+    });
 }
-{% endhighlight %}
+{% endhighlight %}</p>
 
-What happens here is the function sends a HTTP POST request to our API ('http://localhost/slim-cars/api/car') and
+<p>What happens here is the function sends a HTTP POST request to our API ('http://localhost/slim-cars/api/car') and
 URI encodes our form field values so that our API can understand them. Then on success, the browser
 alerts us that a car was successfully added. In addition, we show the delete button (it was never hidden anyway, but
 we'll get to that later), adds the id value to our form's id hidden field, and reload's our car list
-to display our newly added car using our `findAll()` function.
+to display our newly added car using our <code>findAll()</code> function.</p>
 
-Now, we need to be able to send the POST request from the front end. Tie this function to your `#btnSave` button.
-Add this just below `$('#btnAdd').click(function() {...`.
+<p>Now, we need to be able to send the POST request from the front end. Tie this function to your <code>#btnSave</code> button.
+Add this just below <code>$('#btnAdd').click(function() {...</code>.</p>
 
-{% highlight js %}
+<p>{% highlight js %}
 // Call add car function when save button is clicked
 $('#btnSave').click(function() {
-	if($('#id').val() == ''){
-		addCar();
-	}else{
-		updateCar();
-	}
-	return false;
+    if($('#id').val() == ''){
+        addCar();
+    }else{
+        updateCar();
+    }
+    return false;
 });
-{% endhighlight %}
+{% endhighlight %}</p>
 
-Now you can try adding a car by filling in the form and clicking the 'Save' button.
-Note that we haven't added the `updateCar()` method yet...but don't worry it's next.
+<p>Now you can try adding a car by filling in the form and clicking the 'Save' button.
+Note that we haven't added the <code>updateCar()</code> method yet...but don't worry it's next.</p>
 
-### 7. Update a car
+<h3>7. Update a car</h3>
 
-Now we need a way to update a car currently in the database. We will be using HTTP PUT
-method in order to update from our API. Just below your `addCar()` function add:
+<p>Now we need a way to update a car currently in the database. We will be using HTTP PUT
+method in order to update from our API. Just below your <code>addCar()</code> function add:</p>
 
-{% highlight js %}
+<p>{% highlight js %}
 // Update a car
 function updateCar($id) {
-	console.log('updateCar');
-	$.ajax({
-		type: 'PUT',
-		url: rootURL + 'car/' + $('#id').val(),
-		dataType: 'json',
-		data: $.param(getForm()), // URI encode data for request
-		success: function(data, xhr, type, textStatus) {
-			console.log(data, xhr, type, textStatus);
-			alert('Car successfully updated');
-			findAll(); // reload list
-		},
-		error: function(xhr, type, textStatus, errorThrown) {
-			console.log(xhr, type, errorThrown, textStatus);
-		}
-	});
+    console.log('updateCar');
+    $.ajax({
+        type: 'PUT',
+        url: rootURL + 'car/' + $('#id').val(),
+        dataType: 'json',
+        data: $.param(getForm()), // URI encode data for request
+        success: function(data, xhr, type, textStatus) {
+            console.log(data, xhr, type, textStatus);
+            alert('Car successfully updated');
+            findAll(); // reload list
+        },
+        error: function(xhr, type, textStatus, errorThrown) {
+            console.log(xhr, type, errorThrown, textStatus);
+        }
+    });
 }
-{% endhighlight %}
+{% endhighlight %}</p>
 
-Similar to the `addCar()` function, we are URI encoding our form data so our API can
+<p>Similar to the <code>addCar()</code> function, we are URI encoding our form data so our API can
 understand what to do. The function uses our form field 'id' value in order to build
 our URL in which to send the PUT request. For instance, the request sent to
 'http://localhost/slim-cars/api/car/3' tells the API to update car with an id of 3.
 After the update is successful, the browser alerts that the car was updated successfully and
-then reloads the car list.
+then reloads the car list.</p>
 
-We've already tied the `updateCar()` function to our 'Save' button so try selecting a car
-and clicking the 'Save' button. Your car should now be updated in the database.
+<p>We've already tied the <code>updateCar()</code> function to our 'Save' button so try selecting a car
+and clicking the 'Save' button. Your car should now be updated in the database.</p>
 
-### 8. Delete a car
+<h3>8. Delete a car</h3>
 
-Now we need to be able to delete a car. Since no car is in the detail view
+<p>Now we need to be able to delete a car. Since no car is in the detail view
 when the application loads, let's hide the delete file on inital load. Add
-this just below `findAll()`.
+this just below <code>findAll()</code>.</p>
 
-{% highlight js %}
+<p>{% highlight js %}
 // Nothing to delete in initial application state
 $('#btnDelete').hide();
-{% endhighlight %}
+{% endhighlight %}</p>
 
-Now we will use the HTTP DELETE method to delete a car by a specified id. Add
-this just below the `addCar()` function.
+<p>Now we will use the HTTP DELETE method to delete a car by a specified id. Add
+this just below the <code>addCar()</code> function.</p>
 
-{% highlight js %}
+<p>{% highlight js %}
 // Delete a car
 function deleteCar($id) {
-	console.log('deleteCar');
-	$.ajax({
-		type: 'DELETE',
-		url: rootURL + 'car/' + $('#id').val(),
-		success: function(data, xhr, type, textStatus) {
-			console.log(data, xhr, type, textStatus);
-			alert('Car successfully deleted');
-			newCar(); // zero out the form
-			findAll(); // reload list
-		},
-		error: function(xhr, type, textStatus, errorThrown) {
-			console.log(xhr, type, errorThrown, textStatus);
-		}
-	})
+    console.log('deleteCar');
+    $.ajax({
+        type: 'DELETE',
+        url: rootURL + 'car/' + $('#id').val(),
+        success: function(data, xhr, type, textStatus) {
+            console.log(data, xhr, type, textStatus);
+            alert('Car successfully deleted');
+            newCar(); // zero out the form
+            findAll(); // reload list
+        },
+        error: function(xhr, type, textStatus, errorThrown) {
+            console.log(xhr, type, errorThrown, textStatus);
+        }
+    })
 }
-{% endhighlight %}
+{% endhighlight %}</p>
 
-Similar to the other ajax functions, we generate a URL using the current form field id ('http://localhost/slim-cars/api/car/3').
+<p>Similar to the other ajax functions, we generate a URL using the current form field id ('http://localhost/slim-cars/api/car/3').
 Then, the function calls the HTTP DELETE method. On success, the browser alerts that the car was successfully deleted, blanks out the
-form using our `newCar()` method and reloads the car list using our `findAll()` method.
+form using our <code>newCar()</code> method and reloads the car list using our <code>findAll()</code> method.</p>
 
-Now just tie this function into the frontend using our `#btnDelete` button. Add this just below `$('#btnAdd').click(function() {...`
+<p>Now just tie this function into the frontend using our <code>#btnDelete</code> button. Add this just below <code>$('#btnAdd').click(function() {...</code></p>
 
-{% highlight js %}
+<p>{% highlight js %}
 // Call delete car function when button is clicked
 $('#btnDelete').click(function() {
-	deleteCar();
-	return false;
+    deleteCar();
+    return false;
 });
-{% endhighlight %}
+{% endhighlight %}</p>
 
-### 9. Conclusion
+<h3>9. Conclusion</h3>
 
-Now if you visit you app, you should be able to add, delete, update and view your cars in your database. You
-can get a GIT staged step by step version of this post [here on
-Github](https://github.com/cdmedia/slim-cars-frontend).
+<p>Now if you visit you app, you should be able to add, delete, update and view your cars in your database. You
+can get a GIT staged step by step version of this post <a href="https://github.com/cdmedia/slim-cars-frontend">here on
+Github</a>.</p>
 
-![Slim Demo
-Frontend](https://raw.githubusercontent.com/codoki/codoki.github.io/master/public/img/tuts/slim-frontend-api.png)
-
+<p><img src="https://raw.githubusercontent.com/codoki/codoki.github.io/master/public/img/tuts/slim-frontend-api.png" alt="Slim Demo
+Frontend" title="" /></p>
+  </div>
+  </body>
+</html>

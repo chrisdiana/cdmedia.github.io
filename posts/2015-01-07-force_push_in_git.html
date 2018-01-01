@@ -1,105 +1,170 @@
----
-layout: post
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<link href="http://gmpg.org/xfn/11" rel="profile">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="description" content="Codoki is a web development and design
+blog about the latest trends in web technology.">
+
+<!-- Enable responsiveness on mobile devices-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+<title>
+
+Chris Diana &middot; Blog & Tutorials
+
+</title>
+
+<!-- CSS -->
+<link href="//cdn.rawgit.com/noelboss/featherlight/1.0.4/release/featherlight.min.css" type="text/css" rel="stylesheet" title="Featherlight Styles" />
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+<link rel="stylesheet" href="../../assets/css/poole.min.css">
+<link rel="stylesheet" href="../../assets/css/blog.css">
+<!--<link rel="stylesheet" href="/blog/public/css/monokai.css">-->
+<!--<link rel="stylesheet" href="/blog/public/css/lanyon.css">-->
+<!--<link rel="stylesheet" href="/blog/public/css/codoki.css">-->
+
+<!-- Icons -->
+<!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog/public/apple-touch-icon-precomposed.png">-->
+<!--<link rel="shortcut icon" href="/blog/public/favicon.ico">-->
+
+<!-- JS -->
+<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<!-- RSS -->
+<!--<link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+
+<body class="layout">
+
+  <div class="wrap">
+    <div class="masthead">
+      <div class="container">
+        <h3 class="masthead-title">
+          <a class="logo-wrap" href="/blog/" title="Home"></a>
+          <a class="title" href="/blog/" title="Home">Chris Diana</a>
+          <small>Blog & Tutorials</small>
+        </h3>
+    </div>
+  </div>
+
+  <div class="container content">
+<hr />
+
+<p>layout: post
 title: Force push in GIT
-comments: true
-tags: [git]
----
+comments: true</p>
 
-Ever mess up pretty bad on a project and wish you could just go back a few commits and
-forget about all the latest commits, without rebasing?
+<h2>tags: [git]</h2>
 
-Heres a nice tip to get out of a sticky situation, even if you already pushed your commits
-to a remote repo.
+<p>Ever mess up pretty bad on a project and wish you could just go back a few commits and
+forget about all the latest commits, without rebasing?</p>
 
-First, go back to the commit you would like to restart from. Use a `git log` to get the
-commit hash you would like. Then checkout that commit:
+<p>Heres a nice tip to get out of a sticky situation, even if you already pushed your commits
+to a remote repo.</p>
 
-```
+<p>First, go back to the commit you would like to restart from. Use a <code>git log</code> to get the
+commit hash you would like. Then checkout that commit:</p>
+
+<p><code>
 git checkout 8d8e8ba8f
-```
+</code></p>
 
-Then, reset to that commit. This will delete any local changes, so make sure to stash them
-if you dont want to lose them.
+<p>Then, reset to that commit. This will delete any local changes, so make sure to stash them
+if you dont want to lose them.</p>
 
-```
+<p><code>
 git reset --hard 8d8e8ba8f
-```
+</code></p>
 
-After that, make changes and commits as you normally would and when you are satisfied, you
-should see a message similar to this in your `git status`
+<p>After that, make changes and commits as you normally would and when you are satisfied, you
+should see a message similar to this in your <code>git status</code></p>
 
-```
+<p><code>
 On branch samplebranch
 Your branch and 'origin/samplebranch' have diverged,
 and have 8 and 3 different commits each, respectively.
   (use "git pull" to merge the remote branch into yours)
   nothing to commit, working directory clean
-```
+</code></p>
 
-This is basically saying, your branch has split and the remote commits do not align with the
+<p>This is basically saying, your branch has split and the remote commits do not align with the
 local ones--like 2 seperate branches. You dont want this. You want to wipe all those commits
 that are existing on the remote server away. So now we are going to use git force push in
-this syntax `git push <remote> <branch> -f`. For example:
+this syntax <code>git push &lt;remote&gt; &lt;branch&gt; -f</code>. For example:</p>
 
-```
+<p><code>
 git push origin samplebranch -f
-```
+</code></p>
 
-This will strip all those previous commits from remote and replace them with the new ones.
+<p>This will strip all those previous commits from remote and replace them with the new ones.
 Make sure not to do this if others are working on your branch as you will run into merge
-issues.
+issues.</p>
 
-[More info here](http://stackoverflow.com/questions/10510462/force-git-push-to-overwrite-remote-files)
+<p><a href="http://stackoverflow.com/questions/10510462/force-git-push-to-overwrite-remote-files">More info here</a></p>
 
-#### SIDE NOTE:
+<h4>SIDE NOTE:</h4>
 
-A more nondescructive way would be to `git revert` changes. This effectivly creates a commit
-with the reverse patch to cancel them out. If you want to go this route, `git log` and find
-all the commits you would like to revert...for example:
+<p>A more nondescructive way would be to <code>git revert</code> changes. This effectivly creates a commit
+with the reverse patch to cancel them out. If you want to go this route, <code>git log</code> and find
+all the commits you would like to revert...for example:</p>
 
-```
-# This will create three separate revert commits:
-git revert a867b4af 25eee4ca 0766c053
+<p>```</p>
 
-# It also takes ranges. This will revert the last two commits:
-git revert HEAD~2..HEAD
+<h1>This will create three separate revert commits:</h1>
 
-# Reverting a merge commit
-git revert -m 1 <merge_commit_sha>
+<p>git revert a867b4af 25eee4ca 0766c053</p>
 
-# To get just one, you could use `rebase -i` to squash them afterwards
-# Or, you could do it manually (be sure to do this at top level of the repo)
-# get your index and work tree into the desired state, without changing HEAD:
-git checkout 0d1d7fc32 .
+<h1>It also takes ranges. This will revert the last two commits:</h1>
 
-# Then commit. Be sure and write a good message describing what you just did
-git commit
-```
+<p>git revert HEAD~2..HEAD</p>
 
-#### ANOTHER SIDE NOTE:
+<h1>Reverting a merge commit</h1>
 
-If you've commited and not pushed to remote, you can reset to the previous
-commit using:
+<p>git revert -m 1 <merge_commit_sha></p>
 
-```
+<h1>To get just one, you could use <code>rebase -i</code> to squash them afterwards</h1>
+
+<h1>Or, you could do it manually (be sure to do this at top level of the repo)</h1>
+
+<h1>get your index and work tree into the desired state, without changing HEAD:</h1>
+
+<p>git checkout 0d1d7fc32 .</p>
+
+<h1>Then commit. Be sure and write a good message describing what you just did</h1>
+
+<p>git commit
+```</p>
+
+<h4>ANOTHER SIDE NOTE:</h4>
+
+<p>If you've commited and not pushed to remote, you can reset to the previous
+commit using:</p>
+
+<p><code>
 git reset --soft HEAD~1
-```
+</code></p>
 
-HEAD~1 is a shorthand for the commit before head. Alternatively you can refer to
+<p>HEAD~1 is a shorthand for the commit before head. Alternatively you can refer to
 the SHA-1 of the hash you want to reset to. --soft option will delete the commit
 but it will leave all your changed files "Changes to be committed", as git
-status would put it.
+status would put it.</p>
 
-**If you want to get rid of any changes to tracked files in the working tree since
-the commit before head use --hard instead.**
+<p><strong>If you want to get rid of any changes to tracked files in the working tree since
+the commit before head use --hard instead.</strong></p>
 
-Now if you already pushed and someone pulled which is usually my case, you can't
-use git reset. You can however do a git revert,
+<p>Now if you already pushed and someone pulled which is usually my case, you can't
+use git reset. You can however do a git revert,</p>
 
-```
+<p><code>
 git revert HEAD
-```
+</code></p>
 
-This will create a new commit that reverses everything introduced by the
-accidental commit.
-
+<p>This will create a new commit that reverses everything introduced by the
+accidental commit.</p>
+  </div>
+  </body>
+</html>
