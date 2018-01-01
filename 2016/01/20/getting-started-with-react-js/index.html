@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+	<link href="http://gmpg.org/xfn/11" rel="profile">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="description" content="Codoki is a web development and design
+	blog about the latest trends in web technology.">
+
+	<!-- Enable responsiveness on mobile devices-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+	  <!-- REDIRECT -->
+	  <meta http-equiv="refresh" content="0; url=https://cdmedia.github.io/posts/2016-01-20-getting-started-with-react-js">
+	  <link rel="canonical" href="https://cdmedia.github.io/posts/2016-01-20-getting-started-with-react-js" />
+	<title>
+	
+	Getting Started with React.js - Concepts and Creating Your First App &middot; Chris Diana
+	
+	</title>
+
+	<!-- CSS -->
+	<link href="http://cdn.rawgit.com/noelboss/featherlight/1.0.4/release/featherlight.min.css" type="text/css" rel="stylesheet" title="Featherlight Styles" />
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+	<link rel="stylesheet" href="../../../../public/css/poole.css">
+	<link rel="stylesheet" href="../../../../public/css/monokai.css">
+	<link rel="stylesheet" href="../../../../public/css/lanyon.css">
+	<link rel="stylesheet" href="../../../../public/css/codoki.css">
+
+	<!-- Icons -->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../../../public/apple-touch-icon-precomposed.png">
+	<link rel="shortcut icon" href="../../../../public/favicon.ico">
+
+	<!-- JS -->
+	<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="http://cdn.rawgit.com/noelboss/featherlight/1.0.4/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../../../public/js/modernizr.custom.js"></script>
+	<script src="../../../../public/js/classie.js"></script>
+	<script src="../../../../public/js/search.js"></script>
+	<script src="../../../../public/js/script.js"></script>
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://codoki.com/atom.xml">
+</head>
+
+
+  <body class="layout">
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p></p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="../../../../index.html">Home</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="../../../../archive/index.html">Archive</a>
+        
+      
+    
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="../../../../learning/index.html">Learning Resources</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="../../../../links/index.html">Links</a>
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+
+	    <a class="sidebar-nav-item" href="../../../../resources.html">News/Inspiration</a>
+	    <a class="sidebar-nav-item" href="../../../../about.html">About</a>
+	    <a class="sidebar-nav-item" href="../../../../subscribe.html"><i class="fa fa-envelope-o"></i> Subscribe</a>
+
+	    <!--<span class="sidebar-nav-item"></span>-->
+    </nav>
+  </div>
+</div>
+
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+    <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a class="logo-wrap" href="../../../../index.html" title="Home">
+			  <img class="logo logo" src="../../../../public/img/codoki-logo2.png" />
+			 </a>
+            <a class="title" href="../../../../index.html" title="Home">Codoki</a>
+            <small>Tutorials, resources and tips for Web Developers</small>
+          </h3>
+        </div>
+      </div>
+
+       <a href="index.html#" id="trigger-overlay"><i class="fa fa-search fa-lg search-icon"></i></a>
+
+      <div class="container content">
+        <div class="post">
+  <h1 class="post-title">Getting Started with React.js - Concepts and Creating Your First App</h1>
+  <span class="post-date">20 Jan 2016
+	<ul class="tag_list_in_post">
+	
+		<li class="inline tag_list_item">
+			<a class="tag_list_link" href="../../../../tags.1.html#javascript">javascript</a>
+		</li>
+	
+		<li class="inline tag_list_item">
+			<a class="tag_list_link" href="../../../../tags.1.html#react.js">react.js</a>
+		</li>
+	
+		<li class="inline tag_list_item">
+			<a class="tag_list_link" href="../../../../tags.1.html#virtual dom">virtual dom</a>
+		</li>
+	
+		<li class="inline tag_list_item">
+			<a class="tag_list_link" href="../../../../tags.1.html#jsx">jsx</a>
+		</li>
+	
+		<li class="inline tag_list_item">
+			<a class="tag_list_link" href="../../../../tags.1.html#flux">flux</a>
+		</li>
+	
+	<p id="post-meta"></p>
+	</ul>
+  </span>
+  <p>React.js is all the rage these days...and there&#39;s good reason. Here&#39;s a quick
+tutorial to get you up and running with this great JS framework.</p>
+
+<hr>
+
+<h2>What is React.js?</h2>
+
+<p>React.js is a Javascript library used for creating User Interfaces released by the creators of Facebook.
+React was built to solve one huge problem that anyone who has used Javascript extensively has come across at one point or another:</p>
+
+<blockquote>
+<p>Building applications with data that changes over time</p>
+</blockquote>
+
+<p>Simply put, React will update the UI to reflect any new underlying data changes.
+It essentially &quot;refreshes&quot; the UI and knows to only update the new stuff. This is
+done using a special diff algorithm (kind of like how Git works) to see what has changed
+and what needs updated. In addition, React uses a Flux architecture pattern <em>(more on this later)</em> to allow for one-way reactive data flow.</p>
+
+<hr>
+
+<h2>A Different Way of Thinking with React</h2>
+
+<p>If we want to understand how React works, we need to understand what the DOM is.
+When we visit a website, our browser renders the source code of our HTML document.
+We use the <strong>DOM (Document Object Model)</strong> as an API to interact with the HTML document.
+The DOM is a fully object-oriented representation of this document as a structured group
+of nodes and objects that have properties and methods. It is essentially the connection
+between a web document (HTML) and a script (JavaScript).</p>
+
+<p>React.js creates something called a <strong>Virtual DOM</strong> which is an in-memory representation of the DOM (like a snapshot).
+React&#39;s Virtual DOM is much lighter than the real browser DOM so manipulation with Virtual DOM is faster and more efficient.
+Because of this, React can quickly diff <em>(check for differences)</em> the current state of the UI with the desired state and compute the minimal set of DOM mutations.
+<em>This golden concept is exactly how React &quot;refreshes&quot; the UI and knows to only update the new stuff</em>.</p>
+
+<hr>
+
+<h2>Terms to Know</h2>
+
+<p><strong>Virtual DOM</strong></p>
+
+<p>An in-memory representation of the DOM. React manipulates this in order to
+quickly diff the current state of the UI.</p>
+
+<hr>
+
+<p><strong>JSX</strong></p>
+
+<p>JSX is an inline markup that looks like HTML and gets transformed to JavaScript.
+A JSX expression starts with an HTML-like open tag, and ends with the corresponding closing tag.
+JSX tags support the XML self close syntax so you can optionally leave the closing tag off.</p>
+
+<p>You can definitely use React without JSX but JSX makes React a lot more elegant.
+Just like XML, JSX tags have a tag name, attributes, and children. Here&#39;s a quick example:</p>
+
+<p>Without JSX, the React code would look like</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">render</span><span class="err">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="nx">React</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span>
+            <span class="s1">'div'</span><span class="p">,</span>
+            <span class="p">{</span><span class="na">className</span><span class="p">:</span> <span class="s2">"commentBox"</span><span class="p">},</span>
+            <span class="s2">"Hello, world! I am a CommentBox."</span>
+        <span class="p">)</span>
+    <span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>This is <em>with</em> JSX</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">render</span><span class="err">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="s2">"commentBox"</span><span class="o">&gt;</span>
+            <span class="nx">Hello</span><span class="p">,</span> <span class="nx">world</span><span class="o">!</span> <span class="nx">I</span> <span class="nx">am</span> <span class="nx">a</span> <span class="nx">CommentBox</span><span class="p">.</span>
+        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span> <span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+<hr>
+
+<p><strong>Flux</strong></p>
+
+<p><em>Flux</em> or <em>Flux Architecture</em> is a concept/pattern, not a library or framework. The Flux pattern utilizes unidirectional reactive data flow as seen below.</p>
+
+<p><img src="https://github.com/facebook/flux/raw/master/docs/img/flux-diagram-white-background.png" alt="Flux Architecture"></p>
+
+<p>This chart may look a bit confusing so let&#39;s break it down:</p>
+
+<ol>
+<li>Your view triggers an event (i.e. a user types text into a form input field)</li>
+<li>The event triggered by the view updates a model</li>
+<li>This model then triggers another event</li>
+<li>Finally, the view responds to that model&#39;s event by re-rendering with the latest data</li>
+</ol>
+
+<p>This type of pattern is designed to guarantee your stores/models always have the right data.</p>
+
+<hr>
+
+<p><strong>React.js</strong></p>
+
+<p>This is the actual Javascript library. React&#39;s code is structured in a Flux pattern (as described above). There are 3 main concepts that makeup React:</p>
+
+<ol>
+<li>Components</li>
+<li>Properties</li>
+<li>State</li>
+</ol>
+
+<hr>
+
+<p><strong>React Components</strong></p>
+
+<p>Components are the smallest, yet most fundamental part of React. They’re similar, in concept, to things like widgets and modules. Think of React components in terms of the smallest possible components that you can define.</p>
+
+<p>A React component can maintain internal state data. This can be thought as similar to data-binding (think AngularJS/Ember.js). When a component&#39;s state data changes, the rendered markup will be updated.</p>
+
+<p>Here&#39;s an example of a basic component:</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// This is our React component</span>
+<span class="kd">var</span> <span class="nx">HelloWorld</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  <span class="na">render</span> <span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">Hello</span> <span class="nx">World</span><span class="o">!&lt;</span><span class="sr">/div&gt;</span><span class="err">;
+</span>  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="c1">// We then render the component later</span>
+<span class="nx">React</span><span class="p">.</span><span class="nx">renderComponent</span><span class="p">(</span>
+  <span class="o">&lt;</span><span class="nx">HelloWorld</span> <span class="o">/&gt;</span><span class="p">,</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">body</span>
+<span class="p">);</span></code></pre></figure>
+
+<hr>
+
+<p><strong>React Properties</strong></p>
+
+<p>Properties are to React components what attributes are to HTML elements. We can change the behavior based on external information</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// This code will grab the attribute 'name' and output</span>
+<span class="c1">// 'Hello Chris'</span>
+<span class="kd">var</span> <span class="nx">InterfaceComponent</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  <span class="na">render</span> <span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">Hello</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="o">!&lt;</span><span class="sr">/div&gt;</span><span class="err">;
+</span>  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="nx">React</span><span class="p">.</span><span class="nx">renderComponent</span><span class="p">(</span>
+  <span class="o">&lt;</span><span class="nx">InterfaceComponent</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"Chris"</span> <span class="o">/&gt;</span><span class="p">,</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">body</span>
+<span class="p">);</span></code></pre></figure>
+
+<hr>
+
+<p><strong>React State</strong></p>
+
+<p>Like React properties, state affects how a component behaves and renders. Properties are defined when components are created. State, on the other hand, is only seen on the inside of component definitions.</p>
+
+<p>When you think of properties, you should be thinking of component initialization. When you think of state, you should think of an internal data-set which affects the rendering of components.</p>
+
+<p>Take a look at an example:</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// Our components initial state is set to have</span>
+<span class="c1">// '{name: Chris, job: Dev }'. When this component is</span>
+<span class="c1">// rendered it will return 'My name is Chris and I am a Dev'</span>
+<span class="kd">var</span> <span class="nx">InterfaceComponent</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  <span class="na">getInitialState</span> <span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="na">name</span> <span class="p">:</span> <span class="s2">"Chris"</span><span class="p">,</span>
+      <span class="na">job</span>  <span class="p">:</span> <span class="s2">"Dev"</span>
+    <span class="p">};</span>
+  <span class="p">},</span>
+  <span class="na">render</span> <span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+      <span class="nx">My</span> <span class="nx">name</span> <span class="nx">is</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span>
+      <span class="nx">and</span> <span class="nx">I</span> <span class="nx">am</span> <span class="nx">a</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">job</span><span class="p">}.</span>
+    <span class="o">&lt;</span><span class="sr">/div&gt;</span><span class="err">;
+</span>  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="c1">// Here we render our component to the document's body</span>
+<span class="nx">React</span><span class="p">.</span><span class="nx">renderComponent</span><span class="p">(</span>
+  <span class="o">&lt;</span><span class="nx">InterfaceComponent</span> <span class="o">/&gt;</span><span class="p">,</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">body</span>
+<span class="p">);</span></code></pre></figure>
+
+<hr>
+
+<h1>Enough talk. GIVE ME CODE!!!</h1>
+
+<h3>A Basic React App</h3>
+
+<p>Let&#39;s build a quick little React app to get a better understanding of how everything works.
+We will be building a simple Todo App...suprise!</p>
+
+<p><strong>1. Setup</strong></p>
+
+<p>Let&#39;s start off with this basic HTML boilerplate:</p>
+
+<p><em>index.html</em></p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"> <span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;title&gt;</span>React Todo App<span class="nt">&lt;/title&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react-dom.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"content"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/babel"</span> <span class="na">src=</span><span class="s">"script.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span></code></pre></figure>
+
+<p>Notice the &quot;text/babel&quot; instead of &quot;text/javascript&quot; in the link to the <code>script.js</code> which we are using. Babel is the Javascript complier we are using to allow us to write in JSX instead of plain Javascript. Now that the foundation is set, let&#39;s get to the React code. Create a file called <code>script.js</code> and open that open. The rest of the following code will be going into this file.</p>
+
+<hr>
+
+<p><strong>2. Our First React Component</strong></p>
+
+<p>Let&#39;s start off by creating our first React component. We do this by using the <code>React.createClass()</code> method.
+This first component will be our main application. You can create the component by using the <code>createClass()</code> method.</p>
+
+<p><em>script.js</em></p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">TodoApp</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+
+<span class="p">});</span></code></pre></figure>
+
+<p>Inside our TodoApp, we are first going to call React&#39;s <code>getInitialState</code> method. This is where we tell React to set the initial state of our application.
+In this function, we will return an empty array of items. That will the starting state of our todo items.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">TodoApp</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+
+    <span class="na">getInitialState</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">{</span> <span class="na">items</span><span class="p">:</span> <span class="p">[],</span> <span class="na">text</span><span class="p">:</span> <span class="s1">''</span> <span class="p">};</span>
+    <span class="p">},</span>
+
+<span class="p">});</span></code></pre></figure>
+
+<p>Just below <code>getInitialState</code>, we are going to add an <code>onChange</code> method.
+This function watches for any UI changes (value input, checked checkboxes, selected option). Each time the UI is changed, we will set the React state based on our input.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">TodoApp</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+
+    <span class="na">getInitialState</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">{</span> <span class="na">items</span><span class="p">:</span> <span class="p">[],</span> <span class="na">text</span><span class="p">:</span> <span class="s1">''</span> <span class="p">};</span>
+    <span class="p">},</span>
+
+    <span class="na">onChange</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span> <span class="na">text</span><span class="p">:</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span> <span class="p">});</span>
+    <span class="p">},</span>
+
+<span class="p">});</span></code></pre></figure>
+
+<p>Next, we will add the <code>handleSubmit</code> function just below <code>onChange</code>. This function will handle our form submit.
+First, we prevent the default submit event.
+Then, we set a <code>nextItems</code> variable where we grab the item text from the <code>onChange</code> function along
+with setting an <code>id</code> using the current date. After, we set the <code>nextText</code> to empty to set it up for the next entry.
+Finally, we use the <code>setState</code> function to merge current and previous states and prepare for a new entry.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">handleSubmit</span><span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+
+    <span class="kd">var</span> <span class="nx">nextItems</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">items</span><span class="p">.</span><span class="nx">concat</span><span class="p">([{</span>
+        <span class="na">text</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">text</span><span class="p">,</span>
+        <span class="na">id</span><span class="p">:</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span>
+    <span class="p">}]);</span>
+
+    <span class="kd">var</span> <span class="nx">nextText</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
+        <span class="na">items</span><span class="p">:</span> <span class="nx">nextItems</span><span class="p">,</span>
+        <span class="na">text</span><span class="p">:</span> <span class="nx">nextText</span>
+    <span class="p">});</span>
+<span class="p">},</span></code></pre></figure>
+
+<p>The last thing we are going to do to complete our main component <code>TodoApp</code> is add a <code>render</code> function
+which returns a tree of React components which will eventually render to HTML.
+Take note of a few things: First, notice since we are using JSX, instead of using the standard <code>&lt;div class=&quot;row&quot;&gt;</code> we have to use <code>&lt;div className=&quot;row&quot;&gt;</code>. Also notice we are referencing our previous functions inside our returned view. On our form submit we call the <code>handleSubmit</code> function and when there is UI changes to the form input, we call the <code>onChange</code> function.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">render</span><span class="err">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="s2">"row"</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="s2">"four columns"</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">form</span> <span class="nx">onSubmit</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">handleSubmit</span><span class="p">}</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">className</span><span class="o">=</span><span class="s2">"u-full-width"</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text"</span> <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">onChange</span><span class="p">}</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">text</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>                     <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">className</span><span class="o">=</span><span class="s2">"button-primary"</span><span class="o">&gt;</span><span class="nx">Add</span> <span class="o">+&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>                 <span class="o">&lt;</span><span class="sr">/form</span><span class="err">&gt;
+</span>             <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>             <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="s2">"eight columns"</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">TodoList</span> <span class="nx">items</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">items</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>             <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>         <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>     <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span> <span class="p">);</span></code></pre></figure>
+
+<p>We have a form to input information and handle the events, but still nowhere to render the actual list.
+Notice the <code>&lt;TodoList items={this.state.items} /&gt;</code> node.
+This is where we will be calling another React component that will handle rendering list items.
+What we are basically doing is calling one component inside of another. React encourages &quot;smallest possible components that you can define&quot;. Since each component can be isolated, fixes can be applied to one component without inherently affecting the others.</p>
+
+<p>Next, let&#39;s build our <code>TodoList</code> component. This will handle rendering the actual list. We will be placing this code outside of our <code>TodoApp</code> component, just above it:</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">TodoList</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+    <span class="na">render</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">createItem</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="o">&lt;</span><span class="nx">li</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">item</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">item</span><span class="p">.</span><span class="nx">text</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/li&gt;</span><span class="err">;
+</span>     <span class="p">};</span>
+        <span class="k">return</span> <span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">items</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">createItem</span><span class="p">)}</span><span class="o">&lt;</span><span class="sr">/ul&gt;</span><span class="err">;
+</span> <span class="p">}</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>Here we are creating a list item for each todo list item and then returning those inside of an unordered list element. Notice we are referencing the React properties by using <code>this.props</code> to get the items from attribute <code>items</code> in our <code>TodoApp.render()</code> method (<code>&lt;TodoList items={this.state.items} /&gt;</code>).</p>
+
+<p>The last step in our app is to render it all to our real DOM. We will call <code>ReactDOM.render()</code> method along with our main app and a place for it to go. In this example, we want to render it to <code>&lt;div id=&quot;content&quot;&gt;&lt;/div&gt;</code>.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">TodoApp</span> <span class="o">/&gt;</span><span class="p">,</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'content'</span><span class="p">)</span>
+<span class="p">);</span></code></pre></figure>
+
+<p>And there we have it! Our first React app. Once you get your head around all the terminology and concepts,
+React is an incredible tool for both large and small applications.</p>
+
+<p>You can download the full annotated code for this tutorial <a href="https://github.com/codoki/react-todo">here on Github</a></p>
+
+<p><img src="https://raw.githubusercontent.com/codoki/codoki.github.io/master/public/img/tuts/react-todo.png" alt="React Todo App Demo Screenshot"></p>
+
+<hr>
+
+<h2>React.js VS AngularJS?</h2>
+
+<p>There is an ongoing &quot;debate&quot; taking place between the 2 juggernauts AngularJS and React.js in the Javascript
+framework universe on which is best. Angular as you may know is supported by Google while React is backed by Facebook.
+What is the main difference between React.js and AngularJS?
+There is alot of <em>&quot;Angular vs React&quot;</em> going around the net, but comparing them
+is similar to comparing a brand new car (Angular) to a brand new engine (React).</p>
+
+<p><strong>AngularJS</strong></p>
+
+<ul>
+<li>A Front-end full <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">MVC Framework</a>.</li>
+<li>Uses HTML, CSS and Javascript code.</li>
+</ul>
+
+<p><strong>React.js</strong></p>
+
+<ul>
+<li>A <em>View</em> Framework. The V in M<strong>V</strong>C.</li>
+<li>Uses just Javascript code with a special syntax called <em>JSX</em> which allows you
+to use HTML in your Javascript.</li>
+</ul>
+
+<p>So React.js is like a engine while AngularJS is the entire car. Since React is just the
+<em>V</em> of MVC you could technically use React.js <em>with</em> AngularJS, substituting AngularJS views
+for that of React.js (take a look at one example <a href="https://github.com/ngReact/ngReact">here</a>).</p>
+
+<hr>
+
+<h2>Other Things You Can Do With React - <em>React Native</em></h2>
+
+<p>Now that you understand the fundamentals of React, you can use your newfound knowledge
+to actually build <em>Native Mobile</em> apps! Facebook has also released a great library called
+<a href="https://facebook.github.io/react-native/">React Native</a> which allows you to use React.js
+in order to build apps on native platforms such as iOS and Android. This means you can use
+all of the same concepts across multiple platforms.
+Take a deeper look <a href="http://facebook.github.io/react-native/docs/getting-started.html">here</a>.</p>
+
+<h2>References</h2>
+
+<ul>
+<li><a href="https://facebook.github.io/react/index.html">React.js</a></li>
+<li><a href="https://github.com/facebook/react">React.js - Github</a></li>
+<li><a href="https://angularjs.org/">AngularJS</a></li>
+<li><a href="http://buildwithreact.com/tutorial/jsx">Built with React</a></li>
+<li><a href="https://facebook.github.io/react-native/">React Native</a></li>
+<li><a href="https://github.com/facebook/react-native">React Native - Github</a></li>
+<li><a href="https://rnplay.org/">React Native Playground</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction">DOM - Mozilla</a></li>
+<li><a href="http://conferences.oreilly.com/fluent/fluent2014/public/schedule/detail/32395">The Secret&#39;s of React&#39;s Virtual DOM</a></li>
+<li><a href="http://blog.andrewray.me/reactjs-for-stupid-people/">React for Stupid People</a></li>
+<li><a href="https://medium.com/react-tutorials">React Tutorials</a></li>
+</ul>
+
+<hr>
+
+<p>Suggestions or edits? Feel free to submit a pull request with your
+edit on <a href="https://github.com/codoki/codoki.github.io/tree/master/_posts">Github</a></p>
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="../../../../2015/09/01/native-javascript-templating/index.html">
+            Native Javascript Templating - Goodbye Handlebars
+            <small>01 Sep 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="../../../../2015/08/07/build-a-local-search-app-with-geo/index.html">
+            Build a local search based app with geolocation
+            <small>07 Aug 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="../../../../2015/07/06/simplestore/index.html">
+            simpleStore - Open-source online store with no database or backend
+            <small>06 Jul 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+
+  <hr>
+  <h2>Popular Posts</h2>
+   <ul class="related-posts popular">
+   		<li><h3><a href="../../../../2015/01/27/getting-started-with-slim-framework/index.html">Getting Started with Slim Framework - Creating a RESTful API</a></h3></li>
+      	<!--<li><h3><a href="/2015/08/07/build-a-local-search-app-with-geo/">Build a local search based app with geolocation</a></h3></li>-->
+      	<li><h3><a href="../../../../2015/07/06/simplestore/index.html">simpleStore - Open-source online store with no database or backend</a></h3></li>
+  </ul>
+
+  <div class="updates">
+    <hr>
+    <!--<span>Want updates? <a href="http://eepurl.com/bpduc5" data-featherlight data-featherlight-type="iframe">Subscribe to get the latest goodies</a></span>-->
+	<!-- Begin MailChimp Signup Form -->
+	<link href="http://cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
+	<style type="text/css">
+		#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+		#mc_embed_signup form { padding: 0px 0 0px 0%; }
+	</style>
+	<div id="mc_embed_signup">
+	<form action="http://saturnbit.us10.list-manage.com/subscribe/post?u=6a958cda028d0d312d1ef3ccd&amp;id=4ee23b7fda" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+		<div id="mc_embed_signup_scroll">
+		<h2>Want Updates?</h2>
+	<div class="mc-field-group">
+		<label for="mce-EMAIL">Email Address </label>
+		<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+	</div>
+		<div id="mce-responses" class="clear">
+			<div class="response" id="mce-error-response" style="display:none"></div>
+			<div class="response" id="mce-success-response" style="display:none"></div>
+		</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+		<div style="position: absolute; left: -5000px;"><input type="text" name="b_6a958cda028d0d312d1ef3ccd_4ee23b7fda" tabindex="-1" value=""></div>
+		<div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+		</div>
+	</form>
+	</div>
+	<script type='text/javascript' src='http://s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+	<!--End mc_embed_signup-->
+  </div>
+</div>
+
+      	
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+	/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+	var disqus_shortname = 'cdianamedia'; // required: replace example with your forum shortname
+
+	/* * * DON'T EDIT BELOW THIS LINE * * */
+	(function() {
+	 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	 dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	 })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+   <!-- Full screen search overlay - open/close -->
+    <div class="overlay overlay-hugeinc">
+      <button type="button" class="overlay-close"><i class="fa fa-close"></i></button>
+      <div class="search-container">
+        <input id="search-input" placeholder="Search..." />
+        <div id="results-container"></div>
+      </div>
+    </div>
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-67203123-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+  </body>
+</html>

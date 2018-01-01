@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+	<link href="http://gmpg.org/xfn/11" rel="profile">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="description" content="Codoki is a web development and design
+	blog about the latest trends in web technology.">
+
+	<!-- Enable responsiveness on mobile devices-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+      <!-- REDIRECT -->
+  <meta http-equiv="refresh" content="0; url=https://cdmedia.github.io/posts/2015-03-20-getting-started-with-slim-framework-pt-2">
+  <link rel="canonical" href="https://cdmedia.github.io/posts/2015-03-20-getting-started-with-slim-framework-pt-2" />
+	<title>
+	
+	Getting Started with Slim Framework - Part 2 &middot; Codoki
+	
+	</title>
+
+	<!-- CSS -->
+	<link href="http://cdn.rawgit.com/noelboss/featherlight/1.0.4/release/featherlight.min.css" type="text/css" rel="stylesheet" title="Featherlight Styles" />
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+	<link rel="stylesheet" href="../../../../public/css/poole.css">
+	<link rel="stylesheet" href="../../../../public/css/monokai.css">
+	<link rel="stylesheet" href="../../../../public/css/lanyon.css">
+	<link rel="stylesheet" href="../../../../public/css/codoki.css">
+
+	<!-- Icons -->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../../../public/apple-touch-icon-precomposed.png">
+	<link rel="shortcut icon" href="../../../../public/favicon.ico">
+
+	<!-- JS -->
+	<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="http://cdn.rawgit.com/noelboss/featherlight/1.0.4/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../../../public/js/modernizr.custom.js"></script>
+	<script src="../../../../public/js/classie.js"></script>
+	<script src="../../../../public/js/search.js"></script>
+	<script src="../../../../public/js/script.js"></script>
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://codoki.com/atom.xml">
+</head>
+
+
+  <body class="layout">
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p></p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="../../../../index.html">Home</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="../../../../archive/index.html">Archive</a>
+        
+      
+    
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="../../../../learning/index.html">Learning Resources</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="../../../../links/index.html">Links</a>
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+
+	    <a class="sidebar-nav-item" href="../../../../resources.html">News/Inspiration</a>
+	    <a class="sidebar-nav-item" href="../../../../about.html">About</a>
+	    <a class="sidebar-nav-item" href="../../../../subscribe.html"><i class="fa fa-envelope-o"></i> Subscribe</a>
+
+	    <!--<span class="sidebar-nav-item"></span>-->
+    </nav>
+  </div>
+</div>
+
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+    <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a class="logo-wrap" href="../../../../index.html" title="Home">
+			  <img class="logo logo" src="../../../../public/img/codoki-logo2.png" />
+			 </a>
+            <a class="title" href="../../../../index.html" title="Home">Codoki</a>
+            <small>Tutorials, resources and tips for Web Developers</small>
+          </h3>
+        </div>
+      </div>
+
+       <a href="index.html#" id="trigger-overlay"><i class="fa fa-search fa-lg search-icon"></i></a>
+
+      <div class="container content">
+        <div class="post">
+  <h1 class="post-title">Getting Started with Slim Framework - Part 2</h1>
+  <span class="post-date">20 Mar 2015
+	<ul class="tag_list_in_post">
+	
+		<li class="inline tag_list_item">
+			<a class="tag_list_link" href="../../../../tags.1.html#slim">slim</a>
+		</li>
+	
+		<li class="inline tag_list_item">
+			<a class="tag_list_link" href="../../../../tags.1.html#rest">rest</a>
+		</li>
+	
+		<li class="inline tag_list_item">
+			<a class="tag_list_link" href="../../../../tags.1.html#api">api</a>
+		</li>
+	
+	<p id="post-meta"></p>
+	</ul>
+  </span>
+  <p>This is part 2 of the Getting Started with Slim Framework
+tutorial in which we will build a frontend interface to access our API.</p>
+
+<p>In the first part of the tutorial, we focused on building a functional
+API that we could create, delete, update and view items...but there was
+no interface to allow a user to actually use the application unless running
+commands via cURL or through HTTP protocol manually.</p>
+
+<p>In this part of the tutorial, we are going to focus on building the front-end
+interface to allow the user to easily use the API (using HTML, Javascript and AJAX).
+The beauty of using a RESTful
+API is that once an API is build, it can be accessed by any device or language
+that can use HTTP protocols...which gives plenty of flexibility for expanding
+to new platforms or languages. This means you can use the same API with a Web
+Application as an iPhone or Andriod application. You can see how RESTful APIs
+have become extremely popular over the recent years.</p>
+
+<p><strong>Note:</strong> When going through this tutorial, make sure to keep your web browser console open to
+see all the requests, responses and function calls as I&#39;ve placed <code>console.log</code>
+throughout the project.</p>
+
+<h3>1. Setup directory and files</h3>
+
+<p>First, what we are going to do is setup our basic front-end template in which the data
+from the API will eventually load into. We are going to use
+<a href="http://getskeleton.com">Skeleton</a> as our CSS framework because it is very light, fast
+framework (as opposed to the standard Bootstrap starting point). I like Skeleton
+because it has all the basics you need, without the bloat. We are also going to
+use <a href="http://zeptojs.com/">Zepto.js</a>. Zepto is just like jQuery (if you use
+jQuery, you already know Zepto) but much lighter and faster.</p>
+
+<p>Download the latest versions of Zepto.js and Skeleton CSS. Then create a <code>css</code>
+and <code>js</code> folder and place the files in accordingly. After, create a <code>style.css</code>
+,<code>index.html</code> and a <code>script.js</code> file. (Note: You should also have a Normalize.css file that
+comes with Skeleton). Your file directory should look like this:</p>
+<div class="highlight"><pre><code class="language-" data-lang="">- index.html
+- css/
+- - normalize.css
+- - skeleton.css
+- - style.css
+- js/
+- - script.js
+- - zepto.min.js
+</code></pre></div>
+<h3>2. Add the API</h3>
+
+<p>We need a way to access the API, so for simplicity&#39;s sake we are going to just
+place it in our current directory. Let&#39;s clone it into our root directory and
+rename the folder to <code>api</code>:</p>
+<div class="highlight"><pre><code class="language-" data-lang="">git clone https://github.com/cdmedia/slim-cars.git
+mv slim-cars/ api/
+</code></pre></div>
+<h3>3. Setup the template</h3>
+
+<p>Now that we have our structure in place, let&#39;s get the front-end HTML template
+made. Add this to your <code>index.html</code> file:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;DOCTYPE</span> <span class="na">html</span><span class="nt">&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;title&gt;</span>Slim Front-end Demo using Skeleton and Zepto.js<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"description"</span> <span class="na">content=</span><span class="s">""</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"author"</span> <span class="na">content=</span><span class="s">""</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"//fonts.googleapis.com/css?family=Raleway:400,300,600"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"css/normalize.css"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"css/skeleton.css"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"css/style.css"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row main"</span><span class="nt">&gt;</span>
+
+    <span class="c">&lt;!-- Sidebar --&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"three columns"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;b&gt;</span>Garage<span class="nt">&lt;/b&gt;</span>
+      <span class="nt">&lt;ul</span> <span class="na">id=</span><span class="s">"car-list"</span><span class="nt">&gt;&lt;/ul&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="c">&lt;!-- Main Content --&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"nine columns"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"button button-primary"</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">id=</span><span class="s">"btnAdd"</span><span class="nt">&gt;</span>New Car<span class="nt">&lt;/a&gt;</span>
+
+      <span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">"carForm"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"detail-view"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"hidden"</span> <span class="na">id=</span><span class="s">"id"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"year"</span><span class="nt">&gt;</span>Year<span class="nt">&lt;/label&gt;</span>
+          <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"u-full-width"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"year"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"make"</span><span class="nt">&gt;</span>Make<span class="nt">&lt;/label&gt;</span>
+          <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"u-full-width"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"make"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"year"</span><span class="nt">&gt;</span>Model<span class="nt">&lt;/label&gt;</span>
+          <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"u-full-width"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"model"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"button"</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">id=</span><span class="s">"btnSave"</span><span class="nt">&gt;</span>Save<span class="nt">&lt;/a&gt;</span>
+          <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"button"</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">id=</span><span class="s">"btnDelete"</span><span class="nt">&gt;</span>Delete<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;/form&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"js/zepto.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"js/script.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span></code></pre></figure>
+
+<p>Couple things to point out here: We created a sidebar where we will list all of
+the cars in our garage in the <code>&lt;ul id=&quot;car-list&quot;&gt;&lt;/ul&gt;</code> element. Next, we have a
+<code>&lt;a class=&quot;button button-primary&quot; href=&quot;#&quot; id=&quot;btnAdd&quot;&gt;New Car&lt;/a&gt;</code> button for creating a new car.
+Now to the heart of the app: We created a form for adding and updating cars in our garage in the <code>&lt;form id=&quot;carForm&quot;&gt;</code> form element. The
+form will populate with the car&#39;s info when the car is selected from the sidebar. Note
+that we have a hidden form element for <code>id</code>. This will allow our app to tell which car
+is currently in the form. Then, to save or delete a car we have the <code>&lt;a class=&quot;button&quot; href=&quot;#&quot; id=&quot;btnSave&quot;&gt;Save&lt;/a&gt;</code>
+and <code>&lt;a class=&quot;button&quot; href=&quot;#&quot; id=&quot;btnDelete&quot;&gt;Delete&lt;/a&gt;</code> buttons.</p>
+
+<p>Finally, we&#39;ll apply some CSS to clean it up a bit for future steps. Add these
+few lines to your <code>css/style.css</code> file:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.main</span> <span class="p">{</span>
+    <span class="nl">margin-top</span><span class="p">:</span> <span class="m">25px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.detail-view</span> <span class="p">{</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">20px</span> <span class="m">25px</span><span class="p">;</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">15px</span> <span class="m">0px</span><span class="p">;</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="m">#F6F6F6</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">ul</span><span class="nf">#car-list</span> <span class="p">{</span>
+    <span class="nl">list-style</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nf">#car-list</span> <span class="nt">a</span> <span class="p">{</span>
+    <span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nf">#car-list</span> <span class="nt">li</span> <span class="p">{</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">0px</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">10px</span> <span class="m">0px</span> <span class="m">10px</span> <span class="m">5px</span><span class="p">;</span>
+    <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="m">#eee</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nf">#car-list</span> <span class="nt">li</span><span class="nd">:hover</span> <span class="p">{</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="m">#f6f6f6</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nf">#car-list</span> <span class="nt">li</span><span class="nd">:last-child</span> <span class="p">{</span>
+    <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">0px</span> <span class="nb">solid</span> <span class="m">#eee</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<h3>4. Start working with the API - Get all cars</h3>
+
+<p>Now that we have our template and style set up, we can start pulling data
+from our API and get our application working. From here on out, you&#39;ll only
+be working in your <code>js/script.js</code> file. In that file, we are going to
+initialize Zepto.js and setup our root URL for our API. In addition, we will
+add a <code>ajaxBeforeSend</code> function which may be useful when debugging AJAX calls.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">Zepto</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">){</span>
+
+    <span class="c1">// Setup the root url for the RESTful services</span>
+    <span class="kd">var</span> <span class="nx">rootURL</span> <span class="o">=</span> <span class="s1">'http://localhost/slim-cars/api/'</span><span class="p">;</span>
+
+    <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'ajaxBeforeSend'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">xhr</span><span class="p">,</span> <span class="nx">options</span><span class="p">){</span>
+        <span class="c1">// This gets fired for every Ajax request performed on the page.</span>
+        <span class="c1">// The xhr object and $.ajax() options are available for editing.</span>
+        <span class="c1">// Return false to cancel this request.</span>
+    <span class="p">});</span>
+
+<span class="p">});</span></code></pre></figure>
+
+<p>We are going to using AJAX for all our calls to our API. The first thing we need
+to do is get a list of all cars in the database. Just below the <code>ajaxBeforeSend</code>
+function add this:</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// Retrieve car list when application starts</span>
+<span class="nx">findAll</span><span class="p">();</span>
+
+<span class="c1">// Get all cars</span>
+<span class="kd">function</span> <span class="nx">findAll</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+        <span class="na">type</span><span class="p">:</span> <span class="s1">'GET'</span><span class="p">,</span>
+        <span class="na">url</span><span class="p">:</span> <span class="nx">rootURL</span> <span class="o">+</span> <span class="s1">'cars'</span><span class="p">,</span>
+        <span class="na">dataType</span><span class="p">:</span> <span class="s1">'json'</span><span class="p">,</span>
+        <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Success: '</span><span class="p">,</span> <span class="nx">response</span><span class="p">);</span>
+            <span class="nx">renderList</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+        <span class="p">},</span>
+        <span class="na">error</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">xhr</span><span class="p">,</span> <span class="nx">type</span><span class="p">){</span>
+           <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">xhr</span><span class="p">,</span> <span class="nx">type</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="c1">// Render list of all cars</span>
+<span class="kd">function</span> <span class="nx">renderList</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">'#car-list li'</span><span class="p">).</span><span class="nx">remove</span><span class="p">();</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="nx">car</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s1">'#car-list'</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s1">'&lt;li&gt;&lt;a href="#" data-identity="'</span> <span class="o">+</span> <span class="nx">car</span><span class="p">.</span><span class="nx">id</span> <span class="o">+</span> <span class="s1">'"&gt;'</span> <span class="o">+</span> <span class="nx">car</span><span class="p">.</span><span class="nx">model</span> <span class="o">+</span> <span class="s1">'&lt;/a&gt;&lt;/li&gt;'</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>First, we are calling the <code>findAll()</code> function as soon as the application loads, this way
+we have a list of cars when the user first visits the app. Next part is the actual <code>findAll()</code>
+function. We use Zepto&#39;s <code>$.ajax</code> function with the &#39;GET&#39; parameter to hit the URL <code>http://localhost/slim-cars/api/cars</code>.
+This URL the returns a JSON object of all the cars in the database. Then, use the <code>renderList()</code> function
+to render each of the cars as list items in our <code>#car-list</code> element. Note, we also add the <code>data-identity</code> parameter
+using the car&#39;s id. This way we know which car to populate the fields with down the line.</p>
+
+<p>You can now test this by visiting your app at <code>http://localhost/slim-cars/</code> and see the list of cars
+in your database.</p>
+
+<h3>5. Find a car by ID</h3>
+
+<p>Now we have all the cars, but if we need to get a car by just the ID, we can use our API by calling the ID
+after the url like <code>cars/3</code>. Now we are going to create an AJAX call which will get a car by id:</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// Get car by id</span>
+<span class="kd">function</span> <span class="nx">findById</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'findById:'</span> <span class="o">+</span> <span class="nx">id</span><span class="p">);</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+        <span class="na">type</span><span class="p">:</span> <span class="s1">'GET'</span><span class="p">,</span>
+        <span class="na">url</span><span class="p">:</span> <span class="nx">rootURL</span> <span class="o">+</span> <span class="s1">'cars/'</span> <span class="o">+</span> <span class="nx">id</span><span class="p">,</span>
+        <span class="na">dataType</span><span class="p">:</span> <span class="s1">'json'</span><span class="p">,</span>
+        <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s1">'#btnDelete'</span><span class="p">).</span><span class="nx">show</span><span class="p">();</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'findById success: '</span> <span class="o">+</span> <span class="nx">data</span><span class="p">);</span>
+            <span class="nx">currentCar</span> <span class="o">=</span> <span class="nx">data</span><span class="p">;</span>
+            <span class="nx">renderDetails</span><span class="p">(</span><span class="nx">currentCar</span><span class="p">);</span>
+        <span class="p">},</span>
+        <span class="na">error</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">xhr</span><span class="p">,</span> <span class="nx">type</span><span class="p">){</span>
+           <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">xhr</span><span class="p">,</span> <span class="nx">type</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Similarly to above, we are using the AJAX with the GET method to get a car... but unlike above,
+our <code>findByID()</code> function takes an input parameter of <code>id</code>. This function will call the url
+including the id (<code>http://localhost/slim-cars/api/3</code>). On AJAX success, we will also set the
+currentCar (we will be adding shortly) in order for our application to tell
+which car is currently in our &#39;detail view&#39; (form area).</p>
+
+<p>Our application needs a way for us to view one car at a time in a kind of &#39;detail view&#39;. This
+detail view will be using the form to display the current car.</p>
+
+<p>Let&#39;s initialize a <code>currentCar</code> variable just below our <code>rootURL</code> variable:</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">currentCar</span><span class="p">;</span></code></pre></figure>
+
+<p>Now, we need a way for our form to render a car&#39;s details when a car is selected from the sidebar.
+Add this line just below the <code>findAll()</code> function</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// Retrieve car details when list item is clicked</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'#car-list a'</span><span class="p">).</span><span class="nx">live</span><span class="p">(</span><span class="s1">'click'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">findById</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s1">'identity'</span><span class="p">));</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>Finally, we add a <code>renderDetails()</code> function which takes a car as an input. This function then
+populates our form with the car data. (This also fixes whether we have an empty object and
+blanks out the form).</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// Render detail view</span>
+<span class="kd">function</span> <span class="nx">renderDetails</span><span class="p">(</span><span class="nx">car</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">isEmptyObject</span><span class="p">(</span><span class="nx">car</span><span class="p">)){</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s1">'#id'</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="s1">''</span><span class="p">);</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s1">'#year'</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="s1">''</span><span class="p">);</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s1">'#make'</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="s1">''</span><span class="p">);</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s1">'#model'</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="s1">''</span><span class="p">);</span>
+    <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s1">'#id'</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="nx">car</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s1">'#year'</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="nx">car</span><span class="p">.</span><span class="nx">year</span><span class="p">);</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s1">'#make'</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="nx">car</span><span class="p">.</span><span class="nx">make</span><span class="p">);</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s1">'#model'</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="nx">car</span><span class="p">.</span><span class="nx">model</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Now if you view your application, you will see if you click on one of your car items,
+the form fields should populate with the data.</p>
+
+<h3>6. Adding a new car</h3>
+
+<p>First, we need to have our form clear out once the &#39;New Car&#39; button is clicked. Add this just
+above your <code>findAll()</code> function.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// Call new car function when button is clicked</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'#btnAdd'</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">newCar</span><span class="p">();</span>
+    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">});</span>
+
+<span class="c1">// Hide delete button and empty out form</span>
+<span class="kd">function</span> <span class="nx">newCar</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">'#btnDelete'</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+    <span class="nx">currentCar</span> <span class="o">=</span> <span class="p">{};</span>
+    <span class="nx">renderDetails</span><span class="p">(</span><span class="nx">currentCar</span><span class="p">);</span> <span class="c1">// Display empty form</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Next, we need to get the form data from the HTML form in order to URL encode this data
+and place it in our request. Place this just below the <code>renderDetails()</code> function.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// Helper function to get form fields</span>
+<span class="kd">function</span> <span class="nx">getForm</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">car</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">'year'</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'#year'</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+        <span class="s1">'make'</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'#make'</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+        <span class="s1">'model'</span><span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'#model'</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span>
+    <span class="p">};</span>
+    <span class="k">return</span> <span class="nx">car</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>In order to add a car, we will be using Zepto&#39;s <code>$.ajax</code> method, but instead of using <code>GET</code> we will use <code>POST</code> as a parameter.
+This tells Zepto to use HTTP POST method. Add the <code>addCar()</code> function just below <code>findById()</code></p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// Add new car</span>
+<span class="kd">function</span> <span class="nx">addCar</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'addCar'</span><span class="p">);</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+        <span class="na">type</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
+        <span class="na">url</span><span class="p">:</span> <span class="nx">rootURL</span> <span class="o">+</span> <span class="s1">'car'</span><span class="p">,</span>
+        <span class="na">dataType</span><span class="p">:</span> <span class="s1">'json'</span><span class="p">,</span>
+        <span class="na">data</span><span class="p">:</span> <span class="nx">$</span><span class="p">.</span><span class="nx">param</span><span class="p">(</span><span class="nx">getForm</span><span class="p">()),</span> <span class="c1">// URI encode data for request</span>
+        <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">xhr</span><span class="p">,</span> <span class="nx">type</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">xhr</span><span class="p">,</span> <span class="nx">type</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">);</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="s1">'Car added successfully'</span><span class="p">);</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s1">'#btnDelete'</span><span class="p">).</span><span class="nx">show</span><span class="p">();</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s1">'#id'</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+            <span class="nx">findAll</span><span class="p">();</span> <span class="c1">// reload list</span>
+        <span class="p">},</span>
+        <span class="na">error</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">xhr</span><span class="p">,</span> <span class="nx">type</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">errorThrown</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">xhr</span><span class="p">,</span> <span class="nx">type</span><span class="p">,</span> <span class="nx">errorThrown</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>What happens here is the function sends a HTTP POST request to our API (&#39;http://localhost/slim-cars/api/car&#39;) and
+URI encodes our form field values so that our API can understand them. Then on success, the browser
+alerts us that a car was successfully added. In addition, we show the delete button (it was never hidden anyway, but
+we&#39;ll get to that later), adds the id value to our form&#39;s id hidden field, and reload&#39;s our car list
+to display our newly added car using our <code>findAll()</code> function.</p>
+
+<p>Now, we need to be able to send the POST request from the front end. Tie this function to your <code>#btnSave</code> button.
+Add this just below <code>$(&#39;#btnAdd&#39;).click(function() {...</code>.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// Call add car function when save button is clicked</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'#btnSave'</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s1">'#id'</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span> <span class="o">==</span> <span class="s1">''</span><span class="p">){</span>
+        <span class="nx">addCar</span><span class="p">();</span>
+    <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+        <span class="nx">updateCar</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>Now you can try adding a car by filling in the form and clicking the &#39;Save&#39; button.
+Note that we haven&#39;t added the <code>updateCar()</code> method yet...but don&#39;t worry it&#39;s next.</p>
+
+<h3>7. Update a car</h3>
+
+<p>Now we need a way to update a car currently in the database. We will be using HTTP PUT
+method in order to update from our API. Just below your <code>addCar()</code> function add:</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// Update a car</span>
+<span class="kd">function</span> <span class="nx">updateCar</span><span class="p">(</span><span class="nx">$id</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'updateCar'</span><span class="p">);</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+        <span class="na">type</span><span class="p">:</span> <span class="s1">'PUT'</span><span class="p">,</span>
+        <span class="na">url</span><span class="p">:</span> <span class="nx">rootURL</span> <span class="o">+</span> <span class="s1">'car/'</span> <span class="o">+</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'#id'</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+        <span class="na">dataType</span><span class="p">:</span> <span class="s1">'json'</span><span class="p">,</span>
+        <span class="na">data</span><span class="p">:</span> <span class="nx">$</span><span class="p">.</span><span class="nx">param</span><span class="p">(</span><span class="nx">getForm</span><span class="p">()),</span> <span class="c1">// URI encode data for request</span>
+        <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">xhr</span><span class="p">,</span> <span class="nx">type</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">xhr</span><span class="p">,</span> <span class="nx">type</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">);</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="s1">'Car successfully updated'</span><span class="p">);</span>
+            <span class="nx">findAll</span><span class="p">();</span> <span class="c1">// reload list</span>
+        <span class="p">},</span>
+        <span class="na">error</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">xhr</span><span class="p">,</span> <span class="nx">type</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">errorThrown</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">xhr</span><span class="p">,</span> <span class="nx">type</span><span class="p">,</span> <span class="nx">errorThrown</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Similar to the <code>addCar()</code> function, we are URI encoding our form data so our API can
+understand what to do. The function uses our form field &#39;id&#39; value in order to build
+our URL in which to send the PUT request. For instance, the request sent to
+&#39;http://localhost/slim-cars/api/car/3&#39; tells the API to update car with an id of 3.
+After the update is successful, the browser alerts that the car was updated successfully and
+then reloads the car list.</p>
+
+<p>We&#39;ve already tied the <code>updateCar()</code> function to our &#39;Save&#39; button so try selecting a car
+and clicking the &#39;Save&#39; button. Your car should now be updated in the database.</p>
+
+<h3>8. Delete a car</h3>
+
+<p>Now we need to be able to delete a car. Since no car is in the detail view
+when the application loads, let&#39;s hide the delete file on inital load. Add
+this just below <code>findAll()</code>.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// Nothing to delete in initial application state</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'#btnDelete'</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span></code></pre></figure>
+
+<p>Now we will use the HTTP DELETE method to delete a car by a specified id. Add
+this just below the <code>addCar()</code> function.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// Delete a car</span>
+<span class="kd">function</span> <span class="nx">deleteCar</span><span class="p">(</span><span class="nx">$id</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'deleteCar'</span><span class="p">);</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+        <span class="na">type</span><span class="p">:</span> <span class="s1">'DELETE'</span><span class="p">,</span>
+        <span class="na">url</span><span class="p">:</span> <span class="nx">rootURL</span> <span class="o">+</span> <span class="s1">'car/'</span> <span class="o">+</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'#id'</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+        <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">xhr</span><span class="p">,</span> <span class="nx">type</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">xhr</span><span class="p">,</span> <span class="nx">type</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">);</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="s1">'Car successfully deleted'</span><span class="p">);</span>
+            <span class="nx">newCar</span><span class="p">();</span> <span class="c1">// zero out the form</span>
+            <span class="nx">findAll</span><span class="p">();</span> <span class="c1">// reload list</span>
+        <span class="p">},</span>
+        <span class="na">error</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">xhr</span><span class="p">,</span> <span class="nx">type</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">errorThrown</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">xhr</span><span class="p">,</span> <span class="nx">type</span><span class="p">,</span> <span class="nx">errorThrown</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">})</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Similar to the other ajax functions, we generate a URL using the current form field id (&#39;http://localhost/slim-cars/api/car/3&#39;).
+Then, the function calls the HTTP DELETE method. On success, the browser alerts that the car was successfully deleted, blanks out the
+form using our <code>newCar()</code> method and reloads the car list using our <code>findAll()</code> method.</p>
+
+<p>Now just tie this function into the frontend using our <code>#btnDelete</code> button. Add this just below <code>$(&#39;#btnAdd&#39;).click(function() {...</code></p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// Call delete car function when button is clicked</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'#btnDelete'</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">deleteCar</span><span class="p">();</span>
+    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">});</span></code></pre></figure>
+
+<h3>9. Conclusion</h3>
+
+<p>Now if you visit you app, you should be able to add, delete, update and view your cars in your database. You
+can get a GIT staged step by step version of this post <a href="https://github.com/cdmedia/slim-cars-frontend">here on
+Github</a>.</p>
+
+<p><img src="https://raw.githubusercontent.com/codoki/codoki.github.io/master/public/img/tuts/slim-frontend-api.png" alt="Slim Demo
+Frontend"></p>
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="../../../../2016/01/20/getting-started-with-react-js/index.html">
+            Getting Started with React.js - Concepts and Creating Your First App
+            <small>20 Jan 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="../../../09/01/native-javascript-templating/index.html">
+            Native Javascript Templating - Goodbye Handlebars
+            <small>01 Sep 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="../../../08/07/build-a-local-search-app-with-geo/index.html">
+            Build a local search based app with geolocation
+            <small>07 Aug 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+
+  <hr>
+  <h2>Popular Posts</h2>
+   <ul class="related-posts popular">
+   		<li><h3><a href="../../../01/27/getting-started-with-slim-framework/index.html">Getting Started with Slim Framework - Creating a RESTful API</a></h3></li>
+      	<!--<li><h3><a href="/2015/08/07/build-a-local-search-app-with-geo/">Build a local search based app with geolocation</a></h3></li>-->
+      	<li><h3><a href="../../../07/06/simplestore/index.html">simpleStore - Open-source online store with no database or backend</a></h3></li>
+  </ul>
+
+  <div class="updates">
+    <hr>
+    <!--<span>Want updates? <a href="http://eepurl.com/bpduc5" data-featherlight data-featherlight-type="iframe">Subscribe to get the latest goodies</a></span>-->
+	<!-- Begin MailChimp Signup Form -->
+	<link href="http://cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
+	<style type="text/css">
+		#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+		#mc_embed_signup form { padding: 0px 0 0px 0%; }
+	</style>
+	<div id="mc_embed_signup">
+	<form action="http://saturnbit.us10.list-manage.com/subscribe/post?u=6a958cda028d0d312d1ef3ccd&amp;id=4ee23b7fda" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+		<div id="mc_embed_signup_scroll">
+		<h2>Want Updates?</h2>
+	<div class="mc-field-group">
+		<label for="mce-EMAIL">Email Address </label>
+		<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+	</div>
+		<div id="mce-responses" class="clear">
+			<div class="response" id="mce-error-response" style="display:none"></div>
+			<div class="response" id="mce-success-response" style="display:none"></div>
+		</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+		<div style="position: absolute; left: -5000px;"><input type="text" name="b_6a958cda028d0d312d1ef3ccd_4ee23b7fda" tabindex="-1" value=""></div>
+		<div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+		</div>
+	</form>
+	</div>
+	<script type='text/javascript' src='http://s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+	<!--End mc_embed_signup-->
+  </div>
+</div>
+
+      	
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+	/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+	var disqus_shortname = 'cdianamedia'; // required: replace example with your forum shortname
+
+	/* * * DON'T EDIT BELOW THIS LINE * * */
+	(function() {
+	 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	 dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	 })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+   <!-- Full screen search overlay - open/close -->
+    <div class="overlay overlay-hugeinc">
+      <button type="button" class="overlay-close"><i class="fa fa-close"></i></button>
+      <div class="search-container">
+        <input id="search-input" placeholder="Search..." />
+        <div id="results-container"></div>
+      </div>
+    </div>
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-67203123-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+  </body>
+</html>
