@@ -54,11 +54,9 @@ Chris Diana &middot; Blog & Tutorials
   <div class="container content">
 <hr />
 
-<p>layout: post
-title: Getting Started with React.js - Concepts and Creating Your First App
-comments: true</p>
+<h1>Getting Started with React.js - Concepts and Creating Your First App</h1>
 
-<h2>tags: [javascript, react.js, virtual dom, jsx, flux]</h2>
+<h5>tags: [javascript, react.js, virtual dom, jsx, flux]</h5>
 
 <p>React.js is all the rage these days...and there's good reason. Here's a quick
 tutorial to get you up and running with this great JS framework.</p>
@@ -274,23 +272,22 @@ We will be building a simple Todo App...suprise!</p>
 
 <p><em>index.html</em></p>
 
-<pre><code>
- <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <title>React Todo App</title>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react-dom.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    </head>
-    <body>
-    <div id="content"></div>
-    <script type="text/babel" src="script.js"></script>
-    </body>
-</html>
-</code></pre>
+<pre>
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot; /&gt;
+&lt;title&gt;React Todo App&lt;/title&gt;
+&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react-dom.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;content&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/babel&quot; src=&quot;script.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
 
 <p>Notice the "text/babel" instead of "text/javascript" in the link to the <code>script.js</code> which we are using. Babel is the Javascript complier we are using to allow us to write in JSX instead of plain Javascript. Now that the foundation is set, let's get to the React code. Create a file called <code>script.js</code> and open that open. The rest of the following code will be going into this file.</p>
 

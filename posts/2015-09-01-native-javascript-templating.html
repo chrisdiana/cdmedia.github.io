@@ -54,11 +54,9 @@ Chris Diana &middot; Blog & Tutorials
   <div class="container content">
 <hr />
 
-<p>layout: post
-title: Native Javascript Templating - Goodbye Handlebars
-comments: true</p>
+<h1>Native Javascript Templating - Goodbye Handlebars</h1>
 
-<h2>tags: [javascript, jquery]</h2>
+<h5>tags: [javascript, jquery]</h5>
 
 <p>Ditch your javascript template plugin for a native javascript template solution
 you can use in your next app.</p>
@@ -86,7 +84,6 @@ movies.forEach(function(movie) {
 var template = '&lt;li&gt;&lt;span class="movie-name"&gt;' + movie.name + '&lt;/span&gt;&lt;span class="movie-rating"&gt;' + movie.rating + '&lt;/span&gt;&lt;/li&gt;';
 
 $('#list').append(template);
-
 });
 
 </code></pre>
@@ -125,7 +122,7 @@ I came across a pattern used in a Backbone.js example and one in a
 javascript mime type called <code>type="x-template"</code>. Take a look at the example below:</p>
 
 <pre><code>
-<script id="my-template" type="x-template"></script>
+&lt;script id=&quot;my-template&quot; type=&quot;x-template&quot;&gt;&lt;/script&gt;
 </code></pre>
 
 By setting the mime type to `type="x-template"`, the browser doesn't know how to handle
@@ -140,15 +137,15 @@ templates, this can really come in handy.
 
 **index.html**
 <pre><code>
-<ul id="list"></ul>
+&lt;ul id=&quot;list&quot;&gt;&lt;/ul&gt;
 
-<!--Our template placed somewhere in our HTML-->
-<script id="my-template" type="x-template">
-    <li>
-        <span class="movie-name"></span>
-        <span class="movie-rating"></span>
-    </li>
-</script>
+&lt;!--Our template placed somewhere in our HTML--&gt;
+&lt;script id=&quot;my-template&quot; type=&quot;x-template&quot;&gt;
+&lt;li&gt;
+&lt;span class=&quot;movie-name&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;movie-rating&quot;&gt;&lt;/span&gt;
+&lt;/li&gt;
+&lt;/script&gt;
 </code></pre>
 
 
@@ -163,9 +160,8 @@ var movies = [
 ];
 
 // Loop through the movie array and append each list item
-movies.forEach(function(movie) {</p>
+movies.forEach(function(movie) {
 
-<pre><code>
 // Get the template HTML as a string
 var template = $('#my-template').html();
 
