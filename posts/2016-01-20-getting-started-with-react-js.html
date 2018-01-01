@@ -117,7 +117,7 @@ Just like XML, JSX tags have a tag name, attributes, and children. Here's a quic
 
 <p>Without JSX, the React code would look like</p>
 
-<p>{% highlight js %}
+<pre><code>
 render: function() {
     return (
         React.createElement(
@@ -127,11 +127,11 @@ render: function() {
         )
     );
 }
-{% endhighlight %}</p>
+</code></pre>
 
 <p>This is <em>with</em> JSX</p>
 
-<p>{% highlight js %}
+<pre><code>
 render: function() {
     return (
         <div className="commentBox">
@@ -139,7 +139,7 @@ render: function() {
         </div>
     );
 }
-{% endhighlight %}</p>
+</code></pre>
 
 <hr />
 
@@ -182,21 +182,22 @@ render: function() {
 
 <p>Here's an example of a basic component:</p>
 
-<p>{% highlight js %}</p>
 
-<p>// This is our React component
+<pre><code>
+// This is our React component
 var HelloWorld = React.createClass({
   render : function() {
     return <div>Hello World!</div>;
   }
-});</p>
+});
 
-<p>// We then render the component later
+// We then render the component later
 React.renderComponent(
   <HelloWorld />,
   document.body
 );
-{% endhighlight %}</p>
+
+</code></pre>
 
 <hr />
 
@@ -204,21 +205,22 @@ React.renderComponent(
 
 <p>Properties are to React components what attributes are to HTML elements. We can change the behavior based on external information</p>
 
-<p>{% highlight js %}</p>
-
-<p>// This code will grab the attribute 'name' and output
+<pre><code>
+// This code will grab the attribute 'name' and output
 // 'Hello Chris'
 var InterfaceComponent = React.createClass({
   render : function() {
     return <div>Hello {this.props.name}!</div>;
   }
-});</p>
+});
 
-<p>React.renderComponent(
+
+React.renderComponent(
   <InterfaceComponent name="Chris" />,
   document.body
 );
-{% endhighlight %}</p>
+
+</code></pre>
 
 <hr />
 
@@ -230,9 +232,9 @@ var InterfaceComponent = React.createClass({
 
 <p>Take a look at an example:</p>
 
-<p>{% highlight js %}</p>
 
-<p>// Our components initial state is set to have
+<pre><code>
+// Our components initial state is set to have
 // '{name: Chris, job: Dev }'. When this component is
 // rendered it will return 'My name is Chris and I am a Dev'
 var InterfaceComponent = React.createClass({
@@ -248,14 +250,14 @@ var InterfaceComponent = React.createClass({
       and I am a {this.state.job}.
     </div>;
   }
-});</p>
+});
 
-<p>// Here we render our component to the document's body
+// Here we render our component to the document's body
 React.renderComponent(
   <InterfaceComponent />,
   document.body
 );
-{% endhighlight %}</p>
+</code></pre>
 
 <hr />
 
@@ -272,7 +274,7 @@ We will be building a simple Todo App...suprise!</p>
 
 <p><em>index.html</em></p>
 
-<p>{% highlight html %}
+<pre><code>
  <!DOCTYPE html>
 <html>
     <head>
@@ -288,7 +290,7 @@ We will be building a simple Todo App...suprise!</p>
     <script type="text/babel" src="script.js"></script>
     </body>
 </html>
-{% endhighlight %}</p>
+</code></pre>
 
 <p>Notice the "text/babel" instead of "text/javascript" in the link to the <code>script.js</code> which we are using. Babel is the Javascript complier we are using to allow us to write in JSX instead of plain Javascript. Now that the foundation is set, let's get to the React code. Create a file called <code>script.js</code> and open that open. The rest of the following code will be going into this file.</p>
 
@@ -301,43 +303,41 @@ This first component will be our main application. You can create the component 
 
 <p><em>script.js</em></p>
 
-<p>{% highlight js %}
-var TodoApp = React.createClass({</p>
+<pre><code>
+var TodoApp = React.createClass({
 
-<p>});
-{% endhighlight %}</p>
+});
+</code></pre>
 
 <p>Inside our TodoApp, we are first going to call React's <code>getInitialState</code> method. This is where we tell React to set the initial state of our application.
 In this function, we will return an empty array of items. That will the starting state of our todo items.</p>
 
-<p>{% highlight js %}
-var TodoApp = React.createClass({</p>
+<pre><code>
+var TodoApp = React.createClass({
 
-<pre><code>getInitialState: function() {
+getInitialState: function() {
     return { items: [], text: '' };
 },
-</code></pre>
 
-<p>});
-{% endhighlight %}</p>
+});
+</code></pre>
 
 <p>Just below <code>getInitialState</code>, we are going to add an <code>onChange</code> method.
 This function watches for any UI changes (value input, checked checkboxes, selected option). Each time the UI is changed, we will set the React state based on our input.</p>
 
-<p>{% highlight js %}
-var TodoApp = React.createClass({</p>
+<pre><code>
+var TodoApp = React.createClass({
 
-<pre><code>getInitialState: function() {
+getInitialState: function() {
     return { items: [], text: '' };
 },
 
 onChange: function(e) {
     this.setState({ text: e.target.value });
 },
-</code></pre>
 
-<p>});
-{% endhighlight %}</p>
+});
+</code></pre>
 
 <p>Next, we will add the <code>handleSubmit</code> function just below <code>onChange</code>. This function will handle our form submit.
 First, we prevent the default submit event.
@@ -345,10 +345,10 @@ Then, we set a <code>nextItems</code> variable where we grab the item text from 
 with setting an <code>id</code> using the current date. After, we set the <code>nextText</code> to empty to set it up for the next entry.
 Finally, we use the <code>setState</code> function to merge current and previous states and prepare for a new entry.</p>
 
-<p>{% highlight js %}
-handleSubmit: function(e) {</p>
+<pre><code>
+handleSubmit: function(e) {
 
-<pre><code>e.preventDefault();
+e.preventDefault();
 
 var nextItems = this.state.items.concat([{
     text: this.state.text,
@@ -361,16 +361,15 @@ this.setState({
     items: nextItems,
     text: nextText
 });
+},
 </code></pre>
 
-<p>},
-{% endhighlight %}</p>
 
 <p>The last thing we are going to do to complete our main component <code>TodoApp</code> is add a <code>render</code> function
 which returns a tree of React components which will eventually render to HTML.
 Take note of a few things: First, notice since we are using JSX, instead of using the standard <code>&lt;div class="row"&gt;</code> we have to use <code>&lt;div className="row"&gt;</code>. Also notice we are referencing our previous functions inside our returned view. On our form submit we call the <code>handleSubmit</code> function and when there is UI changes to the form input, we call the <code>onChange</code> function.</p>
 
-<p>{% highlight js %}
+<pre><code>
 render: function() {
     return (
         <div>
@@ -387,7 +386,7 @@ render: function() {
             </div>
         </div>
     );
-{% endhighlight %}</p>
+</code></pre>
 
 <p>We have a form to input information and handle the events, but still nowhere to render the actual list.
 Notice the <code>&lt;TodoList items={this.state.items} /&gt;</code> node.
@@ -396,29 +395,29 @@ What we are basically doing is calling one component inside of another. React en
 
 <p>Next, let's build our <code>TodoList</code> component. This will handle rendering the actual list. We will be placing this code outside of our <code>TodoApp</code> component, just above it:</p>
 
-<p>{% highlight js %}</p>
+<pre><code>
 
-<p>var TodoList = React.createClass({
+var TodoList = React.createClass({
     render: function() {
         var createItem = function(item) {
             return <li key={item.id}>{item.text}</li>;
         };
         return <ul>{this.props.items.map(createItem)}</ul>;
     }
-});</p>
+});
+</code></pre>
 
-<p>{% endhighlight %}</p>
 
 <p>Here we are creating a list item for each todo list item and then returning those inside of an unordered list element. Notice we are referencing the React properties by using <code>this.props</code> to get the items from attribute <code>items</code> in our <code>TodoApp.render()</code> method (<code>&lt;TodoList items={this.state.items} /&gt;</code>).</p>
 
 <p>The last step in our app is to render it all to our real DOM. We will call <code>ReactDOM.render()</code> method along with our main app and a place for it to go. In this example, we want to render it to <code>&lt;div id="content"&gt;&lt;/div&gt;</code>.</p>
 
-<p>{% highlight js %}
+<pre><code>
 ReactDOM.render(
     <TodoApp />,
     document.getElementById('content')
 );
-{% endhighlight %}</p>
+</code></pre>
 
 <p>And there we have it! Our first React app. Once you get your head around all the terminology and concepts,
 React is an incredible tool for both large and small applications.</p>

@@ -72,26 +72,24 @@ messy and begin to mesh views and logic.</p>
 
 <h4>The Problem</h4>
 
-<p>{% highlight js %}</p>
-
-<p>// Simple array of movies
+<pre><code>
+// Simple array of movies
 var movies = [
     { "name" : "Inception", "rating": "4" },
     { "name" : "Goodfellas", "rating": "5" },
     { "name" : "Fight Club", "rating": "4" },
-];</p>
+];
 
-<p>// Loop through the movie array and append each list item
-movies.forEach(function(movie) {</p>
+// Loop through the movie array and append each list item
+movies.forEach(function(movie) {
 
-<pre><code>var template = '&lt;li&gt;&lt;span class="movie-name"&gt;' + movie.name + '&lt;/span&gt;&lt;span class="movie-rating"&gt;' + movie.rating + '&lt;/span&gt;&lt;/li&gt;';
+var template = '&lt;li&gt;&lt;span class="movie-name"&gt;' + movie.name + '&lt;/span&gt;&lt;span class="movie-rating"&gt;' + movie.rating + '&lt;/span&gt;&lt;/li&gt;';
 
 $('#list').append(template);
+
+});
+
 </code></pre>
-
-<p>});</p>
-
-<p>{% endhighlight %}</p>
 
 <p>This may work for smaller templates like the one above, but as you can imagine
 when you get into larger sets of nodes, it can become a real PITA to maintain.</p>
@@ -126,10 +124,9 @@ I came across a pattern used in a Backbone.js example and one in a
 <a href="http://yuilibrary.com/yui/docs/app/app-todo.html">YUI Todo App</a> example referencing a
 javascript mime type called <code>type="x-template"</code>. Take a look at the example below:</p>
 
-<p>{% highlight html %}</p>
-
+<pre><code>
 <script id="my-template" type="x-template"></script>
-{% endhighlight %}
+</code></pre>
 
 By setting the mime type to `type="x-template"`, the browser doesn't know how to handle
 the script...so it just ignores it. This is great because you can insert any HTML you want
@@ -142,7 +139,7 @@ templates, this can really come in handy.
 
 
 **index.html**
-{% highlight html %}
+<pre><code>
 <ul id="list"></ul>
 
 <!--Our template placed somewhere in our HTML-->
@@ -152,23 +149,24 @@ templates, this can really come in handy.
         <span class="movie-rating"></span>
     </li>
 </script>
+</code></pre>
 
-<p>{% endhighlight %}</p>
 
 <p><strong>script.js</strong>
-{% highlight js %}</p>
 
-<p>// Simple array of movies
+<pre><code>
+// Simple array of movies
 var movies = [
     { "name" : "Inception", "rating": "4" },
     { "name" : "Goodfellas", "rating": "5" },
     { "name" : "Fight Club", "rating": "4" },
-];</p>
+];
 
-<p>// Loop through the movie array and append each list item
+// Loop through the movie array and append each list item
 movies.forEach(function(movie) {</p>
 
-<pre><code>// Get the template HTML as a string
+<pre><code>
+// Get the template HTML as a string
 var template = $('#my-template').html();
 
 // Change the string literal into a jQuery object
@@ -179,11 +177,10 @@ $template.find('.movie-name').text(movie.name);
 $template.find('.movie-rating').text(movie.rating);
 
 $('#list').append($template);
+
+});
+
 </code></pre>
-
-<p>});</p>
-
-<p>{% endhighlight %}</p>
 
 <hr />
 
@@ -193,11 +190,11 @@ when the solution above clearly is not so here is a vanilla javascript version.<
 
 <hr />
 
-<p>{% highlight js %}</p>
 
-<p>movies.forEach(function(movie) {</p>
+<pre><code>
+movies.forEach(function(movie) {
 
-<pre><code>var template = document.getElementById("my-template").innerHTML,
+var template = document.getElementById("my-template").innerHTML,
     el = document.createElement('div');
 
 el.innerHTML = template;
@@ -206,11 +203,9 @@ el.getElementsByClassName("movie-name")[0].innerHTML += movie.name;
 el.getElementsByClassName("movie-rating")[0].innerHTML += movie.rating;
 
 document.getElementById("list").appendChild(el);
+
+});
 </code></pre>
-
-<p>});</p>
-
-<p>{% endhighlight %}</p>
 
 <h2>Further Reading &amp; Resources</h2>
 
